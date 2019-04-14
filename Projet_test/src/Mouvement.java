@@ -141,7 +141,7 @@ public class Mouvement extends Application {
 	final StackPane layout = new StackPane();
 	StackPane all = new StackPane();
 	
-    Base.getChildren().addAll(limite1,limite2,bone.imageView,Poubelle_1.imageView,Poubelle_2.imageView,dirt.imageView,sand.imageView,water.imageView,wood.imageView,stick.imageView,rock.imageView,fire1.imageView,fire2.imageView,wind.imageView);
+    Base.getChildren().addAll(limite1,limite2,dirt.imageView,sand.imageView,water.imageView,wood.imageView,stick.imageView,rock.imageView,fire1.imageView,fire2.imageView,wind.imageView,bone.imageView);
     Food.getChildren().addAll(limite3,limite4,baguette.imageView);
     Life.getChildren().addAll(limite7,limite8,life.imageView,Sans.imageView,fish.imageView,bird.imageView,egg.imageView);
     Weapon.getChildren().addAll(limite5,limite6,chainsaw.imageView,axe.imageView);
@@ -274,70 +274,22 @@ public class Mouvement extends Application {
     all.setOnMouseReleased(evt -> {
     	
         if (selected != null) {
-        	if(815<evt.getX() && evt.getX()<864 && 860<evt.getY() && evt.getY()<909) {
-        		selected.setTranslateX(-175);
-                selected.setTranslateY(-130);
-                if (selected.getId() != null) {
-                	matrice[0][0] = Integer.valueOf(selected.getId());}
-                System.out.println(matrice[0][0]);
+        	if(815<evt.getX() && evt.getX()<964 && 860<evt.getY() && evt.getY()<1009) {
+        	for(int i=0; i<matrice.length;i++) {
+        		for(int j=0; j<matrice.length;j++) {
+        			
+        			if(815+50*j<evt.getX() && evt.getX()<864+50*j && 860+50*i<evt.getY() && evt.getY()<909+50*i) {
+        				selected.setTranslateX(-175+50*j);
+                        selected.setTranslateY(-130+50*i);
+                        if (selected.getId() != null) {
+                        	matrice[i][j] = Integer.valueOf(selected.getId());}
+                        
+                		}
+        			}
+        			
         	}
-        	
-        	else if(865<=evt.getX() && evt.getX()<914 && 860<evt.getY() && evt.getY()<909) {
-        		selected.setTranslateX(-125);
-                selected.setTranslateY(-130);
-                if (selected.getId() != null) {
-                	matrice[0][1] = Integer.valueOf(selected.getId());}
         	}
-        	
-        	else if(915<=evt.getX() && evt.getX()<964 && 860<evt.getY() && evt.getY()<909) {
-        		selected.setTranslateX(-75);
-                selected.setTranslateY(-130);
-                if (selected.getId() != null) {
-                	matrice[0][2] = Integer.valueOf(selected.getId());}
-        	}
-        	
-        	else if(815<evt.getX() && evt.getX()<864 && 910<=evt.getY() && evt.getY()<959) {
-        		selected.setTranslateX(-175);
-                selected.setTranslateY(-80);
-                if (selected.getId() != null) {
-                	matrice[1][0] = Integer.valueOf(selected.getId());}
-        	}
-        	
-        	else if(865<=evt.getX() && evt.getX()<914 && 910<=evt.getY() && evt.getY()<959) {
-        		selected.setTranslateX(-125);
-                selected.setTranslateY(-80);
-                if (selected.getId() != null) {
-                	matrice[1][1] = Integer.valueOf(selected.getId());}
-        	}
-        	
-        	else if(915<=evt.getX() && evt.getX()<964 && 910<=evt.getY() && evt.getY()<959) {
-        		selected.setTranslateX(-75);
-                selected.setTranslateY(-80);
-                if (selected.getId() != null) {
-                	matrice[1][2] = Integer.valueOf(selected.getId());}
-                
-        	}
-        	
-        	else if(815<evt.getX() && evt.getX()<864 && 960<=evt.getY() && evt.getY()<1009) {
-        		selected.setTranslateX(-175);
-                selected.setTranslateY(-30);
-                if (selected.getId() != null) {
-                	matrice[2][0] = Integer.valueOf(selected.getId());}
-        	}
-        	
-        	else if(865<=evt.getX() && evt.getX()<914 && 960<=evt.getY() && evt.getY()<1009) {
-        		selected.setTranslateX(-125);
-                selected.setTranslateY(-30);
-                if (selected.getId() != null) {
-                	matrice[2][1] = Integer.valueOf(selected.getId());}
-        	}
-        	
-        	else if(915<=evt.getX() && evt.getX()<964 && 960<=evt.getY() && evt.getY()<1009) {
-        		selected.setTranslateX(-75);
-                selected.setTranslateY(-30);
-                if (selected.getId() != null) {
-                	matrice[2][2] = Integer.valueOf(selected.getId());}
-        	}
+        
         	
         	else if((evt.getY() - offset.getY() + translateStart.getY())>=100) {
         		double a = (Math.round((evt.getY() - offset.getY() + translateStart.getY()+25)/50)*50-20);
@@ -354,9 +306,9 @@ public class Mouvement extends Application {
         			int getX = Integer.parseInt(Double.toString(dico.get(i)).substring(3, 6));
         			}
         			
-        		}*/
-        		
+        		}*/	
         	}
+        	
         	else {
         		selected.setTranslateX(STARTX);
         		selected.setTranslateY(STARTY);
@@ -364,13 +316,19 @@ public class Mouvement extends Application {
         	((ImageView) evt.getTarget()).setFitHeight(30);
             ((ImageView) evt.getTarget()).setFitWidth(30);
             evt.consume();
-            
+          
+            for(int i=0; i<matrice.length;i++) {
+        		for(int j=0; j<matrice.length;j++) {
+        			System.out.print(matrice[i][j]);
+        		}
+        		System.out.println("");
+        	}
+            System.out.println("");
         }	
         
     });
 
 }
-
 
   public static void main(String[] args) { launch(args); }
 }
