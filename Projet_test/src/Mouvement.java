@@ -115,6 +115,13 @@ public class Mouvement extends Application {
 	  
 	  //La bouffe
 	  creationImage baguette = new creationImage("Food/baguette.png","65");
+	  
+	  //Création des crafts
+	  creationCraft craft_test = new creationCraft(new ArrayList(Arrays.asList(0,0,0,0,0,0,0,0,0)),51);
+	  
+	  //Creation du dico ou il y aura des craft
+	  Map<Integer,creationCraft> dicoCraft=new HashMap<Integer,creationCraft>();
+	  //Pour ajouter on fait dico.put(Integer.valueOf(LETRUC.id),LECRAFT)
 	
 	//this.dico = new HashMap<>();
 	
@@ -345,6 +352,57 @@ public class Mouvement extends Application {
         }	
         
     });
+    
+    ArrayList liste = new ArrayList();
+    
+    for(int i=0;i<matrice.length;i++) {
+    	for(int j=0;j<matrice.length;j++) {
+    		liste.add((Integer)matrice[i][j]);
+    	}
+    }
+    
+    System.out.println("La matrice "+liste);
+    System.out.println(liste.getClass().getName());
+    System.out.println("Le craft exemple "+craft_test.liste);
+    System.out.println(craft_test.liste.getClass().getName());
+    
+    //Je le garde au cas ou !
+    /*int compteur=0;
+    ArrayList autre_liste=craft_test.liste;
+    
+    for(int k=0;k<liste.size();k++) {
+    
+    if (autre_liste.get(k)==liste.get(k)) {
+    	compteur+=1;
+    }
+    }
+    
+    if(compteur==craft_test.liste.size() && compteur==liste.size()) {
+    	System.out.println("ça marche"); 
+    }*/
+    
+  //Parcourir et comparer avec la matrice
+	  
+    Integer clef = null;
+    creationCraft valeur=null;
+    Iterator<Integer> i = dicoCraft.keySet().iterator();
+    
+    while(i.hasNext()) {
+    	clef=i.next();
+    	valeur = dicoCraft.get(clef);
+    	
+    	int compteur=0;
+    	ArrayList autre_liste=valeur.liste;
+    	
+    	for(int k=0;k<liste.size();k++) {
+    		if (autre_liste.get(k)==liste.get(k)) {
+    			compteur+=1;
+    		}
+    }
+    	if(compteur==craft_test.liste.size() && compteur==liste.size()) {
+    		//La on chope valeur.lid et on affiche l'image qui as cette id dans le resultat de la table de craft
+    	}
+    }
 
 }
 
