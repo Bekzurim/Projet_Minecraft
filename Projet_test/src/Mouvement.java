@@ -2,6 +2,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -30,7 +31,7 @@ public class Mouvement extends Application {
 	
   @Override public void start(final Stage stage) throws Exception {
 	  List<String> listImage = Arrays.asList("0","Base/Dirt.png","Base/bois.png","Base/rock.png","Base/sand.png","Base/wind.png","Base/fire_2.png","Base/stick.png","Base/bone.png","Base/water.png","Base/glass.png","Base/glaçon.png","Base/iron_nugget.png","Base/iron_ingot.png","Base/Poubelle_1.png","Base/Poubelle_2.png",
-	  "Food/baguette.png","Food/beurre.png","Food/ble.png","Food/burger_pain.png","Food/burger.png","Food/farine.png","Food/fromage.png","Food/pomme.png","Food/tomate.png","Food/viande.png",
+	  "Food/baguette.png","Food/beurre.png","Food/ble.png","Food/burger_pain.png","Food/burger.png","Food/farine.png","Food/fromage.png","Food/pomme.png","Food/salade.png","Food/tomate.png","Food/viande.png",
 	  "Life/life.png","Life/sans.png","Life/fish.png","Life/bird.png","Life/egg.png",
 	  "Weapon/ak.png","Weapon/axe.png","Weapon/backpack.png","Weapon/baseball_bat.png","Weapon/battle_axe.png","Weapon/battle_hammer.png","Weapon/bouclier.png","Weapon/bouteille_alcool.png","Weapon/bow.png","Weapon/bow-arrow.png","Weapon/butcher_knife.png","Weapon/chainsaw.png","Weapon/crossbow.png","Weapon/crossbow_arrow.png","Weapon/dague.png","Weapon/double_spear.png","Weapon/Epee_classique.png","Weapon/gas_mask.png","Weapon/grenade.png","Weapon/grenade_laucher.png","Weapon/guandao.png","Weapon/hunter_knife.png","Weapon/katana.png","Weapon/Katana1.png","Weapon/kunai.png","Weapon/lance.png","Weapon/lightsaber.png","Weapon/medkiy.png","Weapon/military_knife.png","Weapon/minigun.png","Weapon/molotov_cocktail.png","Weapon/pistol.png","Weapon/pistol_ammo.png","Weapon/revolver.png","Weapon/rocket.png","Weapon/rocket_launcher.png","Weapon/scythe.png","Weapon/shotgun.png","Weapon/shuriken.png","Weapon/smoke_grenade.png","Weapon/sniper.png","Weapon/tanto1.png","Weapon/throwing_knife.png","Weapon/thunder.png");
 	  
@@ -65,7 +66,6 @@ public class Mouvement extends Application {
 	  creationImage ironIngot = new creationImage("Base/iron_ingot.png","13");
 	  creationImage Poubelle_1 = new creationImage("Base/Poubelle_1.png","14");
 	  creationImage Poubelle_2 = new creationImage("Base/Poubelle_2.png","15");
-	  System.out.println(dirt.image);
 	  
 	  //La bouffe
 	  creationImage baguette = new creationImage("Food/baguette.png","16");
@@ -170,7 +170,7 @@ public class Mouvement extends Application {
 	
 	
     Base.getChildren().addAll(limite1,limite2,dirt.imageView,sand.imageView,water.imageView,wood.imageView,stick.imageView,rock.imageView,fire2.imageView,wind.imageView,bone.imageView);
-    Food.getChildren().addAll(limite3,limite4,baguette.imageView);
+    Food.getChildren().addAll(limite3,limite4,baguette.imageView,beurre.imageView,ble.imageView,burgerPain.imageView,farine.imageView,fromage.imageView,pomme.imageView,salade.imageView,tomate.imageView,viande.imageView);
     Life.getChildren().addAll(limite7,limite8,life.imageView,Sans.imageView,fish.imageView,bird.imageView,egg.imageView);
     Weapon.getChildren().addAll(limite5,limite6,chainsaw.imageView,axe.imageView);
     Matrice.getChildren().addAll(limite9,limite10);
@@ -336,7 +336,7 @@ public class Mouvement extends Application {
                         Matrice.getChildren().add(selected);
                         creationImage newimage = new creationImage(listImage.get((Integer.parseInt(selected.getId()))),selected.getId());
                         if (douquonest ==0) {Base.getChildren().add(newimage.imageView);selected = Base.getChildren().get(10);} 
-                    	else if (douquonest ==1) {Food.getChildren().add(newimage.imageView);selected = Food.getChildren().get(2);} 
+                    	else if (douquonest ==1) {Food.getChildren().add(newimage.imageView);selected = Food.getChildren().get(11);} 
                     	else if (douquonest ==2) {Life.getChildren().add(newimage.imageView);selected = Life.getChildren().get(6);} 
                     	else if (douquonest ==3) {Weapon.getChildren().add(newimage.imageView);selected = Weapon.getChildren().get(3);} 
                         
@@ -399,11 +399,6 @@ public class Mouvement extends Application {
     	}
     }
     
-    System.out.println("La matrice "+liste);
-    System.out.println(liste.getClass().getName());
-    System.out.println("Le craft exemple "+craft_test.liste);
-    System.out.println(craft_test.liste.getClass().getName());
-    
     //Je le garde au cas ou !
     /*int compteur=0;
     ArrayList autre_liste=craft_test.liste;
@@ -444,7 +439,7 @@ public class Mouvement extends Application {
 
 }
 
-}
+
 
   public static void main(String[] args) { launch(args); }
 }
