@@ -2,6 +2,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javafx.application.Application;
@@ -24,11 +25,16 @@ public class Mouvement extends Application {
 	Point2D translateStart;
 	double STARTX;
 	double STARTY;
+	int douquonest = 0;
 	//Map<Integer, Double> dico;
 	
   @Override public void start(final Stage stage) throws Exception {
-
-	//Les bases
+	  List<String> listImage = Arrays.asList("0","Base/Dirt.png","Base/bois.png","Base/rock.png","Base/sand.png","Base/wind.png","Base/fire_2.png","Base/stick.png","Base/bone.png","Base/water.png","Base/glass.png","Base/glaçon.png","Base/iron_nugget.png","Base/iron_ingot.png","Base/Poubelle_1.png","Base/Poubelle_2.png",
+	  "Food/baguette.png","Food/beurre.png","Food/ble.png","Food/burger_pain.png","Food/burger.png","Food/farine.png","Food/fromage.png","Food/pomme.png","Food/tomate.png","Food/viande.png",
+	  "Life/life.png","Life/sans.png","Life/fish.png","Life/bird.png","Life/egg.png",
+	  "Weapon/ak.png","Weapon/axe.png","Weapon/backpack.png","Weapon/baseball_bat.png","Weapon/battle_axe.png","Weapon/battle_hammer.png","Weapon/bouclier.png","Weapon/bouteille_alcool.png","Weapon/bow.png","Weapon/bow-arrow.png","Weapon/butcher_knife.png","Weapon/chainsaw.png","Weapon/crossbow.png","Weapon/crossbow_arrow.png","Weapon/dague.png","Weapon/double_spear.png","Weapon/Epee_classique.png","Weapon/gas_mask.png","Weapon/grenade.png","Weapon/grenade_laucher.png","Weapon/guandao.png","Weapon/hunter_knife.png","Weapon/katana.png","Weapon/Katana1.png","Weapon/kunai.png","Weapon/lance.png","Weapon/lightsaber.png","Weapon/medkiy.png","Weapon/military_knife.png","Weapon/minigun.png","Weapon/molotov_cocktail.png","Weapon/pistol.png","Weapon/pistol_ammo.png","Weapon/revolver.png","Weapon/rocket.png","Weapon/rocket_launcher.png","Weapon/scythe.png","Weapon/shotgun.png","Weapon/shuriken.png","Weapon/smoke_grenade.png","Weapon/sniper.png","Weapon/tanto1.png","Weapon/throwing_knife.png","Weapon/thunder.png");
+	  
+	  //Les bases
 	  ImageView decor = new ImageView(new File("fond.png").toURI().toString());
 	  ImageView craft = new ImageView(new File("fond_craft.png").toURI().toString());
 	  ImageView Dossier = new ImageView(new File("Dossier.png").toURI().toString());
@@ -59,75 +65,75 @@ public class Mouvement extends Application {
 	  creationImage ironIngot = new creationImage("Base/iron_ingot.png","13");
 	  creationImage Poubelle_1 = new creationImage("Base/Poubelle_1.png","14");
 	  creationImage Poubelle_2 = new creationImage("Base/Poubelle_2.png","15");
-	  
-	  //La vie
-	  creationImage Sans = new creationImage("Life/Sans.png","16");
-	  creationImage life = new creationImage("Life/life.png","17");
-	  creationImage fish = new creationImage("Life/fish.png","18");
-	  creationImage bird = new creationImage("Life/bird.png","19");
-	  creationImage egg = new creationImage("Life/egg.png","20");
-	  
-	  //Les armes
-	  creationImage ak = new creationImage("Weapon/ak.png","21");
-	  creationImage axe = new creationImage("Weapon/axe.png","22");
-	  creationImage backpack = new creationImage("Weapon/backpack.png","23");
-	  creationImage baseball_bat = new creationImage("Weapon/baseball_bat.png","24");
-	  creationImage battle_axe = new creationImage("Weapon/battle_axe.png","25");
-	  creationImage battle_hammer = new creationImage("Weapon/battle_hammer.png","26");
-	  creationImage bouclier = new creationImage("Weapon/bouclier.png","27");
-	  creationImage bouteille_alcool = new creationImage("Weapon/bouteille_alcool.png","28");
-	  creationImage bow = new creationImage("Weapon/bow.png","29");
-	  creationImage bow_arrow = new creationImage("Weapon/bow-arrow.png","30");
-	  creationImage butcher_knife = new creationImage("Weapon/butcher_knife.png","31");
-	  creationImage chainsaw = new creationImage("Weapon/chainsaw.png","32");
-	  creationImage crossbow = new creationImage("Weapon/crossbow.png","33");
-	  creationImage crossbow_arrow = new creationImage("Weapon/crossbow_arrow.png","34");
-	  creationImage dague = new creationImage("Weapon/dague.png","35");
-	  creationImage double_spear = new creationImage("Weapon/double_spear.png","36");
-	  creationImage Epee_classique = new creationImage("Weapon/Epee_classique.png","37");
-	  creationImage gas_mask = new creationImage("Weapon/gas_mask.png","38");
-	  creationImage grenade = new creationImage("Weapon/grenade.png","39");
-	  creationImage grenade_laucher = new creationImage("Weapon/grenade_laucher.png","40");
-	  creationImage guandao = new creationImage("Weapon/guandao.png","41");
-	  creationImage hunter_knife = new creationImage("Weapon/hunter_knife.png","42");
-	  creationImage katana = new creationImage("Weapon/katana.png","43");
-	  creationImage Katana1 = new creationImage("Weapon/Katana1.png","44");
-	  creationImage kunai = new creationImage("Weapon/kunai.png","45");
-	  creationImage lance = new creationImage("Weapon/lance.png","46");
-	  creationImage lightsaber = new creationImage("Weapon/lightsaber.png","47");
-	  creationImage medkiy = new creationImage("Weapon/medkiy.png","48");
-	  creationImage military_knife = new creationImage("Weapon/military_knife.png","49");
-	  creationImage minigun = new creationImage("Weapon/minigun.png","50");
-	  creationImage molotov_cocktail = new creationImage("Weapon/molotov_cocktail.png","51");
-	  creationImage pistol = new creationImage("Weapon/pistol.png","52");
-	  creationImage pistol_ammo = new creationImage("Weapon/pistol_ammo.png","53");
-	  creationImage revolver = new creationImage("Weapon/revolver.png","54");
-	  creationImage rocket = new creationImage("Weapon/rocket.png","55");
-	  creationImage rocket_launcher = new creationImage("Weapon/rocket_launcher.png","56");
-	  creationImage scythe = new creationImage("Weapon/scythe.png","57");
-	  creationImage shotgun = new creationImage("Weapon/shotgun.png","58");
-	  creationImage shuriken = new creationImage("Weapon/shuriken.png","59");
-	  creationImage smoke_grenade = new creationImage("Weapon/smoke_grenade.png","60");
-	  creationImage sniper = new creationImage("Weapon/sniper.png","61");
-	  creationImage tanto1 = new creationImage("Weapon/tanto1.png","62");
-	  creationImage throwing_knife = new creationImage("Weapon/throwing_knife.png","63");
-	  creationImage thunder = new creationImage("Weapon/thunder.png","64"); 
+	  System.out.println(dirt.image);
 	  
 	  //La bouffe
-	  creationImage baguette = new creationImage("Food/baguette.png","65");
+	  creationImage baguette = new creationImage("Food/baguette.png","16");
+	  creationImage beurre = new creationImage("Food/beurre.png","17");
+	  creationImage ble = new creationImage("Food/ble.png","18");
+	  creationImage burgerPain = new creationImage("Food/burger_pain.png","19");
+	  creationImage burger = new creationImage("Food/burger.png","20");
+	  creationImage farine = new creationImage("Food/farine.png","21");
+	  creationImage fromage = new creationImage("Food/fromage.png","22");
+	  creationImage pomme = new creationImage("Food/pomme.png","23");
+	  creationImage salade = new creationImage("Food/salade.png","24");
+	  creationImage tomate = new creationImage("Food/tomate.png","25");
+	  creationImage viande = new creationImage("Food/viande.png","26");
 	  
-	  //Cr�ation des crafts
-	  creationCraft craft_test = new creationCraft(new ArrayList(Arrays.asList(0,0,0,0,0,0,0,0,0)),51);
+	//La vie
+	  creationImage life = new creationImage("Life/life.png","27");
+	  creationImage Sans = new creationImage("Life/Sans.png","28");
+	  creationImage fish = new creationImage("Life/fish.png","29");
+	  creationImage bird = new creationImage("Life/bird.png","30");
+	  creationImage egg = new creationImage("Life/egg.png","31");
 	  
-	  //Creation du dico ou il y aura des craft
-	  Map<Integer,creationCraft> dicoCraft=new HashMap<Integer,creationCraft>();
-	  //Pour ajouter on fait dico.put(Integer.valueOf(LETRUC.id),LECRAFT)
-	
+	  //Les armes
+	  creationImage ak = new creationImage("Weapon/ak.png","32");
+	  creationImage axe = new creationImage("Weapon/axe.png","33");
+	  creationImage backpack = new creationImage("Weapon/backpack.png","34");
+	  creationImage baseball_bat = new creationImage("Weapon/baseball_bat.png","35");
+	  creationImage battle_axe = new creationImage("Weapon/battle_axe.png","36");
+	  creationImage battle_hammer = new creationImage("Weapon/battle_hammer.png","37");
+	  creationImage bouclier = new creationImage("Weapon/bouclier.png","38");
+	  creationImage bouteille_alcool = new creationImage("Weapon/bouteille_alcool.png","39");
+	  creationImage bow = new creationImage("Weapon/bow.png","40");
+	  creationImage bow_arrow = new creationImage("Weapon/bow-arrow.png","41");
+	  creationImage butcher_knife = new creationImage("Weapon/butcher_knife.png","42");
+	  creationImage chainsaw = new creationImage("Weapon/chainsaw.png","43");
+	  creationImage crossbow = new creationImage("Weapon/crossbow.png","44");
+	  creationImage crossbow_arrow = new creationImage("Weapon/crossbow_arrow.png","45");
+	  creationImage dague = new creationImage("Weapon/dague.png","46");
+	  creationImage double_spear = new creationImage("Weapon/double_spear.png","47");
+	  creationImage Epee_classique = new creationImage("Weapon/Epee_classique.png","48");
+	  creationImage gas_mask = new creationImage("Weapon/gas_mask.png","49");
+	  creationImage grenade = new creationImage("Weapon/grenade.png","50");
+	  creationImage grenade_laucher = new creationImage("Weapon/grenade_laucher.png","51");
+	  creationImage guandao = new creationImage("Weapon/guandao.png","52");
+	  creationImage hunter_knife = new creationImage("Weapon/hunter_knife.png","53");
+	  creationImage katana = new creationImage("Weapon/katana.png","54");
+	  creationImage Katana1 = new creationImage("Weapon/Katana1.png","55");
+	  creationImage kunai = new creationImage("Weapon/kunai.png","56");
+	  creationImage lance = new creationImage("Weapon/lance.png","57");
+	  creationImage lightsaber = new creationImage("Weapon/lightsaber.png","58");
+	  creationImage medkiy = new creationImage("Weapon/medkiy.png","59");
+	  creationImage military_knife = new creationImage("Weapon/military_knife.png","60");
+	  creationImage minigun = new creationImage("Weapon/minigun.png","61");
+	  creationImage molotov_cocktail = new creationImage("Weapon/molotov_cocktail.png","62");
+	  creationImage pistol = new creationImage("Weapon/pistol.png","63");
+	  creationImage pistol_ammo = new creationImage("Weapon/pistol_ammo.png","64");
+	  creationImage revolver = new creationImage("Weapon/revolver.png","65");
+	  creationImage rocket = new creationImage("Weapon/rocket.png","66");
+	  creationImage rocket_launcher = new creationImage("Weapon/rocket_launcher.png","67");
+	  creationImage scythe = new creationImage("Weapon/scythe.png","68");
+	  creationImage shotgun = new creationImage("Weapon/shotgun.png","69");
+	  creationImage shuriken = new creationImage("Weapon/shuriken.png","70");
+	  creationImage smoke_grenade = new creationImage("Weapon/smoke_grenade.png","71");
+	  creationImage sniper = new creationImage("Weapon/sniper.png","72");
+	  creationImage tanto1 = new creationImage("Weapon/tanto1.png","73");
+	  creationImage throwing_knife = new creationImage("Weapon/throwing_knife.png","74");
+	  creationImage thunder = new creationImage("Weapon/thunder.png","75"); 
+	  
 	//this.dico = new HashMap<>();
-	
-	//test de creationMatrice
-	creationMatrice test1 = new creationMatrice(new ArrayList(Arrays.asList(0,0,0,0,0,0,0,0,0)), 0);
-	System.out.println(test1.matrice);
 	
 	Button Bbase = new Button("Base");
     Button Bfood = new Button("Food");
@@ -144,9 +150,9 @@ public class Mouvement extends Application {
 	toolBar.getItems().add(Bweapon);
 	
 	toolBar.setStyle("-fx-background-color: rgba(0, 100, 100, 0.7);");
-	toolBar.setTranslateY(90);
+	toolBar.setTranslateY(86);
 	
-	//Les 4 groupes, permet de clean facilement une catégorie.
+	//Les 4 groupes, permet de clean facilement une catégorie. +reesayer stackpane
 	Group Base = new Group();
 	Group Food = new Group();
 	Group Weapon = new Group();
@@ -161,8 +167,8 @@ public class Mouvement extends Application {
     Life.getChildren().addAll(limite7,limite8,life.imageView,Sans.imageView,fish.imageView,bird.imageView,egg.imageView);
     Weapon.getChildren().addAll(limite5,limite6,chainsaw.imageView,axe.imageView);
     Matrice.getChildren().addAll(limite9,limite10);
-    all.getChildren().addAll(Base,Matrice);
-    layout.getChildren().addAll(decor,craft,Dossier,inventaire,all,toolBar,button); //le Padre!
+    all.getChildren().addAll(Base);
+    layout.getChildren().addAll(decor,craft,Dossier,inventaire,all,toolBar,button,Matrice); //le Padre!
     
     
     //Positionnement des Nodes à la mano.
@@ -214,7 +220,8 @@ public class Mouvement extends Application {
               @Override
               public void handle(MouseEvent e) {
             	  all.getChildren().clear();
-            	  all.getChildren().addAll(Base,Matrice);
+            	  all.getChildren().addAll(Base);
+            	  douquonest = 0;
             	  
               }
             });
@@ -225,7 +232,8 @@ public class Mouvement extends Application {
               @Override
               public void handle(MouseEvent e) {
             	  all.getChildren().clear();
-            	  all.getChildren().addAll(Food,Matrice);
+            	  all.getChildren().addAll(Food);
+            	  douquonest = 1;
             	  
             	  
               }
@@ -237,7 +245,8 @@ public class Mouvement extends Application {
               @Override
               public void handle(MouseEvent e) {
             	  all.getChildren().clear();
-            	  all.getChildren().addAll(Life,Matrice);
+            	  all.getChildren().addAll(Life);
+            	  douquonest = 2;
             	  
             	  
               }
@@ -249,7 +258,8 @@ public class Mouvement extends Application {
               @Override
               public void handle(MouseEvent e) {
             	  all.getChildren().clear();
-            	  all.getChildren().addAll(Weapon,Matrice);
+            	  all.getChildren().addAll(Weapon);
+            	  douquonest = 3;
             	  
               }
             });
@@ -259,9 +269,11 @@ public class Mouvement extends Application {
             new EventHandler<MouseEvent>() {
               @Override
               public void handle(MouseEvent e) {
+            	  	for(int i =0;i<matrice.length*matrice.length;i++){
+            		  matrice[i%3][i/3] = 0;}
             	  button.setStyle("-fx-background-color: #ff0000;");
             	  Matrice.getChildren().clear();
-            	  Matrice.getChildren().addAll(limite9,limite10);
+            	  Matrice.getChildren().addAll(limite9,limite10); //peut etre pas necessaire
               }
             });
     
@@ -311,12 +323,26 @@ public class Mouvement extends Application {
         			if(815+50*(i%3)<=evt.getX() && evt.getX()<864+50*(i%3) && 860+50*(i/3)<=evt.getY() && evt.getY()<909+50*(i/3)) {
         				selected.setTranslateX(-175+50*(i%3));
                         selected.setTranslateY(-130+50*(i/3));
-                        if (selected.getId() != null) {
-                        	matrice[i/3][i%3] = Integer.valueOf(selected.getId());} //La matrice récupère l'ID de la Node.
-                        	if(selected.getParent() != Matrice) {
-                        	Matrice.getChildren().add(selected);
-                        	}
-                        	}		
+                        if (selected.getId() != null && matrice[i/3][i%3] ==0) {
+                        	matrice[i/3][i%3] = Integer.valueOf(selected.getId()); //La matrice récupère l'ID de la Node.
+                        if(selected.getParent() != Matrice) {
+                        Matrice.getChildren().add(selected);
+                        creationImage newimage = new creationImage(listImage.get((Integer.parseInt(selected.getId()))),selected.getId());
+                        if (douquonest ==0) {Base.getChildren().add(newimage.imageView);selected = Base.getChildren().get(10);} 
+                    	else if (douquonest ==1) {Food.getChildren().add(newimage.imageView);selected = Food.getChildren().get(2);} 
+                    	else if (douquonest ==2) {Life.getChildren().add(newimage.imageView);selected = Life.getChildren().get(6);} 
+                    	else if (douquonest ==3) {Weapon.getChildren().add(newimage.imageView);selected = Weapon.getChildren().get(3);} 
+                        
+                        
+                        selected.setTranslateX(STARTX);
+                        selected.setTranslateY(STARTY);
+                        }
+                        }
+                        else {
+                    		selected.setTranslateX(STARTX);
+                    		selected.setTranslateY(STARTY);
+                    	}
+        			}		
         	}
         	}
         	//Si on est dans l'inventaire
@@ -328,6 +354,12 @@ public class Mouvement extends Application {
             	else { // X négatif
             	X = (Math.round((evt.getX() - offset.getX() + translateStart.getX()-25)/50)*50+25+Math.round((evt.getX() - offset.getX() + translateStart.getX())/50)/2);}
         		selected.setTranslateX(X);
+        		/*if(-175<=STARTX && STARTX<=-75 && -130<=STARTY && STARTY<=-30) {
+        		if (douquonest ==0) {Base.getChildren().add(selected);} 
+        		else if (douquonest ==1) {Food.getChildren().add(selected);} 
+        		else if (douquonest ==2) {Life.getChildren().add(selected);} 
+        		else if (douquonest ==3) {Weapon.getChildren().add(selected);} 
+        		}*/
         		
         	}
         	//Sinon retour au point de départ.
@@ -335,7 +367,6 @@ public class Mouvement extends Application {
         		selected.setTranslateX(STARTX);
         		selected.setTranslateY(STARTY);
         	}
-        	System.out.println(selected.getParent());
         	//Redimensionnement de l'image
         	((ImageView) evt.getTarget()).setFitHeight(30);
             ((ImageView) evt.getTarget()).setFitWidth(30);
@@ -352,57 +383,6 @@ public class Mouvement extends Application {
         }	
         
     });
-    
-    ArrayList liste = new ArrayList();
-    
-    for(int i=0;i<matrice.length;i++) {
-    	for(int j=0;j<matrice.length;j++) {
-    		liste.add((Integer)matrice[i][j]);
-    	}
-    }
-    
-    System.out.println("La matrice "+liste);
-    System.out.println(liste.getClass().getName());
-    System.out.println("Le craft exemple "+craft_test.liste);
-    System.out.println(craft_test.liste.getClass().getName());
-    
-    //Je le garde au cas ou !
-    /*int compteur=0;
-    ArrayList autre_liste=craft_test.liste;
-    
-    for(int k=0;k<liste.size();k++) {
-    
-    if (autre_liste.get(k)==liste.get(k)) {
-    	compteur+=1;
-    }
-    }
-    
-    if(compteur==craft_test.liste.size() && compteur==liste.size()) {
-    	System.out.println("�a marche"); 
-    }*/
-    
-  //Parcourir et comparer avec la matrice
-	  
-    Integer clef = null;
-    creationCraft valeur=null;
-    Iterator<Integer> i = dicoCraft.keySet().iterator();
-    
-    while(i.hasNext()) {
-    	clef=i.next();
-    	valeur = dicoCraft.get(clef);
-    	
-    	int compteur=0;
-    	ArrayList autre_liste=valeur.liste;
-    	
-    	for(int k=0;k<liste.size();k++) {
-    		if (autre_liste.get(k)==liste.get(k)) {
-    			compteur+=1;
-    		}
-    }
-    	if(compteur==craft_test.liste.size() && compteur==liste.size()) {
-    		//La on chope valeur.lid et on affiche l'image qui as cette id dans le resultat de la table de craft
-    	}
-    }
 
 }
 
