@@ -35,7 +35,7 @@ public class Mouvement extends Application {
 	  "Weapon/ak.png","Weapon/axe.png","Weapon/backpack.png","Weapon/baseball_bat.png","Weapon/battle_axe.png","Weapon/battle_hammer.png","Weapon/bouclier.png","Weapon/bouteille_alcool.png","Weapon/bow.png","Weapon/bow-arrow.png","Weapon/butcher_knife.png","Weapon/chainsaw.png","Weapon/crossbow.png","Weapon/crossbow_arrow.png","Weapon/dague.png","Weapon/double_spear.png","Weapon/Epee_classique.png","Weapon/gas_mask.png","Weapon/grenade.png","Weapon/grenade_laucher.png","Weapon/guandao.png","Weapon/hunter_knife.png","Weapon/katana.png","Weapon/Katana1.png","Weapon/kunai.png","Weapon/lance.png","Weapon/lightsaber.png","Weapon/medkiy.png","Weapon/military_knife.png","Weapon/minigun.png","Weapon/molotov_cocktail.png","Weapon/pistol.png","Weapon/pistol_ammo.png","Weapon/revolver.png","Weapon/rocket.png","Weapon/rocket_launcher.png","Weapon/scythe.png","Weapon/shotgun.png","Weapon/shuriken.png","Weapon/smoke_grenade.png","Weapon/sniper.png","Weapon/tanto1.png","Weapon/throwing_knife.png","Weapon/thunder.png");
 	  
 	  //Les bases
-	  ImageView decor = new ImageView(new File("fond.png").toURI().toString());
+	  ImageView decor = new ImageView(new File("fond_ecran2.png").toURI().toString());
 	  ImageView craft = new ImageView(new File("fond_craft.png").toURI().toString());
 	  ImageView Dossier = new ImageView(new File("Dossier.png").toURI().toString());
 	  ImageView inventaire = new ImageView(new File("inventory.png").toURI().toString());
@@ -133,9 +133,16 @@ public class Mouvement extends Application {
 	  creationImage throwing_knife = new creationImage("Weapon/throwing_knife.png","74");
 	  creationImage thunder = new creationImage("Weapon/thunder.png","75"); 
 	  
+	  //Création des crafts
+	  creationCraft craft_test = new creationCraft(new ArrayList(Arrays.asList(0,0,0,0,0,0,0,0,0)),51);
+	  
+	  //Creation du dico ou il y aura des craft
+	  Map<Integer,creationCraft> dicoCraft=new HashMap<Integer,creationCraft>();
+	  //Pour ajouter on fait dico.put(Integer.valueOf(LETRUC.id),LECRAFT)
+	  
 	//this.dico = new HashMap<>();
 	
-	Button Bbase = new Button("Base");
+    Button Bbase = new Button("Base");
     Button Bfood = new Button("Food");
     Button Bweapon = new Button("Weapon");
     Button Blife = new Button("Life");
@@ -383,6 +390,59 @@ public class Mouvement extends Application {
         }	
         
     });
+	  
+	  ArrayList liste = new ArrayList();
+    
+    for(int i=0;i<matrice.length;i++) {
+    	for(int j=0;j<matrice.length;j++) {
+    		liste.add((Integer)matrice[i][j]);
+    	}
+    }
+    
+    System.out.println("La matrice "+liste);
+    System.out.println(liste.getClass().getName());
+    System.out.println("Le craft exemple "+craft_test.liste);
+    System.out.println(craft_test.liste.getClass().getName());
+    
+    //Je le garde au cas ou !
+    /*int compteur=0;
+    ArrayList autre_liste=craft_test.liste;
+    
+    for(int k=0;k<liste.size();k++) {
+    
+    if (autre_liste.get(k)==liste.get(k)) {
+    	compteur+=1;
+    }
+    }
+    
+    if(compteur==craft_test.liste.size() && compteur==liste.size()) {
+    	System.out.println("ça marche"); 
+    }*/
+    
+  //Parcourir et comparer avec la matrice
+	  
+    Integer clef = null;
+    creationCraft valeur=null;
+    Iterator<Integer> i = dicoCraft.keySet().iterator();
+    
+    while(i.hasNext()) {
+    	clef=i.next();
+    	valeur = dicoCraft.get(clef);
+    	
+    	int compteur=0;
+    	ArrayList autre_liste=valeur.liste;
+    	
+    	for(int k=0;k<liste.size();k++) {
+    		if (autre_liste.get(k)==liste.get(k)) {
+    			compteur+=1;
+    		}
+    }
+    	if(compteur==craft_test.liste.size() && compteur==liste.size()) {
+    		//La on chope valeur.lid et on affiche l'image qui as cette id dans le resultat de la table de craft
+    	}
+    }
+
+}
 
 }
 
