@@ -27,9 +27,11 @@ public class Mouvement extends Application {
 	double STARTX;
 	double STARTY;
 	int douquonest = 0;
+	boolean caMarche = false;
 	//Map<Integer, Double> dico;
 	
   @Override public void start(final Stage stage) throws Exception {
+	  //Liste pour récuprérer les images en fonction de l'ID
 	  List<String> listImage = Arrays.asList("0","Base/Dirt.png","Base/bois.png","Base/rock.png","Base/sand.png","Base/wind.png","Base/fire_2.png","Base/stick.png","Base/bone.png","Base/water.png","Base/glass.png","Base/glaçon.png","Base/iron_nugget.png","Base/iron_ingot.png","Base/Poubelle_1.png","Base/Poubelle_2.png",
 	  "Food/baguette.png","Food/beurre.png","Food/ble.png","Food/burger_pain.png","Food/burger.png","Food/farine.png","Food/fromage.png","Food/pomme.png","Food/salade.png","Food/tomate.png","Food/viande.png",
 	  "Life/life.png","Life/sans.png","Life/fish.png","Life/bird.png","Life/egg.png",
@@ -134,21 +136,20 @@ public class Mouvement extends Application {
 	  creationImage thunder = new creationImage("Weapon/thunder.png","75"); 
 	  
 	  //Création des crafts
-	  creationCraft craft_test = new creationCraft(new ArrayList(Arrays.asList(0,0,0,0,0,0,0,0,0)),51);
-	  
-	  //Creation du dico ou il y aura des craft
+	  creationCraft craft_1 = new creationCraft(new ArrayList(Arrays.asList(0,3,0,3,27,3,0,3,0)),31);
+	  //Creation du dico avec les crafts
 	  Map<Integer,creationCraft> dicoCraft=new HashMap<Integer,creationCraft>();
-	  //Pour ajouter on fait dico.put(Integer.valueOf(LETRUC.id),LECRAFT)
-	  
-	//this.dico = new HashMap<>();
+	  dicoCraft.put(51, craft_1);
 	
     Button Bbase = new Button("Base");
     Button Bfood = new Button("Food");
     Button Bweapon = new Button("Weapon");
     Button Blife = new Button("Life");
 
-	Button button = new Button("DELETE");
-	button.setStyle("-fx-background-color: linear-gradient(#ff5400, #be1d00) ");
+    Button buttonAdd = new Button("ADD");
+	Button buttonDel = new Button("DELETE");
+	buttonAdd.setStyle("-fx-background-color: linear-gradient(#50FE80, #36DD0F) ");
+	buttonDel.setStyle("-fx-background-color: linear-gradient(#ff5400, #be1d00) ");
 	
 	ToolBar toolBar = new ToolBar();
 	toolBar.getItems().add(Bbase);
@@ -171,11 +172,11 @@ public class Mouvement extends Application {
 	
     Base.getChildren().addAll(limite1,limite2,dirt.imageView,sand.imageView,water.imageView,wood.imageView,stick.imageView,rock.imageView,fire2.imageView,wind.imageView,bone.imageView);
     Food.getChildren().addAll(limite3,limite4,baguette.imageView,beurre.imageView,ble.imageView,burgerPain.imageView,farine.imageView,fromage.imageView,pomme.imageView,salade.imageView,tomate.imageView,viande.imageView);
-    Life.getChildren().addAll(limite7,limite8,life.imageView,Sans.imageView,fish.imageView,bird.imageView,egg.imageView);
+    Life.getChildren().addAll(limite7,limite8,life.imageView,Sans.imageView,fish.imageView,bird.imageView);
     Weapon.getChildren().addAll(limite5,limite6,chainsaw.imageView,axe.imageView);
     Matrice.getChildren().addAll(limite9,limite10);
     all.getChildren().addAll(Base);
-    layout.getChildren().addAll(decor,craft,Dossier,inventaire,all,toolBar,button,Matrice); //le Padre!
+    layout.getChildren().addAll(decor,craft,Dossier,inventaire,all,toolBar,buttonDel,buttonAdd,Matrice); //le Padre!
     
     
     //Positionnement des Nodes à la mano.
@@ -210,7 +211,8 @@ public class Mouvement extends Application {
     
     //Positionnement du Décor.
     craft.setTranslateX(-55);craft.setTranslateY(-85);
-    button.setTranslateX(82);button.setTranslateY(18);
+    buttonAdd.setTranslateX(82);buttonAdd.setTranslateY(-9);buttonAdd.setMinWidth(54);buttonAdd.setMaxHeight(5);
+    buttonDel.setTranslateX(82);buttonDel.setTranslateY(18);
     Dossier.setTranslateX(300);Dossier.setTranslateY(-185);
     inventaire.setTranslateY(179);
     
@@ -272,23 +274,73 @@ public class Mouvement extends Application {
             });
     
     //Animation du bouton delete + vide le Groupe Matrice
-    button.addEventHandler(MouseEvent.MOUSE_PRESSED,
+    buttonDel.addEventHandler(MouseEvent.MOUSE_PRESSED,
             new EventHandler<MouseEvent>() {
               @Override
               public void handle(MouseEvent e) {
-            	  	for(int i =0;i<matrice.length*matrice.length;i++){
+            	  caMarche = false;
+            	  for(int i =0;i<matrice.length*matrice.length;i++){
             		  matrice[i%3][i/3] = 0;}
-            	  button.setStyle("-fx-background-color: #ff0000;");
+            	  buttonDel.setStyle("-fx-background-color: #ff0000;");
             	  Matrice.getChildren().clear();
             	  Matrice.getChildren().addAll(limite9,limite10); //peut etre pas necessaire
               }
             });
     
-    button.addEventHandler(MouseEvent.MOUSE_RELEASED,
+    buttonDel.addEventHandler(MouseEvent.MOUSE_RELEASED,
             new EventHandler<MouseEvent>() {
               @Override
               public void handle(MouseEvent e) {
-            	  button.setStyle("-fx-background-color: linear-gradient(#ff5400, #be1d00) ");
+            	  buttonDel.setStyle("-fx-background-color: linear-gradient(#ff5400, #be1d00) ");
+              }
+            });
+    
+    buttonAdd.addEventHandler(MouseEvent.MOUSE_PRESSED,
+            new EventHandler<MouseEvent>() {
+              @Override
+              public void handle(MouseEvent e) {
+            	  if(caMarche == true) {
+            	  caMarche = false;
+            	  int IdnouvelObjet = Integer.parseInt(Matrice.getChildren().get(Matrice.getChildren().size()-1).getId());
+            	  if(1<=IdnouvelObjet && IdnouvelObjet<=15){
+            		  Base.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
+            		  all.getChildren().clear();
+                	  all.getChildren().addAll(Base);
+                	  douquonest = 0;
+            	  }
+            	  else if(16<=IdnouvelObjet && IdnouvelObjet<=26){
+            		  Food.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
+            		  all.getChildren().clear();
+                	  all.getChildren().addAll(Food);
+                	  douquonest = 1;
+            	  }
+            	  else if(27<=IdnouvelObjet && IdnouvelObjet<=31){
+            		  Life.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
+            		  all.getChildren().clear();
+                	  all.getChildren().addAll(Life);
+                	  douquonest = 2;
+            	  }
+            	  else if(32<=IdnouvelObjet && IdnouvelObjet<=75){
+            		  Weapon.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
+            		  all.getChildren().clear();
+                	  all.getChildren().addAll(Weapon);
+                	  douquonest = 3;
+            	  }
+            	  
+            	  for(int i =0;i<matrice.length*matrice.length;i++){
+            		  matrice[i%3][i/3] = 0;}
+            	  buttonAdd.setStyle("-fx-background-color: #00FF2D;");
+            	  Matrice.getChildren().clear();
+            	  Matrice.getChildren().addAll(limite9,limite10); //peut etre pas necessaire
+              }
+              }
+            });
+    
+    buttonAdd.addEventHandler(MouseEvent.MOUSE_RELEASED,
+            new EventHandler<MouseEvent>() {
+              @Override
+              public void handle(MouseEvent e) {
+            	  buttonAdd.setStyle("-fx-background-color: linear-gradient(#50FE80, #36DD0F) ");
               }
             });
     
@@ -302,6 +354,7 @@ public class Mouvement extends Application {
             translateStart = new Point2D(selected.getTranslateX(), selected.getTranslateY());
             STARTX = (evt.getX() - offset.getX() + translateStart.getX()); // servent au cas ou
             STARTY = (evt.getY() - offset.getY() + translateStart.getY()); // d'un mauvais positionnement
+
         } else {
             selected = null;
         }
@@ -332,13 +385,15 @@ public class Mouvement extends Application {
                         selected.setTranslateY(-130+50*(i/3));
                         if (selected.getId() != null && matrice[i/3][i%3] ==0) {
                         	matrice[i/3][i%3] = Integer.valueOf(selected.getId()); //La matrice récupère l'ID de la Node.
+                        if(caMarche ==true) { //delete le resultat si on rajoute un node dans la matrice
+                        Matrice.getChildren().remove(Matrice.getChildren().size()-1);}
                         if(selected.getParent() != Matrice) {
                         Matrice.getChildren().add(selected);
                         creationImage newimage = new creationImage(listImage.get((Integer.parseInt(selected.getId()))),selected.getId());
-                        if (douquonest ==0) {Base.getChildren().add(newimage.imageView);selected = Base.getChildren().get(10);} 
-                    	else if (douquonest ==1) {Food.getChildren().add(newimage.imageView);selected = Food.getChildren().get(11);} 
-                    	else if (douquonest ==2) {Life.getChildren().add(newimage.imageView);selected = Life.getChildren().get(6);} 
-                    	else if (douquonest ==3) {Weapon.getChildren().add(newimage.imageView);selected = Weapon.getChildren().get(3);} 
+                        if (douquonest ==0) {Base.getChildren().add(newimage.imageView);selected = Base.getChildren().get(Base.getChildren().size()-1);} 
+                    	else if (douquonest ==1) {Food.getChildren().add(newimage.imageView);selected = Food.getChildren().get(Food.getChildren().size()-1);} 
+                    	else if (douquonest ==2) {Life.getChildren().add(newimage.imageView);selected = Life.getChildren().get(Life.getChildren().size()-1);} 
+                    	else if (douquonest ==3) {Weapon.getChildren().add(newimage.imageView);selected = Weapon.getChildren().get(Weapon.getChildren().size()-1);} 
                         
                         
                         selected.setTranslateX(STARTX);
@@ -361,12 +416,6 @@ public class Mouvement extends Application {
             	else { // X négatif
             	X = (Math.round((evt.getX() - offset.getX() + translateStart.getX()-25)/50)*50+25+Math.round((evt.getX() - offset.getX() + translateStart.getX())/50)/2);}
         		selected.setTranslateX(X);
-        		/*if(-175<=STARTX && STARTX<=-75 && -130<=STARTY && STARTY<=-30) {
-        		if (douquonest ==0) {Base.getChildren().add(selected);} 
-        		else if (douquonest ==1) {Food.getChildren().add(selected);} 
-        		else if (douquonest ==2) {Life.getChildren().add(selected);} 
-        		else if (douquonest ==3) {Weapon.getChildren().add(selected);} 
-        		}*/
         		
         	}
         	//Sinon retour au point de départ.
@@ -388,55 +437,41 @@ public class Mouvement extends Application {
         	}
             System.out.println("");
         }	
+        //Parcourir et comparer avec la matrice
         
+        ArrayList<Integer> liste = new ArrayList<Integer>();
+        Integer clef;
+        ArrayList<?> valeur;
+        int compteur=0;
+        Iterator<Integer> idico = dicoCraft.keySet().iterator();
+        
+        for(int i=0;i<matrice.length;i++) {
+        	for(int j=0;j<matrice.length;j++) {
+        		liste.add(matrice[i][j]);
+        	}
+        }
+        while(idico.hasNext()) {
+        	clef=idico.next();
+        	valeur = dicoCraft.get(clef).liste;
+        	
+        	for(int k=0;k<liste.size();k++) {
+        		if (valeur.get(k)==liste.get(k)) {
+        			compteur+=1;
+        		}
+        }
+        	if(compteur==craft_1.liste.size() && compteur==liste.size()) {
+        		caMarche = true;
+        		creationImage newImage = new creationImage(listImage.get(dicoCraft.get(clef).resultat), String.valueOf(dicoCraft.get(clef).resultat));
+        		Matrice.getChildren().add(newImage.imageView);
+        		Matrice.getChildren().get(Matrice.getChildren().size()-1).setTranslateX(85);
+        		Matrice.getChildren().get(Matrice.getChildren().size()-1).setTranslateY(-80);
+        	}
+        	else {
+        		caMarche = false;
+        	}
+        }
+    System.out.println(caMarche);
     });
-	  
-	  ArrayList liste = new ArrayList();
-    
-    for(int i=0;i<matrice.length;i++) {
-    	for(int j=0;j<matrice.length;j++) {
-    		liste.add((Integer)matrice[i][j]);
-    	}
-    }
-    
-    //Je le garde au cas ou !
-    /*int compteur=0;
-    ArrayList autre_liste=craft_test.liste;
-    
-    for(int k=0;k<liste.size();k++) {
-    
-    if (autre_liste.get(k)==liste.get(k)) {
-    	compteur+=1;
-    }
-    }
-    
-    if(compteur==craft_test.liste.size() && compteur==liste.size()) {
-    	System.out.println("ça marche"); 
-    }*/
-    
-  //Parcourir et comparer avec la matrice
-	  
-    Integer clef = null;
-    creationCraft valeur=null;
-    Iterator<Integer> i = dicoCraft.keySet().iterator();
-    
-    while(i.hasNext()) {
-    	clef=i.next();
-    	valeur = dicoCraft.get(clef);
-    	
-    	int compteur=0;
-    	ArrayList autre_liste=valeur.liste;
-    	
-    	for(int k=0;k<liste.size();k++) {
-    		if (autre_liste.get(k)==liste.get(k)) {
-    			compteur+=1;
-    		}
-    }
-    	if(compteur==craft_test.liste.size() && compteur==liste.size()) {
-    		//La on chope valeur.lid et on affiche l'image qui as cette id dans le resultat de la table de craft
-    	}
-    }
-
 }
 
 
