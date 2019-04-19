@@ -148,18 +148,12 @@ public class Mouvement extends Application {
 	  creationCraft craft_9 = new creationCraft(new ArrayList(Arrays.asList(0,19,0,26,24,25,0,19,0)),20);
 	  creationCraft craft_10 = new creationCraft(new ArrayList(Arrays.asList(0,19,0,26,25,24,0,19,0)),20);
 	  creationCraft craft_11 = new creationCraft(new ArrayList(Arrays.asList(13,13,13,13,13,13,0,13,0)),38);
+	  
 	  //Creation du dico avec les crafts
 	  Map<Integer,creationCraft> dicoCraft=new HashMap<Integer,creationCraft>();
 	  dicoCraft.put(1, craft_1);
-	  dicoCraft.put(10, craft_2);
-	  dicoCraft.put(11, craft_3);
-	  dicoCraft.put(12, craft_4);
-	  dicoCraft.put(20, craft_5);
-	  dicoCraft.put(21, craft_6);
-	  dicoCraft.put(22, craft_7);
-	  dicoCraft.put(23, craft_8);
-	  dicoCraft.put(24, craft_9);
-	  dicoCraft.put(25, craft_10);
+	  dicoCraft.put(10, craft_2);dicoCraft.put(11, craft_3);dicoCraft.put(12, craft_4);
+	  dicoCraft.put(20, craft_5);dicoCraft.put(21, craft_6);dicoCraft.put(22, craft_7);dicoCraft.put(23, craft_8);dicoCraft.put(24, craft_9);dicoCraft.put(25, craft_10);
 	  dicoCraft.put(30, craft_11);
 
     Button Bbase = new Button("Base");
@@ -169,6 +163,7 @@ public class Mouvement extends Application {
 
     Button buttonAdd = new Button("ADD");
 	Button buttonDel = new Button("DELETE");
+	Bbase.setStyle("-fx-background-color: linear-gradient(#50FE80, #36DD0F) ");
 	buttonAdd.setStyle("-fx-background-color: linear-gradient(#50FE80, #36DD0F) ");
 	buttonDel.setStyle("-fx-background-color: linear-gradient(#ff5400, #be1d00) ");
 	
@@ -177,6 +172,7 @@ public class Mouvement extends Application {
 	toolBar.getItems().add(Bfood);
 	toolBar.getItems().add(Blife);
 	toolBar.getItems().add(Bweapon);
+	
 	
 	toolBar.setStyle("-fx-background-color: rgba(0, 100, 100, 0.7);");
 	toolBar.setTranslateY(86);
@@ -243,6 +239,8 @@ public class Mouvement extends Application {
     
     //Matrice de craft
     int[][] matrice = new int[3][3];
+    
+////////////////////////////////////////////     Boutons event     ////////////////////////////////////////////
     
     //Affiche que les Nodes du Group Base (clear les autres).
     Bbase.addEventHandler(MouseEvent.MOUSE_PRESSED,
@@ -320,6 +318,7 @@ public class Mouvement extends Application {
             new EventHandler<MouseEvent>() {
               @Override
               public void handle(MouseEvent e) {
+            	  buttonAdd.setStyle("-fx-background-color: #00FF2D;");
             	  if(caMarche == true) {
             	  caMarche = false;
             	  clef = clef/10*10;
@@ -361,7 +360,6 @@ public class Mouvement extends Application {
             	  
             	  for(int i =0;i<matrice.length*matrice.length;i++){
             		  matrice[i%3][i/3] = 0;}
-            	  buttonAdd.setStyle("-fx-background-color: #00FF2D;");
             	  Matrice.getChildren().clear();
             	  Matrice.getChildren().addAll(limite9,limite10); //peut etre pas necessaire
               }
@@ -375,6 +373,8 @@ public class Mouvement extends Application {
             	  buttonAdd.setStyle("-fx-background-color: linear-gradient(#50FE80, #36DD0F) ");
               }
             });
+    
+////////////////////////////////////////////     Mouse event     ////////////////////////////////////////////
     
     //Selection de la Node
     all.setOnMousePressed(evt -> {
