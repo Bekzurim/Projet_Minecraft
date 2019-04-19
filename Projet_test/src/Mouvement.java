@@ -193,8 +193,8 @@ public class Mouvement extends Application {
 	
     Base.getChildren().addAll(limite1,limite2,dirt.imageView,sand.imageView,water.imageView,wood.imageView,ironIngot.imageView,rock.imageView,fire2.imageView,wind.imageView,bone.imageView);
     Food.getChildren().addAll(limite3,limite4,baguette.imageView,beurre.imageView,ble.imageView,burgerPain.imageView,farine.imageView,fromage.imageView,pomme.imageView,salade.imageView,tomate.imageView,viande.imageView);
-    Life.getChildren().addAll(limite7,limite8,life.imageView,Sans.imageView,fish.imageView,bird.imageView);
-    Weapon.getChildren().addAll(limite5,limite6,chainsaw.imageView,axe.imageView);
+    Life.getChildren().addAll(limite5,limite6,life.imageView,Sans.imageView,fish.imageView,bird.imageView);
+    Weapon.getChildren().addAll(limite7,limite8);
     Matrice.getChildren().addAll(limite9,limite10);
     all.getChildren().addAll(Base);
     layout.getChildren().addAll(decor,craft,Dossier,inventaire,all,toolBar,buttonDel,buttonAdd,Matrice); //le Padre!
