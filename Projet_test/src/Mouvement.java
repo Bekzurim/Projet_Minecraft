@@ -322,6 +322,7 @@ public class Mouvement extends Application {
               public void handle(MouseEvent e) {
             	  if(caMarche == true) {
             	  caMarche = false;
+            	  clef = clef/10*10;
             	  for(int i=0;i<10;i++) {
               		dicoCraft.remove(clef+i);}
             	  int IdnouvelObjet = Integer.parseInt(Matrice.getChildren().get(Matrice.getChildren().size()-1).getId());
