@@ -137,10 +137,30 @@ public class Mouvement extends Application {
 	  
 	  //Création des crafts
 	  creationCraft craft_1 = new creationCraft(new ArrayList(Arrays.asList(0,3,0,3,27,3,0,3,0)),31);
+	  creationCraft craft_2 = new creationCraft(new ArrayList(Arrays.asList(0,0,0,4,0,0,6,0,0)),10);
+	  creationCraft craft_3 = new creationCraft(new ArrayList(Arrays.asList(0,0,0,0,4,0,0,6,0)),10);
+	  creationCraft craft_4 = new creationCraft(new ArrayList(Arrays.asList(0,0,0,0,0,4,0,0,6)),10);
+	  creationCraft craft_5 = new creationCraft(new ArrayList(Arrays.asList(0,19,0,24,25,26,0,19,0)),20);
+	  creationCraft craft_6 = new creationCraft(new ArrayList(Arrays.asList(0,19,0,25,24,26,0,19,0)),20);
+	  creationCraft craft_7 = new creationCraft(new ArrayList(Arrays.asList(0,19,0,25,26,24,0,19,0)),20);
+	  creationCraft craft_8 = new creationCraft(new ArrayList(Arrays.asList(0,19,0,24,26,25,0,19,0)),20);
+	  creationCraft craft_9 = new creationCraft(new ArrayList(Arrays.asList(0,19,0,26,24,25,0,19,0)),20);
+	  creationCraft craft_10 = new creationCraft(new ArrayList(Arrays.asList(0,19,0,26,25,24,0,19,0)),20);
+	  creationCraft craft_11 = new creationCraft(new ArrayList(Arrays.asList(13,13,13,13,13,13,0,13,0)),38);
 	  //Creation du dico avec les crafts
 	  Map<Integer,creationCraft> dicoCraft=new HashMap<Integer,creationCraft>();
-	  dicoCraft.put(51, craft_1);
-	
+	  dicoCraft.put(1, craft_1);
+	  dicoCraft.put(2, craft_2);
+	  dicoCraft.put(3, craft_3);
+	  dicoCraft.put(4, craft_4);
+	  dicoCraft.put(5, craft_5);
+	  dicoCraft.put(6, craft_6);
+	  dicoCraft.put(7, craft_7);
+	  dicoCraft.put(8, craft_8);
+	  dicoCraft.put(9, craft_9);
+	  dicoCraft.put(10, craft_10);
+	  dicoCraft.put(11, craft_11);
+
     Button Bbase = new Button("Base");
     Button Bfood = new Button("Food");
     Button Bweapon = new Button("Weapon");
@@ -170,7 +190,7 @@ public class Mouvement extends Application {
 	final StackPane layout = new StackPane();
 	
 	
-    Base.getChildren().addAll(limite1,limite2,dirt.imageView,sand.imageView,water.imageView,wood.imageView,stick.imageView,rock.imageView,fire2.imageView,wind.imageView,bone.imageView);
+    Base.getChildren().addAll(limite1,limite2,dirt.imageView,sand.imageView,water.imageView,wood.imageView,ironIngot.imageView,rock.imageView,fire2.imageView,wind.imageView,bone.imageView);
     Food.getChildren().addAll(limite3,limite4,baguette.imageView,beurre.imageView,ble.imageView,burgerPain.imageView,farine.imageView,fromage.imageView,pomme.imageView,salade.imageView,tomate.imageView,viande.imageView);
     Life.getChildren().addAll(limite7,limite8,life.imageView,Sans.imageView,fish.imageView,bird.imageView);
     Weapon.getChildren().addAll(limite5,limite6,chainsaw.imageView,axe.imageView);
@@ -304,24 +324,32 @@ public class Mouvement extends Application {
             	  int IdnouvelObjet = Integer.parseInt(Matrice.getChildren().get(Matrice.getChildren().size()-1).getId());
             	  if(1<=IdnouvelObjet && IdnouvelObjet<=15){
             		  Base.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
+            		  selected = Base.getChildren().get(Base.getChildren().size()-1);
+            		  selected.setTranslateX(-330+(51*Math.round((Base.getChildren().size()-3)/3)));selected.setTranslateY(130+51*((Base.getChildren().size())%3));
             		  all.getChildren().clear();
                 	  all.getChildren().addAll(Base);
                 	  douquonest = 0;
             	  }
             	  else if(16<=IdnouvelObjet && IdnouvelObjet<=26){
             		  Food.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
+            		  selected = Food.getChildren().get(Food.getChildren().size()-1);
+            		  selected.setTranslateX(-330+(51*Math.round((Food.getChildren().size()-3)/3)));selected.setTranslateY(130+51*((Food.getChildren().size())%3));
             		  all.getChildren().clear();
                 	  all.getChildren().addAll(Food);
                 	  douquonest = 1;
             	  }
             	  else if(27<=IdnouvelObjet && IdnouvelObjet<=31){
             		  Life.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
+            		  selected = Life.getChildren().get(Life.getChildren().size()-1);
+              		  selected.setTranslateX(-330+(51*Math.round((Life.getChildren().size()-3)/3)));selected.setTranslateY(130+51*((Life.getChildren().size())%3));
             		  all.getChildren().clear();
                 	  all.getChildren().addAll(Life);
                 	  douquonest = 2;
             	  }
             	  else if(32<=IdnouvelObjet && IdnouvelObjet<=75){
             		  Weapon.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
+            		  selected = Weapon.getChildren().get(Weapon.getChildren().size()-1);
+            		  selected.setTranslateX(-330+(51*Math.round((Weapon.getChildren().size()-3)/3)));selected.setTranslateY(130+51*((Weapon.getChildren().size())%3));
             		  all.getChildren().clear();
                 	  all.getChildren().addAll(Weapon);
                 	  douquonest = 3;
@@ -442,7 +470,7 @@ public class Mouvement extends Application {
         ArrayList<Integer> liste = new ArrayList<Integer>();
         Integer clef;
         ArrayList<?> valeur;
-        int compteur=0;
+        caMarche = false;
         Iterator<Integer> idico = dicoCraft.keySet().iterator();
         
         for(int i=0;i<matrice.length;i++) {
@@ -450,10 +478,14 @@ public class Mouvement extends Application {
         		liste.add(matrice[i][j]);
         	}
         }
-        while(idico.hasNext()) {
+        while(idico.hasNext() && caMarche == false) {
+        	int compteur=0;
         	clef=idico.next();
         	valeur = dicoCraft.get(clef).liste;
-        	
+      	  
+      	  	System.out.print(valeur);
+      	  System.out.println(liste);
+      	
         	for(int k=0;k<liste.size();k++) {
         		if (valeur.get(k)==liste.get(k)) {
         			compteur+=1;
