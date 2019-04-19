@@ -158,12 +158,15 @@ public class Mouvement extends Application {
 
     Button Bbase = new Button("Base");
     Button Bfood = new Button("Food");
-    Button Bweapon = new Button("Weapon");
     Button Blife = new Button("Life");
+    Button Bweapon = new Button("Weapon");
 
     Button buttonAdd = new Button("ADD");
 	Button buttonDel = new Button("DELETE");
-	Bbase.setStyle("-fx-background-color: linear-gradient(#50FE80, #36DD0F) ");
+	Bbase.setStyle("-fx-background-color: linear-gradient(to left, #ffffff, #cccbcd, #9e989c, #72696b, #493d3d) ");
+	Bfood.setStyle("-fx-background-color: linear-gradient(to left, #ffffff, #cccbcd, #9e989c, #72696b, #493d3d) ");
+	Blife.setStyle("-fx-background-color: linear-gradient(to left, #ffffff, #cccbcd, #9e989c, #72696b, #493d3d) ");
+	Bweapon.setStyle("-fx-background-color: linear-gradient(to left, #ffffff, #cccbcd, #9e989c, #72696b, #493d3d) ");
 	buttonAdd.setStyle("-fx-background-color: linear-gradient(#50FE80, #36DD0F) ");
 	buttonDel.setStyle("-fx-background-color: linear-gradient(#ff5400, #be1d00) ");
 	
