@@ -28,6 +28,7 @@ public class Mouvement extends Application {
 	double STARTY;
 	int douquonest = 0;
 	boolean caMarche = false;
+	Integer clef;
 	//Map<Integer, Double> dico;
 	
   @Override public void start(final Stage stage) throws Exception {
@@ -321,6 +322,8 @@ public class Mouvement extends Application {
               public void handle(MouseEvent e) {
             	  if(caMarche == true) {
             	  caMarche = false;
+            	  for(int i=0;i<10;i++) {
+              		dicoCraft.remove(clef+i);}
             	  int IdnouvelObjet = Integer.parseInt(Matrice.getChildren().get(Matrice.getChildren().size()-1).getId());
             	  if(1<=IdnouvelObjet && IdnouvelObjet<=15){
             		  Base.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
@@ -468,7 +471,6 @@ public class Mouvement extends Application {
         //Parcourir et comparer avec la matrice
         
         ArrayList<Integer> liste = new ArrayList<Integer>();
-        Integer clef;
         ArrayList<?> valeur;
         caMarche = false;
         Iterator<Integer> idico = dicoCraft.keySet().iterator();
@@ -494,8 +496,7 @@ public class Mouvement extends Application {
         	if(compteur==craft_1.liste.size() && compteur==liste.size()) {
         		caMarche = true;
         		creationImage newImage = new creationImage(listImage.get(dicoCraft.get(clef).resultat), String.valueOf(dicoCraft.get(clef).resultat));
-        		for(int i=0;i<10;i++) {
-        		dicoCraft.remove(clef+i);}
+        		
         		Matrice.getChildren().add(newImage.imageView);
         		Matrice.getChildren().get(Matrice.getChildren().size()-1).setTranslateX(85);
         		Matrice.getChildren().get(Matrice.getChildren().size()-1).setTranslateY(-80);
