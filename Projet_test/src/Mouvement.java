@@ -408,7 +408,7 @@ public class Mouvement extends Application {
         	//Si on est dans la matrice
         	if(815<evt.getX() && evt.getX()<964 && 860<evt.getY() && evt.getY()<1009) {
         	for(int i=0; i<matrice.length*matrice.length;i++) {
-        			if(815+50*(i%3)<=evt.getX() && evt.getX()<864+50*(i%3) && 860+50*(i/3)<=evt.getY() && evt.getY()<909+50*(i/3)) {
+        			if(815+50*(i%3)<=evt.getX() && evt.getX()<=864+50*(i%3) && 860+50*(i/3)<=evt.getY() && evt.getY()<=909+50*(i/3)) {
         				selected.setTranslateX(-175+50*(i%3));
                         selected.setTranslateY(-130+50*(i/3));
                         if (selected.getId() != null && matrice[i/3][i%3] ==0) {
