@@ -17,6 +17,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class Mouvement extends Application {
@@ -134,7 +135,7 @@ public class Mouvement extends Application {
 	  creationImage sniper = new creationImage("Weapon/sniper.png","72");
 	  creationImage tanto1 = new creationImage("Weapon/tanto1.png","73");
 	  creationImage throwing_knife = new creationImage("Weapon/throwing_knife.png","74");
-	  creationImage thunder = new creationImage("Weapon/thunder.png","75"); 
+	  creationImage thunder = new creationImage("Weapon/thunder.png","75");
 	  
 	  //Création des crafts
 	  creationCraft craft_1 = new creationCraft(new ArrayList(Arrays.asList(0,3,0,3,27,3,0,3,0)),31);
@@ -163,10 +164,10 @@ public class Mouvement extends Application {
 
     Button buttonAdd = new Button("ADD");
 	Button buttonDel = new Button("DELETE");
-	Bbase.setStyle("-fx-background-color: linear-gradient(to left, #ffffff, #cccbcd, #9e989c, #72696b, #493d3d) ");
-	Bfood.setStyle("-fx-background-color: linear-gradient(to left, #ffffff, #cccbcd, #9e989c, #72696b, #493d3d) ");
-	Blife.setStyle("-fx-background-color: linear-gradient(to left, #ffffff, #cccbcd, #9e989c, #72696b, #493d3d) ");
-	Bweapon.setStyle("-fx-background-color: linear-gradient(to left, #ffffff, #cccbcd, #9e989c, #72696b, #493d3d) ");
+	Bbase.setStyle("-fx-background-color: linear-gradient(to right , #1c389b, #2d47ae, #3b57c1, #4967d4, #5777e8); -fx-text-fill: white ");
+	Bfood.setStyle("-fx-background-color: linear-gradient(to right , #1c389b, #2d47ae, #3b57c1, #4967d4, #5777e8); -fx-text-fill: white  ");
+	Blife.setStyle("-fx-background-color: linear-gradient(to right , #1c389b, #2d47ae, #3b57c1, #4967d4, #5777e8); -fx-text-fill: white  ");
+	Bweapon.setStyle("-fx-background-color: linear-gradient(to right , #1c389b, #2d47ae, #3b57c1, #4967d4, #5777e8); -fx-text-fill: white  ");
 	buttonAdd.setStyle("-fx-background-color: linear-gradient(#50FE80, #36DD0F) ");
 	buttonDel.setStyle("-fx-background-color: linear-gradient(#ff5400, #be1d00) ");
 	
@@ -177,7 +178,7 @@ public class Mouvement extends Application {
 	toolBar.getItems().add(Bweapon);
 	
 	
-	toolBar.setStyle("-fx-background-color: rgba(0, 100, 100, 0.7);");
+	toolBar.setStyle("-fx-background-color: rgba(83, 87, 84, 0.9);");
 	toolBar.setTranslateY(86);
 	
 	//Les 4 groupes, permet de clean facilement une catégorie. +reesayer stackpane
