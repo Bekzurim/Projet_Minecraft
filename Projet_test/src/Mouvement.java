@@ -150,16 +150,16 @@ public class Mouvement extends Application {
 	  //Creation du dico avec les crafts
 	  Map<Integer,creationCraft> dicoCraft=new HashMap<Integer,creationCraft>();
 	  dicoCraft.put(1, craft_1);
-	  dicoCraft.put(2, craft_2);
-	  dicoCraft.put(3, craft_3);
-	  dicoCraft.put(4, craft_4);
-	  dicoCraft.put(5, craft_5);
-	  dicoCraft.put(6, craft_6);
-	  dicoCraft.put(7, craft_7);
-	  dicoCraft.put(8, craft_8);
-	  dicoCraft.put(9, craft_9);
-	  dicoCraft.put(10, craft_10);
-	  dicoCraft.put(11, craft_11);
+	  dicoCraft.put(10, craft_2);
+	  dicoCraft.put(11, craft_3);
+	  dicoCraft.put(12, craft_4);
+	  dicoCraft.put(20, craft_5);
+	  dicoCraft.put(21, craft_6);
+	  dicoCraft.put(22, craft_7);
+	  dicoCraft.put(23, craft_8);
+	  dicoCraft.put(24, craft_9);
+	  dicoCraft.put(25, craft_10);
+	  dicoCraft.put(30, craft_11);
 
     Button Bbase = new Button("Base");
     Button Bfood = new Button("Food");
@@ -484,7 +484,7 @@ public class Mouvement extends Application {
         	valeur = dicoCraft.get(clef).liste;
       	  
       	  	System.out.print(valeur);
-      	  System.out.println(liste);
+      	    System.out.println(liste);
       	
         	for(int k=0;k<liste.size();k++) {
         		if (valeur.get(k)==liste.get(k)) {
@@ -494,6 +494,8 @@ public class Mouvement extends Application {
         	if(compteur==craft_1.liste.size() && compteur==liste.size()) {
         		caMarche = true;
         		creationImage newImage = new creationImage(listImage.get(dicoCraft.get(clef).resultat), String.valueOf(dicoCraft.get(clef).resultat));
+        		for(int i=0;i<10;i++) {
+        		dicoCraft.remove(clef+i);}
         		Matrice.getChildren().add(newImage.imageView);
         		Matrice.getChildren().get(Matrice.getChildren().size()-1).setTranslateX(85);
         		Matrice.getChildren().get(Matrice.getChildren().size()-1).setTranslateY(-80);
