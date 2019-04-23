@@ -217,6 +217,7 @@ public class Mouvement extends Application {
 		selected = Weapon.getChildren().get(i+2);
 		selected.setTranslateX(-330+(51*Math.round(i/3)));selected.setTranslateY(130+51*(i%3));
     }
+    selected = null;
     
     //Ca j'ai vrmt honte faudra changer.
     limite1.setTranslateX(-1000);limite1.setTranslateY(-1000);
@@ -382,7 +383,41 @@ public class Mouvement extends Application {
     
     //Selection de la Node
     all.setOnMousePressed(evt -> {
-        Node target = (Node) evt.getTarget();
+    	Node target = (Node) evt.getTarget();
+    	//selected = target;
+    	
+    	if (selected != null && target == all) {
+    	if(815<evt.getX() && evt.getX()<964 && 860<evt.getY() && evt.getY()<1009) {
+        	for(int i=0; i<matrice.length*matrice.length;i++) {
+        			if(815+50*(i%3)<=evt.getX() && evt.getX()<=864+50*(i%3) && 860+50*(i/3)<=evt.getY() && evt.getY()<=909+50*(i/3)) {
+        				selected.setTranslateX(-175+50*(i%3));
+                        selected.setTranslateY(-130+50*(i/3));
+                        if (selected.getId() != null && matrice[i/3][i%3] ==0) {
+                        	matrice[i/3][i%3] = Integer.valueOf(selected.getId()); //La matrice récupère l'ID de la Node.
+                        if(caMarche ==true) { //delete le resultat si on rajoute un node dans la matrice
+                        Matrice.getChildren().remove(Matrice.getChildren().size()-1);}
+                        
+                        Matrice.getChildren().add(selected);
+                        creationImage newimage = new creationImage(listImage.get((Integer.parseInt(selected.getId()))),selected.getId());
+                        // Ajoute ds le groupe actuel la copie de la Node;  change le selected en la copie pour la placer aux coords START(X/Y).
+                        if (douquonest ==0) {Base.getChildren().add(newimage.imageView);selected = Base.getChildren().get(Base.getChildren().size()-1);} 
+                    	else if (douquonest ==1) {Food.getChildren().add(newimage.imageView);selected = Food.getChildren().get(Food.getChildren().size()-1);} 
+                    	else if (douquonest ==2) {Life.getChildren().add(newimage.imageView);selected = Life.getChildren().get(Life.getChildren().size()-1);} 
+                    	else if (douquonest ==3) {Weapon.getChildren().add(newimage.imageView);selected = Weapon.getChildren().get(Weapon.getChildren().size()-1);} 
+                        
+                        
+                        selected.setTranslateX(STARTX);
+                        selected.setTranslateY(STARTY);
+                        }
+                        else {
+                    		selected.setTranslateX(STARTX);
+                    		selected.setTranslateY(STARTY);
+                    	}
+        			}		
+        	}
+        	}
+    	}
+    	else {
         if (target != all) { // si on est bien sur le Node
             selected = target;
             
@@ -395,6 +430,7 @@ public class Mouvement extends Application {
             selected = null;
         }
         evt.consume();
+    	}
     });
     
     //Mouvement qui suit la souris
@@ -416,16 +452,17 @@ public class Mouvement extends Application {
         	//Si on est dans la matrice
         	if(815<evt.getX() && evt.getX()<964 && 860<evt.getY() && evt.getY()<1009) {
         	for(int i=0; i<matrice.length*matrice.length;i++) {
-        			if(815+50*(i%3)<=evt.getX() && evt.getX()<=864+50*(i%3) && 860+50*(i/3)<=evt.getY() && evt.getY()<=909+50*(i/3)) {
+        			if(815+50*(i%3)<=evt.getX() && evt.getX()<864+50*(i%3) && 860+50*(i/3)<=evt.getY() && evt.getY()<=909+50*(i/3)) {
         				selected.setTranslateX(-175+50*(i%3));
                         selected.setTranslateY(-130+50*(i/3));
                         if (selected.getId() != null && matrice[i/3][i%3] ==0) {
                         	matrice[i/3][i%3] = Integer.valueOf(selected.getId()); //La matrice récupère l'ID de la Node.
                         if(caMarche ==true) { //delete le resultat si on rajoute un node dans la matrice
                         Matrice.getChildren().remove(Matrice.getChildren().size()-1);}
-                        if(selected.getParent() != Matrice) {
+                        
                         Matrice.getChildren().add(selected);
                         creationImage newimage = new creationImage(listImage.get((Integer.parseInt(selected.getId()))),selected.getId());
+                        // Ajoute ds le groupe actuel la copie de la Node;  change le selected en la copie pour la placer aux coords START(X/Y).
                         if (douquonest ==0) {Base.getChildren().add(newimage.imageView);selected = Base.getChildren().get(Base.getChildren().size()-1);} 
                     	else if (douquonest ==1) {Food.getChildren().add(newimage.imageView);selected = Food.getChildren().get(Food.getChildren().size()-1);} 
                     	else if (douquonest ==2) {Life.getChildren().add(newimage.imageView);selected = Life.getChildren().get(Life.getChildren().size()-1);} 
@@ -434,7 +471,6 @@ public class Mouvement extends Application {
                         
                         selected.setTranslateX(STARTX);
                         selected.setTranslateY(STARTY);
-                        }
                         }
                         else {
                     		selected.setTranslateX(STARTX);
