@@ -55,6 +55,7 @@ public class Mouvement extends Application {
 	  ImageView decor1 = new ImageView(new File("fond_ecran2.png").toURI().toString());
 	  ImageView decor2 = new ImageView(new File("fond_ecran2.png").toURI().toString());
 	  ImageView craft = new ImageView(new File("fond_craft.png").toURI().toString());
+	  ImageView mini_craft = new ImageView(new File("mini_fond_craft.png").toURI().toString());
 	  ImageView Dossier = new ImageView(new File("Dossier.png").toURI().toString());
 	  ImageView inventaire = new ImageView(new File("inventory.png").toURI().toString());
 	  ImageView limite1 = new ImageView(new File("limitetresnul.png").toURI().toString());
@@ -226,7 +227,7 @@ public class Mouvement extends Application {
     Matrice.getChildren().addAll(limite9,limite10);
     all.getChildren().addAll(Base);
     layout.getChildren().addAll(decor1,craft,Dossier,inventaire,all,toolBar,buttonDel,buttonAdd,Matrice); //le Padre!
-    layout2.getChildren().addAll(decor2,sansA1,sansA2,sansA3,sansA4,sansA5,sansA6,sansA7,sansA8,vb);
+    layout2.getChildren().addAll(decor2,sansA1,sansA2,sansA3,sansA4,sansA5,sansA6,sansA7,sansA8,vb,mini_craft);
     
     
     //Positionnement des Nodes à la mano.
@@ -275,6 +276,7 @@ public class Mouvement extends Application {
     sansA6.setTranslateX(0);sansA6.setTranslateY(-20);
     sansA7.setTranslateX(-260);sansA7.setTranslateY(110);
     sansA8.setTranslateX(-130);sansA8.setTranslateY(110);
+    mini_craft.setTranslateX(130);mini_craft.setTranslateY(-200);
     
     //On lance la fenêtre
     scene1 = new Scene(layout,700,500);
@@ -424,7 +426,7 @@ public class Mouvement extends Application {
 ////////////////////////////////////////////     Mouse event     ////////////////////////////////////////////
     
     layout2.setOnMousePressed(evt -> {
-    	if(612<evt.getX() && evt.getX()<670 && 30<evt.getY() && evt.getY()<70) {
+    	if(439<evt.getX() && evt.getX()<520 && 25<evt.getY() && evt.getY()<75) {
     	selected = null; //evite de garder un objet séléctionné car en cas de reclick l'objet se téléportait à l'endroit en question dans le layout 1.
     	test = false;
 		stage.setScene(scene1);
@@ -435,14 +437,14 @@ public class Mouvement extends Application {
     vb.setOnScroll((ScrollEvent event) -> {
         // Adjust the zoom factor as per your requirement
         double deltaY = event.getDeltaY();
-        if (deltaY < 0 ){
+        if (deltaY < 0 && vb.getChildren().get(vb.getChildren().size()-1).getTranslateY()>-110){
         	for(int i=0; i<vb.getChildren().size(); i++) {
-        	vb.getChildren().get(i).setTranslateY((vb.getChildren().get(i).getTranslateY()) + deltaY);
+        	vb.getChildren().get(i).setTranslateY((vb.getChildren().get(i).getTranslateY()) + deltaY/2);
         	}
         }
-        if(deltaY > 0) {
+        if(deltaY > 0 && vb.getChildren().get(0).getTranslateY()<380) {
         	for(int i=0; i<vb.getChildren().size(); i++) {
-            	vb.getChildren().get(i).setTranslateY((vb.getChildren().get(i).getTranslateY()) + deltaY);
+            	vb.getChildren().get(i).setTranslateY((vb.getChildren().get(i).getTranslateY()) + deltaY/2);
             	}
         }
         
