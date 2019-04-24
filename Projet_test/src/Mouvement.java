@@ -9,26 +9,25 @@ import java.util.Map;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.geometry.Point2D;
-import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class Mouvement extends Application {
 	
-	Point2D offset;
+	Scene scene1,scene2;
+	Point2D offset,translateStart;
 	Node selected;
-	Point2D translateStart;
-	double STARTX;
-	double STARTY;
+	double STARTX,STARTY;
+	double X,Y;
 	int douquonest = 0;
-	boolean caMarche = false;
+	boolean caMarche,test = false;
 	Integer clef;
 	//Map<Integer, Double> dico;
 	
@@ -39,8 +38,22 @@ public class Mouvement extends Application {
 	  "Life/life.png","Life/sans.png","Life/fish.png","Life/bird.png","Life/egg.png",
 	  "Weapon/ak.png","Weapon/axe.png","Weapon/backpack.png","Weapon/baseball_bat.png","Weapon/battle_axe.png","Weapon/battle_hammer.png","Weapon/bouclier.png","Weapon/bouteille_alcool.png","Weapon/bow.png","Weapon/bow-arrow.png","Weapon/butcher_knife.png","Weapon/chainsaw.png","Weapon/crossbow.png","Weapon/crossbow_arrow.png","Weapon/dague.png","Weapon/double_spear.png","Weapon/Epee_classique.png","Weapon/gas_mask.png","Weapon/grenade.png","Weapon/grenade_laucher.png","Weapon/guandao.png","Weapon/hunter_knife.png","Weapon/katana.png","Weapon/Katana1.png","Weapon/kunai.png","Weapon/lance.png","Weapon/lightsaber.png","Weapon/medkiy.png","Weapon/military_knife.png","Weapon/minigun.png","Weapon/molotov_cocktail.png","Weapon/pistol.png","Weapon/pistol_ammo.png","Weapon/revolver.png","Weapon/rocket.png","Weapon/rocket_launcher.png","Weapon/scythe.png","Weapon/shotgun.png","Weapon/shuriken.png","Weapon/smoke_grenade.png","Weapon/sniper.png","Weapon/tanto1.png","Weapon/throwing_knife.png","Weapon/thunder.png");
 	  
+	  //Achievements
+	  ImageView sansA1 = new ImageView(new File("sansAchievement.png").toURI().toString());
+	  ImageView sansA2 = new ImageView(new File("sansAchievement.png").toURI().toString());
+	  ImageView sansA3 = new ImageView(new File("sansAchievement.png").toURI().toString());
+	  ImageView sansA4 = new ImageView(new File("sansAchievement.png").toURI().toString());
+	  ImageView sansA5 = new ImageView(new File("sansAchievement.png").toURI().toString());
+	  ImageView sansA6 = new ImageView(new File("sansAchievement.png").toURI().toString());
+	  ImageView sansA7 = new ImageView(new File("sansAchievement.png").toURI().toString());
+	  ImageView sansA8 = new ImageView(new File("sansAchievement.png").toURI().toString());
+	  ImageView sansTest1 = new ImageView(new File("sansAchievement.png").toURI().toString());
+	  ImageView sansTest2 = new ImageView(new File("sansAchievement.png").toURI().toString());
+	  
 	  //Les bases
-	  ImageView decor = new ImageView(new File("fond_ecran2.png").toURI().toString());
+	  Image icon = new Image(new File("icon.png").toURI().toString());
+	  ImageView decor1 = new ImageView(new File("fond_ecran2.png").toURI().toString());
+	  ImageView decor2 = new ImageView(new File("fond_ecran2.png").toURI().toString());
 	  ImageView craft = new ImageView(new File("fond_craft.png").toURI().toString());
 	  ImageView Dossier = new ImageView(new File("Dossier.png").toURI().toString());
 	  ImageView inventaire = new ImageView(new File("inventory.png").toURI().toString());
@@ -164,31 +177,46 @@ public class Mouvement extends Application {
 
     Button buttonAdd = new Button("ADD");
 	Button buttonDel = new Button("DELETE");
-	Bbase.setStyle("-fx-background-color: linear-gradient(to right , #1c389b, #2d47ae, #3b57c1, #4967d4, #5777e8); -fx-text-fill: white ");
-	Bfood.setStyle("-fx-background-color: linear-gradient(to right , #1c389b, #2d47ae, #3b57c1, #4967d4, #5777e8); -fx-text-fill: white  ");
-	Blife.setStyle("-fx-background-color: linear-gradient(to right , #1c389b, #2d47ae, #3b57c1, #4967d4, #5777e8); -fx-text-fill: white  ");
-	Bweapon.setStyle("-fx-background-color: linear-gradient(to right , #1c389b, #2d47ae, #3b57c1, #4967d4, #5777e8); -fx-text-fill: white  ");
+	
+	String bStyle = "-fx-background-color: linear-gradient(to right , #1c389b, #2d47ae, #3b57c1, #4967d4, #5777e8); -fx-text-fill: white ";
+	Bbase.setStyle(bStyle);
+	Bfood.setStyle(bStyle);
+	Blife.setStyle(bStyle);
+	Bweapon.setStyle(bStyle);
 	buttonAdd.setStyle("-fx-background-color: linear-gradient(#50FE80, #36DD0F) ");
 	buttonDel.setStyle("-fx-background-color: linear-gradient(#ff5400, #be1d00) ");
-	
+
 	ToolBar toolBar = new ToolBar();
 	toolBar.getItems().add(Bbase);
 	toolBar.getItems().add(Bfood);
 	toolBar.getItems().add(Blife);
 	toolBar.getItems().add(Bweapon);
 	
+	toolBar.setMaxWidth(700);
+	
 	
 	toolBar.setStyle("-fx-background-color: rgba(83, 87, 84, 0.9);");
 	toolBar.setTranslateY(86);
 	
-	//Les 4 groupes, permet de clean facilement une catégorie. +reesayer stackpane
+	final VBox vb = new VBox();
+	vb.setLayoutX(5);
+    vb.setSpacing(10);
+    
+    String style = "-fx-background-color: rgba(0, 0, 0, 1);";
+    vb.setStyle(style);
+    vb.getChildren().addAll(sansTest1,sansTest2);
+    vb.setTranslateX(580);
+    
+	
+	//Les 4 groupes, permet de clean facilement une catégorie. +reessayer stackpane (peut être)
 	Group Base = new Group();
 	Group Food = new Group();
 	Group Weapon = new Group();
 	Group Life = new Group();
 	Group Matrice = new Group();
-	StackPane all = new StackPane();
+	StackPane all = new StackPane();	
 	final StackPane layout = new StackPane();
+	final StackPane layout2 = new StackPane();
 	
 	
     Base.getChildren().addAll(limite1,limite2,dirt.imageView,sand.imageView,water.imageView,wood.imageView,ironIngot.imageView,rock.imageView,fire2.imageView,wind.imageView,bone.imageView);
@@ -197,7 +225,8 @@ public class Mouvement extends Application {
     Weapon.getChildren().addAll(limite7,limite8);
     Matrice.getChildren().addAll(limite9,limite10);
     all.getChildren().addAll(Base);
-    layout.getChildren().addAll(decor,craft,Dossier,inventaire,all,toolBar,buttonDel,buttonAdd,Matrice); //le Padre!
+    layout.getChildren().addAll(decor1,craft,Dossier,inventaire,all,toolBar,buttonDel,buttonAdd,Matrice); //le Padre!
+    layout2.getChildren().addAll(decor2,sansA1,sansA2,sansA3,sansA4,sansA5,sansA6,sansA7,sansA8,vb);
     
     
     //Positionnement des Nodes à la mano.
@@ -231,15 +260,28 @@ public class Mouvement extends Application {
     limite9.setTranslateX(-1000);limite9.setTranslateY(-1000);
     limite10.setTranslateX(1000);limite10.setTranslateY(1000);
     
-    //Positionnement du Décor.
+    //Positionnement du Décor dans le layout1
     craft.setTranslateX(-55);craft.setTranslateY(-85);
     buttonAdd.setTranslateX(82);buttonAdd.setTranslateY(-9);buttonAdd.setMinWidth(54);buttonAdd.setMaxHeight(5);
     buttonDel.setTranslateX(82);buttonDel.setTranslateY(18);
     Dossier.setTranslateX(300);Dossier.setTranslateY(-185);
     inventaire.setTranslateY(179);
+    //Des achievements dans le layout2
+    sansA1.setTranslateX(-260);sansA1.setTranslateY(-150);
+    sansA2.setTranslateX(-130);sansA2.setTranslateY(-150);
+    sansA3.setTranslateX(0);sansA3.setTranslateY(-150);
+    sansA4.setTranslateX(-260);sansA4.setTranslateY(-20);
+    sansA5.setTranslateX(-130);sansA5.setTranslateY(-20);
+    sansA6.setTranslateX(0);sansA6.setTranslateY(-20);
+    sansA7.setTranslateX(-260);sansA7.setTranslateY(110);
+    sansA8.setTranslateX(-130);sansA8.setTranslateY(110);
     
     //On lance la fenêtre
-    stage.setScene(new Scene(layout,700,500));
+    scene1 = new Scene(layout,700,500);
+    scene2 = new Scene(layout2,700,500);
+    stage.setScene(scene1);
+    stage.getIcons().add(icon);
+    stage.setTitle("Projet Minecraft");
     stage.show();
     
     //Matrice de craft
@@ -366,7 +408,7 @@ public class Mouvement extends Application {
             	  for(int i =0;i<matrice.length*matrice.length;i++){
             		  matrice[i%3][i/3] = 0;}
             	  Matrice.getChildren().clear();
-            	  Matrice.getChildren().addAll(limite9,limite10); //peut etre pas necessaire
+            	  Matrice.getChildren().addAll(limite9,limite10);
               }
               }
             });
@@ -381,43 +423,48 @@ public class Mouvement extends Application {
     
 ////////////////////////////////////////////     Mouse event     ////////////////////////////////////////////
     
+    layout2.setOnMousePressed(evt -> {
+    	if(612<evt.getX() && evt.getX()<670 && 30<evt.getY() && evt.getY()<70) {
+    	selected = null; //evite de garder un objet séléctionné car en cas de reclick l'objet se téléportait à l'endroit en question dans le layout 1.
+    	test = false;
+		stage.setScene(scene1);
+    	}
+    	
+    });
+    
+    vb.setOnScroll((ScrollEvent event) -> {
+        // Adjust the zoom factor as per your requirement
+        double deltaY = event.getDeltaY();
+        if (deltaY < 0 ){
+        	for(int i=0; i<vb.getChildren().size(); i++) {
+        	vb.getChildren().get(i).setTranslateY((vb.getChildren().get(i).getTranslateY()) + deltaY);
+        	}
+        }
+        if(deltaY > 0) {
+        	for(int i=0; i<vb.getChildren().size(); i++) {
+            	vb.getChildren().get(i).setTranslateY((vb.getChildren().get(i).getTranslateY()) + deltaY);
+            	}
+        }
+        
+        
+        
+    });
+    
     //Selection de la Node
     all.setOnMousePressed(evt -> {
-    	Node target = (Node) evt.getTarget();
-    	//selected = target;
     	
-    	if (selected != null && target == all) {
-    	if(815<evt.getX() && evt.getX()<964 && 860<evt.getY() && evt.getY()<1009) {
-        	for(int i=0; i<matrice.length*matrice.length;i++) {
-        			if(815+50*(i%3)<=evt.getX() && evt.getX()<=864+50*(i%3) && 860+50*(i/3)<=evt.getY() && evt.getY()<=909+50*(i/3)) {
-        				selected.setTranslateX(-175+50*(i%3));
-                        selected.setTranslateY(-130+50*(i/3));
-                        if (selected.getId() != null && matrice[i/3][i%3] ==0) {
-                        	matrice[i/3][i%3] = Integer.valueOf(selected.getId()); //La matrice récupère l'ID de la Node.
-                        if(caMarche ==true) { //delete le resultat si on rajoute un node dans la matrice
-                        Matrice.getChildren().remove(Matrice.getChildren().size()-1);}
-                        
-                        Matrice.getChildren().add(selected);
-                        creationImage newimage = new creationImage(listImage.get((Integer.parseInt(selected.getId()))),selected.getId());
-                        // Ajoute ds le groupe actuel la copie de la Node;  change le selected en la copie pour la placer aux coords START(X/Y).
-                        if (douquonest ==0) {Base.getChildren().add(newimage.imageView);selected = Base.getChildren().get(Base.getChildren().size()-1);} 
-                    	else if (douquonest ==1) {Food.getChildren().add(newimage.imageView);selected = Food.getChildren().get(Food.getChildren().size()-1);} 
-                    	else if (douquonest ==2) {Life.getChildren().add(newimage.imageView);selected = Life.getChildren().get(Life.getChildren().size()-1);} 
-                    	else if (douquonest ==3) {Weapon.getChildren().add(newimage.imageView);selected = Weapon.getChildren().get(Weapon.getChildren().size()-1);} 
-                        
-                        
-                        selected.setTranslateX(STARTX);
-                        selected.setTranslateY(STARTY);
-                        }
-                        else {
-                    		selected.setTranslateX(STARTX);
-                    		selected.setTranslateY(STARTY);
-                    	}
-        			}		
-        	}
-        	}
+    	X = evt.getX();
+    	Y = evt.getY();
+    	
+    	if(1294<evt.getX() && evt.getX()<1335 && 809<evt.getY() && evt.getY()<839) {
+    		test = true;
+    		stage.setScene(scene2);
+    		
     	}
     	else {
+    	Node target = (Node) evt.getTarget();
+   
+
         if (target != all) { // si on est bien sur le Node
             selected = target;
             
@@ -433,7 +480,7 @@ public class Mouvement extends Application {
     	}
     });
     
-    //Mouvement qui suit la souris
+    //Mouvement
     all.setOnMouseDragged(evt -> {
         if (selected != null) {
             selected.setTranslateX(evt.getX() - offset.getX() + translateStart.getX());
@@ -447,12 +494,11 @@ public class Mouvement extends Application {
     });
     
     all.setOnMouseReleased(evt -> {
-    	
-        if (selected != null) {
+        if (selected != null && test == false) {
         	//Si on est dans la matrice
         	if(815<evt.getX() && evt.getX()<964 && 860<evt.getY() && evt.getY()<1009) {
         	for(int i=0; i<matrice.length*matrice.length;i++) {
-        			if(815+50*(i%3)<=evt.getX() && evt.getX()<864+50*(i%3) && 860+50*(i/3)<=evt.getY() && evt.getY()<=909+50*(i/3)) {
+        			if(815+50*(i%3)<=evt.getX() && evt.getX()<865+50*(i%3) && 860+50*(i/3)<=evt.getY() && evt.getY()<910+50*(i/3)) {
         				selected.setTranslateX(-175+50*(i%3));
                         selected.setTranslateY(-130+50*(i/3));
                         if (selected.getId() != null && matrice[i/3][i%3] ==0) {
@@ -467,15 +513,16 @@ public class Mouvement extends Application {
                     	else if (douquonest ==1) {Food.getChildren().add(newimage.imageView);selected = Food.getChildren().get(Food.getChildren().size()-1);} 
                     	else if (douquonest ==2) {Life.getChildren().add(newimage.imageView);selected = Life.getChildren().get(Life.getChildren().size()-1);} 
                     	else if (douquonest ==3) {Weapon.getChildren().add(newimage.imageView);selected = Weapon.getChildren().get(Weapon.getChildren().size()-1);} 
-                        
-                        
+
                         selected.setTranslateX(STARTX);
                         selected.setTranslateY(STARTY);
                         }
+                        
                         else {
-                    		selected.setTranslateX(STARTX);
+                        	selected.setTranslateX(STARTX);
                     		selected.setTranslateY(STARTY);
-                    	}
+                        }
+                        
         			}		
         	}
         	}
@@ -521,13 +568,13 @@ public class Mouvement extends Application {
         		liste.add(matrice[i][j]);
         	}
         }
-        while(idico.hasNext() && caMarche == false) {
+        while(idico.hasNext() && caMarche == false && test ==false) {
         	int compteur=0;
         	clef=idico.next();
         	valeur = dicoCraft.get(clef).liste;
       	  
-      	  	System.out.print(valeur);
-      	    System.out.println(liste);
+      	  	//System.out.print(valeur);
+      	    //System.out.println(liste);
       	
         	for(int k=0;k<liste.size();k++) {
         		if (valeur.get(k)==liste.get(k)) {
