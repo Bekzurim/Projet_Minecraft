@@ -37,8 +37,24 @@ public class Mouvement extends Application {
 	  "Food/baguette.png","Food/beurre.png","Food/ble.png","Food/burger_pain.png","Food/burger.png","Food/farine.png","Food/fromage.png","Food/pomme.png","Food/salade.png","Food/tomate.png","Food/viande.png",
 	  "Life/life.png","Life/sans.png","Life/fish.png","Life/bird.png","Life/egg.png",
 	  "Weapon/ak.png","Weapon/axe.png","Weapon/backpack.png","Weapon/baseball_bat.png","Weapon/battle_axe.png","Weapon/battle_hammer.png","Weapon/bouclier.png","Weapon/bouteille_alcool.png","Weapon/bow.png","Weapon/bow-arrow.png","Weapon/butcher_knife.png","Weapon/chainsaw.png","Weapon/crossbow.png","Weapon/crossbow_arrow.png","Weapon/dague.png","Weapon/double_spear.png","Weapon/Epee_classique.png","Weapon/gas_mask.png","Weapon/grenade.png","Weapon/grenade_laucher.png","Weapon/guandao.png","Weapon/hunter_knife.png","Weapon/katana.png","Weapon/Katana1.png","Weapon/kunai.png","Weapon/lance.png","Weapon/lightsaber.png","Weapon/medkiy.png","Weapon/military_knife.png","Weapon/minigun.png","Weapon/molotov_cocktail.png","Weapon/pistol.png","Weapon/pistol_ammo.png","Weapon/revolver.png","Weapon/rocket.png","Weapon/rocket_launcher.png","Weapon/scythe.png","Weapon/shotgun.png","Weapon/shuriken.png","Weapon/smoke_grenade.png","Weapon/sniper.png","Weapon/tanto1.png","Weapon/throwing_knife.png","Weapon/thunder.png");
-	  
+
 	  //Achievements
+	  ImageView sansFA1 = new ImageView(new File("sansFutureAchievement.png").toURI().toString());
+	  ImageView sansFAT1 = new ImageView(new File("sansFutureAchievementtxt.png").toURI().toString());
+	  ImageView sansFA2 = new ImageView(new File("sansFutureAchievement.png").toURI().toString());
+	  ImageView sansFAT2 = new ImageView(new File("sansFutureAchievementtxt.png").toURI().toString());
+	  ImageView sansFA3 = new ImageView(new File("sansFutureAchievement.png").toURI().toString());
+	  ImageView sansFAT3 = new ImageView(new File("sansFutureAchievementtxt.png").toURI().toString());
+	  ImageView sansFA4 = new ImageView(new File("sansFutureAchievement.png").toURI().toString());
+	  ImageView sansFAT4 = new ImageView(new File("sansFutureAchievementtxt.png").toURI().toString());
+	  ImageView sansFA5 = new ImageView(new File("sansFutureAchievement.png").toURI().toString());
+	  ImageView sansFAT5 = new ImageView(new File("sansFutureAchievementtxt.png").toURI().toString());
+	  ImageView sansFA6 = new ImageView(new File("sansFutureAchievement.png").toURI().toString());
+	  ImageView sansFAT6 = new ImageView(new File("sansFutureAchievementtxt.png").toURI().toString());
+	  ImageView sansFA7 = new ImageView(new File("sansFutureAchievement.png").toURI().toString());
+	  ImageView sansFAT7 = new ImageView(new File("sansFutureAchievementtxt.png").toURI().toString());
+	  ImageView sansFA8 = new ImageView(new File("sansFutureAchievement.png").toURI().toString());
+	  ImageView sansFAT8 = new ImageView(new File("sansFutureAchievementtxt.png").toURI().toString());
 	  ImageView sansA1 = new ImageView(new File("sansAchievement.png").toURI().toString());
 	  ImageView sansA2 = new ImageView(new File("sansAchievement.png").toURI().toString());
 	  ImageView sansA3 = new ImageView(new File("sansAchievement.png").toURI().toString());
@@ -163,6 +179,7 @@ public class Mouvement extends Application {
 	  creationCraft craft_9 = new creationCraft(new ArrayList(Arrays.asList(0,19,0,26,24,25,0,19,0)),20);
 	  creationCraft craft_10 = new creationCraft(new ArrayList(Arrays.asList(0,19,0,26,25,24,0,19,0)),20);
 	  creationCraft craft_11 = new creationCraft(new ArrayList(Arrays.asList(13,13,13,13,13,13,0,13,0)),38);
+	  creationCraft craft_12 = new creationCraft(new ArrayList(Arrays.asList(0,8,0,8,27,8,0,8,0)),28);
 	  
 	  //Creation du dico avec les crafts
 	  Map<Integer,creationCraft> dicoCraft=new HashMap<Integer,creationCraft>();
@@ -170,6 +187,7 @@ public class Mouvement extends Application {
 	  dicoCraft.put(10, craft_2);dicoCraft.put(11, craft_3);dicoCraft.put(12, craft_4);
 	  dicoCraft.put(20, craft_5);dicoCraft.put(21, craft_6);dicoCraft.put(22, craft_7);dicoCraft.put(23, craft_8);dicoCraft.put(24, craft_9);dicoCraft.put(25, craft_10);
 	  dicoCraft.put(30, craft_11);
+	  dicoCraft.put(40, craft_12);
 
     Button Bbase = new Button("Base");
     Button Bfood = new Button("Food");
@@ -215,6 +233,7 @@ public class Mouvement extends Application {
 	Group Weapon = new Group();
 	Group Life = new Group();
 	Group Matrice = new Group();
+	StackPane Succes = new StackPane();
 	StackPane all = new StackPane();	
 	final StackPane layout = new StackPane();
 	final StackPane layout2 = new StackPane();
@@ -222,12 +241,13 @@ public class Mouvement extends Application {
 	
     Base.getChildren().addAll(limite1,limite2,dirt.imageView,sand.imageView,water.imageView,wood.imageView,ironIngot.imageView,rock.imageView,fire2.imageView,wind.imageView,bone.imageView);
     Food.getChildren().addAll(limite3,limite4,baguette.imageView,beurre.imageView,ble.imageView,burgerPain.imageView,farine.imageView,fromage.imageView,pomme.imageView,salade.imageView,tomate.imageView,viande.imageView);
-    Life.getChildren().addAll(limite5,limite6,life.imageView,Sans.imageView,fish.imageView,bird.imageView);
+    Life.getChildren().addAll(limite5,limite6,life.imageView,fish.imageView,bird.imageView);
     Weapon.getChildren().addAll(limite7,limite8);
     Matrice.getChildren().addAll(limite9,limite10);
     all.getChildren().addAll(Base);
     layout.getChildren().addAll(decor1,craft,Dossier,inventaire,all,toolBar,buttonDel,buttonAdd,Matrice); //le Padre!
-    layout2.getChildren().addAll(decor2,sansA1,sansA2,sansA3,sansA4,sansA5,sansA6,sansA7,sansA8,vb,mini_craft);
+    Succes.getChildren().addAll(sansFA1,sansFA2,sansFA3,sansFA4,sansFA5,sansFA6,sansFA7,sansFA8);
+    layout2.getChildren().addAll(decor2,vb,mini_craft,Succes);
     
     
     //Positionnement des Nodes à la mano.
@@ -268,15 +288,33 @@ public class Mouvement extends Application {
     Dossier.setTranslateX(300);Dossier.setTranslateY(-185);
     inventaire.setTranslateY(179);
     //Des achievements dans le layout2
-    sansA1.setTranslateX(-260);sansA1.setTranslateY(-150);
-    sansA2.setTranslateX(-130);sansA2.setTranslateY(-150);
-    sansA3.setTranslateX(0);sansA3.setTranslateY(-150);
-    sansA4.setTranslateX(-260);sansA4.setTranslateY(-20);
-    sansA5.setTranslateX(-130);sansA5.setTranslateY(-20);
-    sansA6.setTranslateX(0);sansA6.setTranslateY(-20);
-    sansA7.setTranslateX(-260);sansA7.setTranslateY(110);
-    sansA8.setTranslateX(-130);sansA8.setTranslateY(110);
+    Succes.setTranslateX(-140);
+    sansA1.setTranslateX(-140);sansA1.setTranslateY(-150);
+    sansFA1.setTranslateX(-140);sansFA1.setTranslateY(-150);
+    sansFAT1.setTranslateX(-140);sansFAT1.setTranslateY(-150);
+    sansA2.setTranslateY(-150);
+    sansFA2.setTranslateY(-150);
+    sansFAT2.setTranslateY(-150);
+    sansA3.setTranslateX(140);sansA3.setTranslateY(-150);
+    sansFA3.setTranslateX(140);sansFA3.setTranslateY(-150);
+    sansFAT3.setTranslateX(140);sansFAT3.setTranslateY(-150);
+    sansA4.setTranslateX(-140);sansA4.setTranslateY(-20);
+    sansFA4.setTranslateX(-140);sansFA4.setTranslateY(-20);
+    sansFAT4.setTranslateX(-140);sansFAT4.setTranslateY(-20);
+    sansA5.setTranslateY(-20);
+    sansFA5.setTranslateY(-20);
+    sansFAT5.setTranslateY(-20);
+    sansA6.setTranslateX(140);sansA6.setTranslateY(-20);
+    sansFA6.setTranslateX(140);sansFA6.setTranslateY(-20);
+    sansFAT6.setTranslateX(140);sansFAT6.setTranslateY(-20);
+    sansA7.setTranslateX(-140);sansA7.setTranslateY(110);
+    sansFA7.setTranslateX(-140);sansFA7.setTranslateY(110);
+    sansFAT7.setTranslateX(-140);sansFAT7.setTranslateY(110);
+    sansA8.setTranslateY(110);
+    sansFA8.setTranslateY(110);
+    sansFAT8.setTranslateY(110);
     mini_craft.setTranslateX(130);mini_craft.setTranslateY(-200);
+    
     
     //On lance la fenêtre
     scene1 = new Scene(layout,700,500);
@@ -374,6 +412,7 @@ public class Mouvement extends Application {
             	  for(int i=0;i<10;i++) {
               		dicoCraft.remove(clef+i);}
             	  int IdnouvelObjet = Integer.parseInt(Matrice.getChildren().get(Matrice.getChildren().size()-1).getId());
+            	  
             	  if(1<=IdnouvelObjet && IdnouvelObjet<=15){
             		  Base.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
             		  selected = Base.getChildren().get(Base.getChildren().size()-1);
@@ -405,6 +444,10 @@ public class Mouvement extends Application {
             		  all.getChildren().clear();
                 	  all.getChildren().addAll(Weapon);
                 	  douquonest = 3;
+            	  }
+            	  if(Integer.parseInt(selected.getId()) == 28) {
+            		  Succes.getChildren().remove(sansFA1);
+            		  Succes.getChildren().addAll(sansA1);
             	  }
             	  
             	  for(int i =0;i<matrice.length*matrice.length;i++){
@@ -451,8 +494,71 @@ public class Mouvement extends Application {
         
         
     });
+    sansFA1.setOnMouseEntered(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent t) {Succes.getChildren().add(sansFAT1);}});
+
+    sansFAT1.setOnMouseExited(new EventHandler<MouseEvent>() {
+    	@Override
+        public void handle(MouseEvent t) {Succes.getChildren().remove(sansFAT1);}});
     
-    //Selection de la Node
+    sansFA2.setOnMouseEntered(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent t) {Succes.getChildren().add(sansFAT2);}});
+
+    sansFAT2.setOnMouseExited(new EventHandler<MouseEvent>() {
+    	@Override
+        public void handle(MouseEvent t) {Succes.getChildren().remove(sansFAT2);}});
+    
+    sansFA3.setOnMouseEntered(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent t) {Succes.getChildren().add(sansFAT3);}});
+
+    sansFAT3.setOnMouseExited(new EventHandler<MouseEvent>() {
+    	@Override
+        public void handle(MouseEvent t) {Succes.getChildren().remove(sansFAT3);}});
+    
+    sansFA4.setOnMouseEntered(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent t) {Succes.getChildren().add(sansFAT4);}});
+
+    sansFAT4.setOnMouseExited(new EventHandler<MouseEvent>() {
+    	@Override
+        public void handle(MouseEvent t) {Succes.getChildren().remove(sansFAT4);}});
+    
+    sansFA5.setOnMouseEntered(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent t) {Succes.getChildren().add(sansFAT5);}});
+
+    sansFAT5.setOnMouseExited(new EventHandler<MouseEvent>() {
+    	@Override
+        public void handle(MouseEvent t) {Succes.getChildren().remove(sansFAT5);}});
+    
+    sansFA6.setOnMouseEntered(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent t) {Succes.getChildren().add(sansFAT6);}});
+
+    sansFAT6.setOnMouseExited(new EventHandler<MouseEvent>() {
+    	@Override
+        public void handle(MouseEvent t) {Succes.getChildren().remove(sansFAT6);}});
+    
+    sansFA7.setOnMouseEntered(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent t) {Succes.getChildren().add(sansFAT7);}});
+
+    sansFAT7.setOnMouseExited(new EventHandler<MouseEvent>() {
+    	@Override
+        public void handle(MouseEvent t) {Succes.getChildren().remove(sansFAT7);}});
+    
+    sansFA8.setOnMouseEntered(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent t) {Succes.getChildren().add(sansFAT8);}});
+
+    sansFAT8.setOnMouseExited(new EventHandler<MouseEvent>() {
+    	@Override
+        public void handle(MouseEvent t) {Succes.getChildren().remove(sansFAT8);}});
+    
+    //Selection de la Node dans Layout1
     all.setOnMousePressed(evt -> {
     	
     	X = evt.getX();
