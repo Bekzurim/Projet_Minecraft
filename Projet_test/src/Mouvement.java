@@ -30,13 +30,14 @@ public class Mouvement extends Application {
 	boolean caMarche,test = false;
 	Integer clef;
 	//Map<Integer, Double> dico;
-	
-  @Override public void start(final Stage stage) throws Exception {
+
+@Override public void start(final Stage stage) throws Exception {
 	  //Liste pour récuprérer les images en fonction de l'ID
-	  List<String> listImage = Arrays.asList("0","Base/Dirt.png","Base/bois.png","Base/rock.png","Base/sand.png","Base/wind.png","Base/fire_2.png","Base/stick.png","Base/bone.png","Base/water.png","Base/glass.png","Base/glaçon.png","Base/iron_nugget.png","Base/iron_ingot.png","Base/Poubelle_1.png","Base/Poubelle_2.png",
+	  List<String> listImage = Arrays.asList("0","Base/Dirt.png","Base/bois.png","Base/wooden_block.png","Base/rock.png","Base/sand.png","Base/wind.png","Base/fire_2.png","Base/stick.png","Base/bone.png","Base/water.png","Base/glass.png","Base/glaçon.png","Base/iron_nugget.png","Base/iron_ingot.png","Base/Poubelle_1.png","Base/Poubelle_2.png",
 	  "Food/baguette.png","Food/beurre.png","Food/ble.png","Food/burger_pain.png","Food/burger.png","Food/farine.png","Food/fromage.png","Food/pomme.png","Food/salade.png","Food/tomate.png","Food/viande.png",
-	  "Life/life.png","Life/sans.png","Life/fish.png","Life/bird.png","Life/egg.png",
-	  "Weapon/ak.png","Weapon/axe.png","Weapon/backpack.png","Weapon/baseball_bat.png","Weapon/battle_axe.png","Weapon/battle_hammer.png","Weapon/bouclier.png","Weapon/bouteille_alcool.png","Weapon/bow.png","Weapon/bow-arrow.png","Weapon/butcher_knife.png","Weapon/chainsaw.png","Weapon/crossbow.png","Weapon/crossbow_arrow.png","Weapon/dague.png","Weapon/double_spear.png","Weapon/Epee_classique.png","Weapon/gas_mask.png","Weapon/grenade.png","Weapon/grenade_laucher.png","Weapon/guandao.png","Weapon/hunter_knife.png","Weapon/katana.png","Weapon/Katana1.png","Weapon/kunai.png","Weapon/lance.png","Weapon/lightsaber.png","Weapon/medkiy.png","Weapon/military_knife.png","Weapon/minigun.png","Weapon/molotov_cocktail.png","Weapon/pistol.png","Weapon/pistol_ammo.png","Weapon/revolver.png","Weapon/rocket.png","Weapon/rocket_launcher.png","Weapon/scythe.png","Weapon/shotgun.png","Weapon/shuriken.png","Weapon/smoke_grenade.png","Weapon/sniper.png","Weapon/tanto1.png","Weapon/throwing_knife.png","Weapon/thunder.png");
+	  "Life/life.png","Life/cow.png","Life/fish.png","Life/bird.png","Life/egg.png","Life/SMB.png","Life/sans.png",
+	  "Weapon/ak.png","Weapon/axe.png","Weapon/backpack.png","Weapon/baseball_bat.png","Weapon/battle_axe.png","Weapon/battle_hammer.png","Weapon/bouclier.png","Weapon/bouteille_alcool.png","Weapon/bow.png","Weapon/bow-arrow.png","Weapon/butcher_knife.png","Weapon/chainsaw.png","Weapon/crossbow.png","Weapon/crossbow_arrow.png","Weapon/dague.png","Weapon/double_spear.png","Weapon/Epee_classique.png","Weapon/gas_mask.png","Weapon/grenade.png","Weapon/grenade_laucher.png","Weapon/guandao.png","Weapon/hunter_knife.png","Weapon/katana.png","Weapon/Katana1.png","Weapon/kunai.png","Weapon/lance.png","Weapon/lightsaber.png","Weapon/medkiy.png","Weapon/military_knife.png","Weapon/minigun.png","Weapon/molotov_cocktail.png","Weapon/pistol.png","Weapon/pistol_ammo.png","Weapon/revolver.png","Weapon/rocket.png","Weapon/rocket_launcher.png","Weapon/scythe.png","Weapon/shotgun.png","Weapon/shuriken.png","Weapon/smoke_grenade.png","Weapon/sniper.png","Weapon/tanto1.png","Weapon/throwing_knife.png","Weapon/thunder.png"
+	  );
 
 	  //Achievements
 	  ImageView sansFA1 = new ImageView(new File("sansFutureAchievement.png").toURI().toString());
@@ -87,108 +88,158 @@ public class Mouvement extends Application {
 	  
 	  creationImage dirt = new creationImage("Base/Dirt.png","1");
 	  creationImage wood = new creationImage("Base/bois.png","2");
-	  creationImage rock = new creationImage("Base/rock.png","3");
-	  creationImage sand = new creationImage("Base/sand.png","4");
-	  creationImage wind = new creationImage("Base/wind.png","5");
-	  creationImage fire2 = new creationImage("Base/fire_2.png","6");
-	  creationImage stick = new creationImage("Base/stick.png","7");
-	  creationImage bone = new creationImage("Base/bone.png","8");
-	  creationImage water = new creationImage("Base/water.png","9");
-	  creationImage glass = new creationImage("Base/glass.png","10");
-	  creationImage glaçon = new creationImage("Base/glaçon.png","11");
-	  creationImage ironNugget = new creationImage("Base/iron_nugget.png","12");
-	  creationImage ironIngot = new creationImage("Base/iron_ingot.png","13");
-	  creationImage Poubelle_1 = new creationImage("Base/Poubelle_1.png","14");
-	  creationImage Poubelle_2 = new creationImage("Base/Poubelle_2.png","15");
+	  creationImage wooden = new creationImage("Base/wooden_block.png","3");
+	  creationImage rock = new creationImage("Base/rock.png","4");
+	  creationImage sand = new creationImage("Base/sand.png","5");
+	  creationImage wind = new creationImage("Base/wind.png","6");
+	  creationImage fire2 = new creationImage("Base/fire_2.png","7");
+	  creationImage stick = new creationImage("Base/stick.png","8");
+	  creationImage bone = new creationImage("Base/bone.png","9");
+	  creationImage water = new creationImage("Base/water.png","10");
+	  creationImage glass = new creationImage("Base/glass.png","11");
+	  creationImage glaçon = new creationImage("Base/glaçon.png","12");
+	  creationImage ironNugget = new creationImage("Base/iron_nugget.png","13");
+	  creationImage ironIngot = new creationImage("Base/iron_ingot.png","14");
+	  creationImage Poubelle_1 = new creationImage("Base/Poubelle_1.png","15");
+	  creationImage Poubelle_2 = new creationImage("Base/Poubelle_2.png","16");
 	  
 	  //La bouffe
-	  creationImage baguette = new creationImage("Food/baguette.png","16");
-	  creationImage beurre = new creationImage("Food/beurre.png","17");
-	  creationImage ble = new creationImage("Food/ble.png","18");
-	  creationImage burgerPain = new creationImage("Food/burger_pain.png","19");
-	  creationImage burger = new creationImage("Food/burger.png","20");
-	  creationImage farine = new creationImage("Food/farine.png","21");
-	  creationImage fromage = new creationImage("Food/fromage.png","22");
-	  creationImage pomme = new creationImage("Food/pomme.png","23");
-	  creationImage salade = new creationImage("Food/salade.png","24");
-	  creationImage tomate = new creationImage("Food/tomate.png","25");
-	  creationImage viande = new creationImage("Food/viande.png","26");
+	  creationImage baguette = new creationImage("Food/baguette.png","17");
+	  creationImage beurre = new creationImage("Food/beurre.png","18");
+	  creationImage ble = new creationImage("Food/ble.png","19");
+	  creationImage burgerPain = new creationImage("Food/burger_pain.png","20");
+	  creationImage burger = new creationImage("Food/burger.png","21");
+	  creationImage farine = new creationImage("Food/farine.png","22");
+	  creationImage fromage = new creationImage("Food/fromage.png","23");
+	  creationImage pomme = new creationImage("Food/pomme.png","24");
+	  creationImage salade = new creationImage("Food/salade.png","25");
+	  creationImage tomate = new creationImage("Food/tomate.png","26");
+	  creationImage viande = new creationImage("Food/viande.png","27");
 	  
 	//La vie
-	  creationImage life = new creationImage("Life/life.png","27");
-	  creationImage Sans = new creationImage("Life/Sans.png","28");
-	  creationImage fish = new creationImage("Life/fish.png","29");
-	  creationImage bird = new creationImage("Life/bird.png","30");
-	  creationImage egg = new creationImage("Life/egg.png","31");
+	  creationImage life = new creationImage("Life/life.png","28");
+	  creationImage cow = new creationImage("Life/cow.png","29");
+	  creationImage fish = new creationImage("Life/fish.png","30");
+	  creationImage bird = new creationImage("Life/bird.png","31");
+	  creationImage egg = new creationImage("Life/egg.png","32");
+	  creationImage SMB = new creationImage("Life/SMB.png","33");
+	  creationImage Sans = new creationImage("Life/Sans.png","34");
 	  
 	  //Les armes
-	  creationImage ak = new creationImage("Weapon/ak.png","32");
-	  creationImage axe = new creationImage("Weapon/axe.png","33");
-	  creationImage backpack = new creationImage("Weapon/backpack.png","34");
-	  creationImage baseball_bat = new creationImage("Weapon/baseball_bat.png","35");
-	  creationImage battle_axe = new creationImage("Weapon/battle_axe.png","36");
-	  creationImage battle_hammer = new creationImage("Weapon/battle_hammer.png","37");
-	  creationImage bouclier = new creationImage("Weapon/bouclier.png","38");
-	  creationImage bouteille_alcool = new creationImage("Weapon/bouteille_alcool.png","39");
-	  creationImage bow = new creationImage("Weapon/bow.png","40");
-	  creationImage bow_arrow = new creationImage("Weapon/bow-arrow.png","41");
-	  creationImage butcher_knife = new creationImage("Weapon/butcher_knife.png","42");
-	  creationImage chainsaw = new creationImage("Weapon/chainsaw.png","43");
-	  creationImage crossbow = new creationImage("Weapon/crossbow.png","44");
-	  creationImage crossbow_arrow = new creationImage("Weapon/crossbow_arrow.png","45");
-	  creationImage dague = new creationImage("Weapon/dague.png","46");
-	  creationImage double_spear = new creationImage("Weapon/double_spear.png","47");
-	  creationImage Epee_classique = new creationImage("Weapon/Epee_classique.png","48");
-	  creationImage gas_mask = new creationImage("Weapon/gas_mask.png","49");
-	  creationImage grenade = new creationImage("Weapon/grenade.png","50");
-	  creationImage grenade_laucher = new creationImage("Weapon/grenade_laucher.png","51");
-	  creationImage guandao = new creationImage("Weapon/guandao.png","52");
-	  creationImage hunter_knife = new creationImage("Weapon/hunter_knife.png","53");
-	  creationImage katana = new creationImage("Weapon/katana.png","54");
-	  creationImage Katana1 = new creationImage("Weapon/Katana1.png","55");
-	  creationImage kunai = new creationImage("Weapon/kunai.png","56");
-	  creationImage lance = new creationImage("Weapon/lance.png","57");
-	  creationImage lightsaber = new creationImage("Weapon/lightsaber.png","58");
-	  creationImage medkiy = new creationImage("Weapon/medkiy.png","59");
-	  creationImage military_knife = new creationImage("Weapon/military_knife.png","60");
-	  creationImage minigun = new creationImage("Weapon/minigun.png","61");
-	  creationImage molotov_cocktail = new creationImage("Weapon/molotov_cocktail.png","62");
-	  creationImage pistol = new creationImage("Weapon/pistol.png","63");
-	  creationImage pistol_ammo = new creationImage("Weapon/pistol_ammo.png","64");
-	  creationImage revolver = new creationImage("Weapon/revolver.png","65");
-	  creationImage rocket = new creationImage("Weapon/rocket.png","66");
-	  creationImage rocket_launcher = new creationImage("Weapon/rocket_launcher.png","67");
-	  creationImage scythe = new creationImage("Weapon/scythe.png","68");
-	  creationImage shotgun = new creationImage("Weapon/shotgun.png","69");
-	  creationImage shuriken = new creationImage("Weapon/shuriken.png","70");
-	  creationImage smoke_grenade = new creationImage("Weapon/smoke_grenade.png","71");
-	  creationImage sniper = new creationImage("Weapon/sniper.png","72");
-	  creationImage tanto1 = new creationImage("Weapon/tanto1.png","73");
-	  creationImage throwing_knife = new creationImage("Weapon/throwing_knife.png","74");
-	  creationImage thunder = new creationImage("Weapon/thunder.png","75");
+	  creationImage ak = new creationImage("Weapon/ak.png","35");
+	  creationImage axe = new creationImage("Weapon/axe.png","36");
+	  creationImage backpack = new creationImage("Weapon/backpack.png","37");
+	  creationImage baseball_bat = new creationImage("Weapon/baseball_bat.png","38");
+	  creationImage battle_axe = new creationImage("Weapon/battle_axe.png","39");
+	  creationImage battle_hammer = new creationImage("Weapon/battle_hammer.png","40");
+	  creationImage bouclier = new creationImage("Weapon/bouclier.png","41");
+	  creationImage bouteille_alcool = new creationImage("Weapon/bouteille_alcool.png","42");
+	  creationImage bow = new creationImage("Weapon/bow.png","43");
+	  creationImage bow_arrow = new creationImage("Weapon/bow-arrow.png","44");
+	  creationImage butcher_knife = new creationImage("Weapon/butcher_knife.png","45");
+	  creationImage chainsaw = new creationImage("Weapon/chainsaw.png","46");
+	  creationImage crossbow = new creationImage("Weapon/crossbow.png","47");
+	  creationImage crossbow_arrow = new creationImage("Weapon/crossbow_arrow.png","48");
+	  creationImage dague = new creationImage("Weapon/dague.png","49");
+	  creationImage double_spear = new creationImage("Weapon/double_spear.png","50");
+	  creationImage Epee_classique = new creationImage("Weapon/Epee_classique.png","51");
+	  creationImage gas_mask = new creationImage("Weapon/gas_mask.png","52");
+	  creationImage grenade = new creationImage("Weapon/grenade.png","53");
+	  creationImage grenade_laucher = new creationImage("Weapon/grenade_laucher.png","54");
+	  creationImage guandao = new creationImage("Weapon/guandao.png","55");
+	  creationImage hunter_knife = new creationImage("Weapon/hunter_knife.png","56");
+	  creationImage katana = new creationImage("Weapon/katana.png","57");
+	  creationImage Katana1 = new creationImage("Weapon/Katana1.png","58");
+	  creationImage kunai = new creationImage("Weapon/kunai.png","59");
+	  creationImage lance = new creationImage("Weapon/lance.png","60");
+	  creationImage lightsaber = new creationImage("Weapon/lightsaber.png","61");
+	  creationImage medkiy = new creationImage("Weapon/medkiy.png","62");
+	  creationImage military_knife = new creationImage("Weapon/military_knife.png","63");
+	  creationImage minigun = new creationImage("Weapon/minigun.png","64");
+	  creationImage molotov_cocktail = new creationImage("Weapon/molotov_cocktail.png","65");
+	  creationImage pistol = new creationImage("Weapon/pistol.png","66");
+	  creationImage pistol_ammo = new creationImage("Weapon/pistol_ammo.png","67");
+	  creationImage revolver = new creationImage("Weapon/revolver.png","68");
+	  creationImage rocket = new creationImage("Weapon/rocket.png","69");
+	  creationImage rocket_launcher = new creationImage("Weapon/rocket_launcher.png","70");
+	  creationImage scythe = new creationImage("Weapon/scythe.png","71");
+	  creationImage shotgun = new creationImage("Weapon/shotgun.png","72");
+	  creationImage shuriken = new creationImage("Weapon/shuriken.png","73");
+	  creationImage smoke_grenade = new creationImage("Weapon/smoke_grenade.png","74");
+	  creationImage sniper = new creationImage("Weapon/sniper.png","75");
+	  creationImage tanto1 = new creationImage("Weapon/tanto1.png","76");
+	  creationImage throwing_knife = new creationImage("Weapon/throwing_knife.png","77");
+	  creationImage thunder = new creationImage("Weapon/thunder.png","78");
 	  
 	  //Création des crafts
-	  creationCraft craft_1 = new creationCraft(new ArrayList(Arrays.asList(0,3,0,3,27,3,0,3,0)),31);
-	  creationCraft craft_2 = new creationCraft(new ArrayList(Arrays.asList(0,0,0,4,0,0,6,0,0)),10);
-	  creationCraft craft_3 = new creationCraft(new ArrayList(Arrays.asList(0,0,0,0,4,0,0,6,0)),10);
-	  creationCraft craft_4 = new creationCraft(new ArrayList(Arrays.asList(0,0,0,0,0,4,0,0,6)),10);
-	  creationCraft craft_5 = new creationCraft(new ArrayList(Arrays.asList(0,19,0,24,25,26,0,19,0)),20);
-	  creationCraft craft_6 = new creationCraft(new ArrayList(Arrays.asList(0,19,0,25,24,26,0,19,0)),20);
-	  creationCraft craft_7 = new creationCraft(new ArrayList(Arrays.asList(0,19,0,25,26,24,0,19,0)),20);
-	  creationCraft craft_8 = new creationCraft(new ArrayList(Arrays.asList(0,19,0,24,26,25,0,19,0)),20);
-	  creationCraft craft_9 = new creationCraft(new ArrayList(Arrays.asList(0,19,0,26,24,25,0,19,0)),20);
-	  creationCraft craft_10 = new creationCraft(new ArrayList(Arrays.asList(0,19,0,26,25,24,0,19,0)),20);
-	  creationCraft craft_11 = new creationCraft(new ArrayList(Arrays.asList(13,13,13,13,13,13,0,13,0)),38);
-	  creationCraft craft_12 = new creationCraft(new ArrayList(Arrays.asList(0,8,0,8,27,8,0,8,0)),28);
+	  
+	  //Base
+	  creationCraft craft_16 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,2,2,0,2,2,0,0,0)),3);
+	  creationCraft craft_17 = new creationCraft(new ArrayList<Integer>(Arrays.asList(2,2,0,2,2,0,0,0,0)),3);
+	  creationCraft craft_18 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,2,2,0,2,2,0)),3);
+	  creationCraft craft_19 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,2,2,0,2,2)),3);
+	  creationCraft craft_26 = new creationCraft(new ArrayList<Integer>(Arrays.asList(3,0,0,3,0,0,0,0,0)),8);
+	  creationCraft craft_27 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,3,0,0,3,0,0,0,0)),8);
+	  creationCraft craft_28 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,3,0,0,3,0,0,0)),8);
+	  creationCraft craft_29 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,3,0,0,3,0,0)),8);
+	  creationCraft craft_30 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,3,0,0,3,0)),8);
+	  creationCraft craft_31 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,3,0,0,3)),8);
+	  creationCraft craft_35 = new creationCraft(new ArrayList<Integer>(Arrays.asList(51,30,0,0,0,0,0,0,0)),9);
+	  creationCraft craft_36 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,51,30,0,0,0,0)),9);
+	  creationCraft craft_37 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,51,30,0)),9);
+	  creationCraft craft_2 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,5,0,0,7,0,0)),11);
+	  creationCraft craft_3 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,5,0,0,7,0)),11);
+	  creationCraft craft_4 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,5,0,0,7)),11);
+	  creationCraft craft_5 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,13,0,0,7,0,0)),14);
+	  creationCraft craft_6 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,13,0,0,7,0)),14);
+	  creationCraft craft_7 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,13,0,0,7)),14);
+	  
+	  //Food
+	  creationCraft craft_8 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,20,0,25,26,27,0,20,0)),21);
+	  creationCraft craft_9 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,20,0,26,25,27,0,20,0)),21);
+	  creationCraft craft_10 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,20,0,26,27,25,0,20,0)),21);
+	  creationCraft craft_11 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,20,0,25,27,26,0,20,0)),21);
+	  creationCraft craft_12 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,20,0,27,25,26,0,20,0)),21);
+	  creationCraft craft_13 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,20,0,27,26,25,0,20,0)),21);
+	  creationCraft craft_38 = new creationCraft(new ArrayList<Integer>(Arrays.asList(51,31,0,0,0,0,0,0,0)),27);
+	  creationCraft craft_39 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,51,31,0,0,0,0)),27);
+	  creationCraft craft_40 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,51,31,0)),27);
+	  
+	  //Life
+	  creationCraft craft_20 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,10,0,0,32,0,0)),30);
+	  creationCraft craft_21 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,10,0,0,32,0)),30);
+	  creationCraft craft_22 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,10,0,0,32)),30);
+	  creationCraft craft_23 = new creationCraft(new ArrayList<Integer>(Arrays.asList(32,0,0,6,0,0,0,0,0)),31);
+	  creationCraft craft_24 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,32,0,0,6,0,0,0,0)),31);
+	  creationCraft craft_25 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,32,0,0,6,0,0,0)),31);
+	  creationCraft craft_1 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,4,0,4,28,4,0,4,0)),32);
+	  creationCraft craft_15 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,9,0,9,28,9,0,9,0)),34);
+	  
+	  //Weapon
+	 
+	  creationCraft craft_14 = new creationCraft(new ArrayList<Integer>(Arrays.asList(14,14,14,14,14,14,0,14,0)),41);
+	  creationCraft craft_32 = new creationCraft(new ArrayList<Integer>(Arrays.asList(14,0,0,14,0,0,8,0,0)),51);
+	  creationCraft craft_33 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,14,0,0,14,0,0,8,0)),51);
+	  creationCraft craft_34 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,14,0,0,14,0,0,8)),51);
+
 	  
 	  //Creation du dico avec les crafts
 	  Map<Integer,creationCraft> dicoCraft=new HashMap<Integer,creationCraft>();
 	  dicoCraft.put(1, craft_1);
 	  dicoCraft.put(10, craft_2);dicoCraft.put(11, craft_3);dicoCraft.put(12, craft_4);
-	  dicoCraft.put(20, craft_5);dicoCraft.put(21, craft_6);dicoCraft.put(22, craft_7);dicoCraft.put(23, craft_8);dicoCraft.put(24, craft_9);dicoCraft.put(25, craft_10);
-	  dicoCraft.put(30, craft_11);
-	  dicoCraft.put(40, craft_12);
-
+	  dicoCraft.put(20, craft_5);dicoCraft.put(21, craft_6);dicoCraft.put(22, craft_7);
+	  dicoCraft.put(30, craft_8);dicoCraft.put(31, craft_9);dicoCraft.put(32, craft_10);dicoCraft.put(33, craft_11);dicoCraft.put(34, craft_12);dicoCraft.put(35, craft_13);
+	  dicoCraft.put(40, craft_14);
+	  dicoCraft.put(50, craft_15);
+	  dicoCraft.put(60, craft_16);dicoCraft.put(61, craft_17);dicoCraft.put(62, craft_18);dicoCraft.put(63, craft_19);
+	  dicoCraft.put(70, craft_20);dicoCraft.put(71, craft_21);dicoCraft.put(72, craft_22);
+	  dicoCraft.put(80, craft_23);dicoCraft.put(81, craft_24);dicoCraft.put(82, craft_25);
+	  dicoCraft.put(90, craft_26);dicoCraft.put(91, craft_27);dicoCraft.put(92, craft_28);dicoCraft.put(93, craft_29);dicoCraft.put(94, craft_30);dicoCraft.put(95, craft_31);
+	  dicoCraft.put(100, craft_32);dicoCraft.put(101, craft_33);dicoCraft.put(102, craft_34);
+	  dicoCraft.put(110, craft_35);dicoCraft.put(111, craft_36);dicoCraft.put(112, craft_37);
+	  dicoCraft.put(120, craft_38);dicoCraft.put(121, craft_39);dicoCraft.put(122, craft_40);
+	  
+	  
     Button Bbase = new Button("Base");
     Button Bfood = new Button("Food");
     Button Blife = new Button("Life");
@@ -221,7 +272,7 @@ public class Mouvement extends Application {
 	vb.setLayoutX(5);
     vb.setSpacing(10);
     
-    String style = "-fx-background-color: rgba(0, 0, 0, 1);";
+    String style = "-fx-background-color: rgba(23, 27, 24, 0.9);";
     vb.setStyle(style);
     vb.getChildren().addAll(sansTest1,sansTest2);
     vb.setTranslateX(580);
@@ -235,20 +286,19 @@ public class Mouvement extends Application {
 	Group Matrice = new Group();
 	StackPane Succes = new StackPane();
 	StackPane all = new StackPane();	
-	final StackPane layout = new StackPane();
+	final StackPane layout1 = new StackPane();
 	final StackPane layout2 = new StackPane();
 	
 	
-    Base.getChildren().addAll(limite1,limite2,dirt.imageView,sand.imageView,water.imageView,wood.imageView,ironIngot.imageView,rock.imageView,fire2.imageView,wind.imageView,bone.imageView);
-    Food.getChildren().addAll(limite3,limite4,baguette.imageView,beurre.imageView,ble.imageView,burgerPain.imageView,farine.imageView,fromage.imageView,pomme.imageView,salade.imageView,tomate.imageView,viande.imageView);
-    Life.getChildren().addAll(limite5,limite6,life.imageView,fish.imageView,bird.imageView);
+    Base.getChildren().addAll(limite1,limite2,dirt.imageView,sand.imageView,water.imageView,wood.imageView,rock.imageView,fire2.imageView,wind.imageView,ironNugget.imageView);
+    Food.getChildren().addAll(limite3,limite4,beurre.imageView,ble.imageView,burgerPain.imageView,farine.imageView,fromage.imageView,pomme.imageView,salade.imageView,tomate.imageView);
+    Life.getChildren().addAll(limite5,limite6,life.imageView);
     Weapon.getChildren().addAll(limite7,limite8);
     Matrice.getChildren().addAll(limite9,limite10);
     all.getChildren().addAll(Base);
-    layout.getChildren().addAll(decor1,craft,Dossier,inventaire,all,toolBar,buttonDel,buttonAdd,Matrice); //le Padre!
+    layout1.getChildren().addAll(decor1,craft,Dossier,inventaire,all,toolBar,buttonDel,buttonAdd,Matrice); //le Padre!
     Succes.getChildren().addAll(sansFA1,sansFA2,sansFA3,sansFA4,sansFA5,sansFA6,sansFA7,sansFA8);
     layout2.getChildren().addAll(decor2,vb,mini_craft,Succes);
-    
     
     //Positionnement des Nodes à la mano.
     for(int i=0; i<Base.getChildren().size()-2; i++){
@@ -317,7 +367,7 @@ public class Mouvement extends Application {
     
     
     //On lance la fenêtre
-    scene1 = new Scene(layout,700,500);
+    scene1 = new Scene(layout1,700,500);
     scene2 = new Scene(layout2,700,500);
     stage.setScene(scene1);
     stage.getIcons().add(icon);
@@ -413,7 +463,7 @@ public class Mouvement extends Application {
               		dicoCraft.remove(clef+i);}
             	  int IdnouvelObjet = Integer.parseInt(Matrice.getChildren().get(Matrice.getChildren().size()-1).getId());
             	  
-            	  if(1<=IdnouvelObjet && IdnouvelObjet<=15){
+            	  if(1<=IdnouvelObjet && IdnouvelObjet<=16){
             		  Base.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
             		  selected = Base.getChildren().get(Base.getChildren().size()-1);
             		  selected.setTranslateX(-330+(51*Math.round((Base.getChildren().size()-3)/3)));selected.setTranslateY(130+51*((Base.getChildren().size())%3));
@@ -421,7 +471,7 @@ public class Mouvement extends Application {
                 	  all.getChildren().addAll(Base);
                 	  douquonest = 0;
             	  }
-            	  else if(16<=IdnouvelObjet && IdnouvelObjet<=26){
+            	  else if(17<=IdnouvelObjet && IdnouvelObjet<=27){
             		  Food.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
             		  selected = Food.getChildren().get(Food.getChildren().size()-1);
             		  selected.setTranslateX(-330+(51*Math.round((Food.getChildren().size()-3)/3)));selected.setTranslateY(130+51*((Food.getChildren().size())%3));
@@ -429,7 +479,7 @@ public class Mouvement extends Application {
                 	  all.getChildren().addAll(Food);
                 	  douquonest = 1;
             	  }
-            	  else if(27<=IdnouvelObjet && IdnouvelObjet<=31){
+            	  else if(28<=IdnouvelObjet && IdnouvelObjet<=34){
             		  Life.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
             		  selected = Life.getChildren().get(Life.getChildren().size()-1);
               		  selected.setTranslateX(-330+(51*Math.round((Life.getChildren().size()-3)/3)));selected.setTranslateY(130+51*((Life.getChildren().size())%3));
@@ -437,7 +487,7 @@ public class Mouvement extends Application {
                 	  all.getChildren().addAll(Life);
                 	  douquonest = 2;
             	  }
-            	  else if(32<=IdnouvelObjet && IdnouvelObjet<=75){
+            	  else if(35<=IdnouvelObjet && IdnouvelObjet<=78){
             		  Weapon.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
             		  selected = Weapon.getChildren().get(Weapon.getChildren().size()-1);
             		  selected.setTranslateX(-330+(51*Math.round((Weapon.getChildren().size()-3)/3)));selected.setTranslateY(130+51*((Weapon.getChildren().size())%3));
@@ -445,10 +495,10 @@ public class Mouvement extends Application {
                 	  all.getChildren().addAll(Weapon);
                 	  douquonest = 3;
             	  }
-            	  if(Integer.parseInt(selected.getId()) == 28) {
+            	  if(Integer.parseInt(selected.getId()) == 34) {
             		  Succes.getChildren().remove(sansFA1);
             		  Succes.getChildren().addAll(sansA1);
-            	  }
+            	  }	
             	  
             	  for(int i =0;i<matrice.length*matrice.length;i++){
             		  matrice[i%3][i/3] = 0;}
