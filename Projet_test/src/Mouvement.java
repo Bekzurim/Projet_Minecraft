@@ -767,7 +767,7 @@ public class Mouvement extends Application {
         		caMarche = true;
         		creationImage newImage = new creationImage(listImage.get(dicoCraft.get(clef).resultat), String.valueOf(dicoCraft.get(clef).resultat));
         		layout1.getChildren().clear();
-        		layout1.getChildren().addAll(decor1,craftOk,Dossier,inventaire,all,toolBar,buttonDel,buttonAdd,Matrice);
+        		layout1.getChildren().addAll(decor1,craftOk,Dossier,inventaire,all,toolBar,buttonDel,buttonAdd,Matrice);//remplace fond craft
         		Matrice.getChildren().add(newImage.imageView);
         		Matrice.getChildren().get(Matrice.getChildren().size()-1).setTranslateX(85);
         		Matrice.getChildren().get(Matrice.getChildren().size()-1).setTranslateY(-80);
