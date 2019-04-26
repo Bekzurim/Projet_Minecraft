@@ -29,7 +29,6 @@ public class Mouvement extends Application {
 	int douquonest = 0;
 	boolean caMarche,test = false;
 	Integer clef;
-	//Map<Integer, Double> dico;
 
 @Override public void start(final Stage stage) throws Exception {
 	  //Liste pour récuprérer les images en fonction de l'ID
@@ -474,10 +473,10 @@ public class Mouvement extends Application {
             	  caMarche = false;
             	  clef = clef/10*10;
             	  for(int i=0;i<10;i++) {
-              		dicoCraft.remove(clef+i);}
+              		dicoCraft.remove(clef+i);}//Clean toutes les possibilités de craft
             	  int IdnouvelObjet = Integer.parseInt(Matrice.getChildren().get(Matrice.getChildren().size()-1).getId());
             	  
-            	  if(1<=IdnouvelObjet && IdnouvelObjet<=17){
+            	  if(1<=IdnouvelObjet && IdnouvelObjet<=17){ //Place nouveau Base
             		  Base.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
             		  selected = Base.getChildren().get(Base.getChildren().size()-1);
             		  ((ImageView) selected).setFitHeight(30);
@@ -487,7 +486,7 @@ public class Mouvement extends Application {
                 	  all.getChildren().addAll(Base);
                 	  douquonest = 0;
             	  }
-            	  else if(18<=IdnouvelObjet && IdnouvelObjet<=28){
+            	  else if(18<=IdnouvelObjet && IdnouvelObjet<=28){ //Place nouveau Food
             		  Food.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
             		  selected = Food.getChildren().get(Food.getChildren().size()-1);
             		  ((ImageView) selected).setFitHeight(30);
@@ -497,7 +496,7 @@ public class Mouvement extends Application {
                 	  all.getChildren().addAll(Food);
                 	  douquonest = 1;
             	  }
-            	  else if(29<=IdnouvelObjet && IdnouvelObjet<=35){
+            	  else if(29<=IdnouvelObjet && IdnouvelObjet<=35){ //Place nouveau Life
             		  Life.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
             		  selected = Life.getChildren().get(Life.getChildren().size()-1);
             		  ((ImageView) selected).setFitHeight(30);
@@ -507,7 +506,7 @@ public class Mouvement extends Application {
                 	  all.getChildren().addAll(Life);
                 	  douquonest = 2;
             	  }
-            	  else if(36<=IdnouvelObjet && IdnouvelObjet<=79){
+            	  else if(36<=IdnouvelObjet && IdnouvelObjet<=79){ //Place nouveau Weapon
             		  Weapon.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
             		  selected = Weapon.getChildren().get(Weapon.getChildren().size()-1);
             		  ((ImageView) selected).setFitHeight(30);
@@ -550,7 +549,7 @@ public class Mouvement extends Application {
     });
     
     vb.setOnScroll((ScrollEvent event) -> {
-        // Adjust the zoom factor as per your requirement
+        //scroll de l'historique
         double deltaY = event.getDeltaY();
         if (deltaY < 0 && vb.getChildren().get(vb.getChildren().size()-1).getTranslateY()>-110){
         	for(int i=0; i<vb.getChildren().size(); i++) {
