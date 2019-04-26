@@ -212,13 +212,13 @@ public class Mouvement extends Application {
 	  
 	  //Life
 	  creationCraft craft_20 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,10,0,0,33,0,0)),31);
-	  creationCraft craft_21 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,10,0,0,32,0)),31);
-	  creationCraft craft_22 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,10,0,0,32)),31);
+	  creationCraft craft_21 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,10,0,0,33,0)),31);
+	  creationCraft craft_22 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,10,0,0,33)),31);
 	  creationCraft craft_23 = new creationCraft(new ArrayList<Integer>(Arrays.asList(33,0,0,6,0,0,0,0,0)),32);
 	  creationCraft craft_24 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,33,0,0,6,0,0,0,0)),32);
 	  creationCraft craft_25 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,33,0,0,6,0,0,0)),32);
 	  creationCraft craft_1 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,4,0,4,29,4,0,4,0)),33);
-	  creationCraft craft_15 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,9,0,9,29,9,0,9,0)),34);
+	  creationCraft craft_15 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,9,0,9,29,9,0,9,0)),35);
 	  creationCraft craft_41 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,29,0,0,1,0,0)),30);
 	  creationCraft craft_42 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,29,0,0,1,0)),30);
 	  creationCraft craft_43 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,29,0,0,1)),30);
@@ -230,9 +230,9 @@ public class Mouvement extends Application {
 	  creationCraft craft_32 = new creationCraft(new ArrayList<Integer>(Arrays.asList(14,0,0,14,0,0,8,0,0)),52);
 	  creationCraft craft_33 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,14,0,0,14,0,0,8,0)),52);
 	  creationCraft craft_34 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,14,0,0,14,0,0,8)),52);
-	  creationCraft craft_48 = new creationCraft(new ArrayList<Integer>(Arrays.asList(9,0,0,3,0,0,15,0,0)),45);
-	  creationCraft craft_49 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,9,0,0,3,0,0,15,0)),45);
-	  creationCraft craft_50 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,9,0,0,3,0,0,15)),45);
+	  creationCraft craft_48 = new creationCraft(new ArrayList<Integer>(Arrays.asList(9,0,0,8,0,0,15,0,0)),45);
+	  creationCraft craft_49 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,9,0,0,8,0,0,15,0)),45);
+	  creationCraft craft_50 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,9,0,0,8,0,0,15)),45);
 
 	  
 	  //Creation du dico avec les crafts
@@ -251,9 +251,9 @@ public class Mouvement extends Application {
 	  dicoCraft.put(110, craft_35);dicoCraft.put(111, craft_36);dicoCraft.put(112, craft_37);
 	  dicoCraft.put(120, craft_38);dicoCraft.put(121, craft_39);dicoCraft.put(122, craft_40);
 	  dicoCraft.put(130, craft_41);dicoCraft.put(131, craft_42);dicoCraft.put(132, craft_43);
-	  dicoCraft.put(140, craft_44);
-	  dicoCraft.put(140, craft_45);dicoCraft.put(141, craft_46);dicoCraft.put(142, craft_47);
-	  dicoCraft.put(150, craft_48);dicoCraft.put(151, craft_49);dicoCraft.put(152, craft_50);
+	  dicoCraft.put(150, craft_44);
+	  dicoCraft.put(160, craft_45);dicoCraft.put(161, craft_46);dicoCraft.put(162, craft_47);
+	  dicoCraft.put(170, craft_48);dicoCraft.put(171, craft_49);dicoCraft.put(172, craft_50);
 	  
     Button Bbase = new Button("Base");
     Button Bfood = new Button("Food");
