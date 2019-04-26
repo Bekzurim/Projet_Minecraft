@@ -304,7 +304,6 @@ public class Mouvement extends Application {
 	final StackPane layout1 = new StackPane();
 	final StackPane layout2 = new StackPane();
 	
-	
     Base.getChildren().addAll(limite1,limite2,dirt.imageView,sand.imageView,water.imageView,wood.imageView,rock.imageView,fire2.imageView,wind.imageView,ironNugget.imageView);
     Food.getChildren().addAll(limite3,limite4,beurre.imageView,ble.imageView,burgerPain.imageView,farine.imageView,fromage.imageView,pomme.imageView,salade.imageView,tomate.imageView);
     Life.getChildren().addAll(limite5,limite6,life.imageView);
@@ -486,6 +485,8 @@ public class Mouvement extends Application {
             	  if(1<=IdnouvelObjet && IdnouvelObjet<=17){
             		  Base.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
             		  selected = Base.getChildren().get(Base.getChildren().size()-1);
+            		  ((ImageView) selected).setFitHeight(30);
+            		  ((ImageView) selected).setFitWidth(30);
             		  selected.setTranslateX(-330+(51*Math.round((Base.getChildren().size()-3)/3)));selected.setTranslateY(130+51*((Base.getChildren().size())%3));
             		  all.getChildren().clear();
                 	  all.getChildren().addAll(Base);
@@ -494,6 +495,8 @@ public class Mouvement extends Application {
             	  else if(18<=IdnouvelObjet && IdnouvelObjet<=28){
             		  Food.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
             		  selected = Food.getChildren().get(Food.getChildren().size()-1);
+            		  ((ImageView) selected).setFitHeight(30);
+            		  ((ImageView) selected).setFitWidth(30);
             		  selected.setTranslateX(-330+(51*Math.round((Food.getChildren().size()-3)/3)));selected.setTranslateY(130+51*((Food.getChildren().size())%3));
             		  all.getChildren().clear();
                 	  all.getChildren().addAll(Food);
@@ -502,6 +505,8 @@ public class Mouvement extends Application {
             	  else if(29<=IdnouvelObjet && IdnouvelObjet<=35){
             		  Life.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
             		  selected = Life.getChildren().get(Life.getChildren().size()-1);
+            		  ((ImageView) selected).setFitHeight(30);
+            		  ((ImageView) selected).setFitWidth(30);
               		  selected.setTranslateX(-330+(51*Math.round((Life.getChildren().size()-3)/3)));selected.setTranslateY(130+51*((Life.getChildren().size())%3));
             		  all.getChildren().clear();
                 	  all.getChildren().addAll(Life);
@@ -510,6 +515,8 @@ public class Mouvement extends Application {
             	  else if(36<=IdnouvelObjet && IdnouvelObjet<=79){
             		  Weapon.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
             		  selected = Weapon.getChildren().get(Weapon.getChildren().size()-1);
+            		  ((ImageView) selected).setFitHeight(30);
+            		  ((ImageView) selected).setFitWidth(30);
             		  selected.setTranslateX(-330+(51*Math.round((Weapon.getChildren().size()-3)/3)));selected.setTranslateY(130+51*((Weapon.getChildren().size())%3));
             		  all.getChildren().clear();
                 	  all.getChildren().addAll(Weapon);
