@@ -401,8 +401,7 @@ public class Mouvement extends Application {
               public void handle(MouseEvent e) {
             	  all.getChildren().clear();
             	  all.getChildren().addAll(Base);
-            	  douquonest = 0;
-            	  
+            	  douquonest = 0;	  
               }
             });
     
@@ -415,7 +414,6 @@ public class Mouvement extends Application {
             	  all.getChildren().addAll(Food);
             	  douquonest = 1;
             	  
-            	  
               }
             });
     
@@ -426,9 +424,7 @@ public class Mouvement extends Application {
               public void handle(MouseEvent e) {
             	  all.getChildren().clear();
             	  all.getChildren().addAll(Life);
-            	  douquonest = 2;
-            	  
-            	  
+            	  douquonest = 2;	  
               }
             });
     
@@ -439,8 +435,7 @@ public class Mouvement extends Application {
               public void handle(MouseEvent e) {
             	  all.getChildren().clear();
             	  all.getChildren().addAll(Weapon);
-            	  douquonest = 3;
-            	  
+            	  douquonest = 3;	  
               }
             });
     
@@ -571,6 +566,7 @@ public class Mouvement extends Application {
         
         
     });
+    /////   Gère les indices au passage de la souris
     sansFA1.setOnMouseEntered(new EventHandler<MouseEvent>() {
         @Override
         public void handle(MouseEvent t) {Succes.getChildren().add(sansFAT1);}});
