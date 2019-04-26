@@ -72,6 +72,7 @@ public class Mouvement extends Application {
 	  ImageView decor1 = new ImageView(new File("fond_ecran2.png").toURI().toString());
 	  ImageView decor2 = new ImageView(new File("fond_ecran2.png").toURI().toString());
 	  ImageView craft = new ImageView(new File("fond_craft.png").toURI().toString());
+	  ImageView craftOk = new ImageView(new File("fond_craft_ok.png").toURI().toString());
 	  ImageView mini_craft = new ImageView(new File("mini_fond_craft.png").toURI().toString());
 	  ImageView Dossier = new ImageView(new File("Dossier.png").toURI().toString());
 	  ImageView inventaire = new ImageView(new File("inventory.png").toURI().toString());
@@ -201,9 +202,9 @@ public class Mouvement extends Application {
 	  creationCraft craft_11 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,20,0,25,27,26,0,20,0)),21);
 	  creationCraft craft_12 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,20,0,27,25,26,0,20,0)),21);
 	  creationCraft craft_13 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,20,0,27,26,25,0,20,0)),21);
-	  creationCraft craft_38 = new creationCraft(new ArrayList<Integer>(Arrays.asList(51,31,0,0,0,0,0,0,0)),27);
-	  creationCraft craft_39 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,51,31,0,0,0,0)),27);
-	  creationCraft craft_40 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,51,31,0)),27);
+	  creationCraft craft_38 = new creationCraft(new ArrayList<Integer>(Arrays.asList(51,29,0,0,0,0,0,0,0)),27);
+	  creationCraft craft_39 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,51,29,0,0,0,0)),27);
+	  creationCraft craft_40 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,51,29,0)),27);
 	  
 	  //Life
 	  creationCraft craft_20 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,10,0,0,32,0,0)),30);
@@ -214,6 +215,10 @@ public class Mouvement extends Application {
 	  creationCraft craft_25 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,32,0,0,6,0,0,0)),31);
 	  creationCraft craft_1 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,4,0,4,28,4,0,4,0)),32);
 	  creationCraft craft_15 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,9,0,9,28,9,0,9,0)),34);
+	  creationCraft craft_41 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,28,0,0,1,0,0)),29);
+	  creationCraft craft_42 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,28,0,0,1,0)),29);
+	  creationCraft craft_43 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,28,0,0,1)),29);
+	  creationCraft craft_44 = new creationCraft(new ArrayList<Integer>(Arrays.asList(27,27,27,27,27,27,27,27,27)),33);
 	  
 	  //Weapon
 	 
@@ -238,6 +243,8 @@ public class Mouvement extends Application {
 	  dicoCraft.put(100, craft_32);dicoCraft.put(101, craft_33);dicoCraft.put(102, craft_34);
 	  dicoCraft.put(110, craft_35);dicoCraft.put(111, craft_36);dicoCraft.put(112, craft_37);
 	  dicoCraft.put(120, craft_38);dicoCraft.put(121, craft_39);dicoCraft.put(122, craft_40);
+	  dicoCraft.put(130, craft_41);dicoCraft.put(131, craft_42);dicoCraft.put(132, craft_43);
+	  dicoCraft.put(140, craft_44);
 	  
 	  
     Button Bbase = new Button("Base");
@@ -333,6 +340,7 @@ public class Mouvement extends Application {
     
     //Positionnement du Décor dans le layout1
     craft.setTranslateX(-55);craft.setTranslateY(-85);
+    craftOk.setTranslateX(-55);craftOk.setTranslateY(-85);
     buttonAdd.setTranslateX(82);buttonAdd.setTranslateY(-9);buttonAdd.setMinWidth(54);buttonAdd.setMaxHeight(5);
     buttonDel.setTranslateX(82);buttonDel.setTranslateY(18);
     Dossier.setTranslateX(300);Dossier.setTranslateY(-185);
@@ -434,6 +442,8 @@ public class Mouvement extends Application {
             new EventHandler<MouseEvent>() {
               @Override
               public void handle(MouseEvent e) {
+            	  layout1.getChildren().clear();
+              	  layout1.getChildren().addAll(decor1,craft,Dossier,inventaire,all,toolBar,buttonDel,buttonAdd,Matrice);
             	  caMarche = false;
             	  for(int i =0;i<matrice.length*matrice.length;i++){
             		  matrice[i%3][i/3] = 0;}
@@ -457,6 +467,8 @@ public class Mouvement extends Application {
               public void handle(MouseEvent e) {
             	  buttonAdd.setStyle("-fx-background-color: #00FF2D;");
             	  if(caMarche == true) {
+            	  layout1.getChildren().clear();
+                  layout1.getChildren().addAll(decor1,craft,Dossier,inventaire,all,toolBar,buttonDel,buttonAdd,Matrice);
             	  caMarche = false;
             	  clef = clef/10*10;
             	  for(int i=0;i<10;i++) {
@@ -662,6 +674,8 @@ public class Mouvement extends Application {
                         if (selected.getId() != null && matrice[i/3][i%3] ==0) {
                         	matrice[i/3][i%3] = Integer.valueOf(selected.getId()); //La matrice récupère l'ID de la Node.
                         if(caMarche ==true) { //delete le resultat si on rajoute un node dans la matrice
+                        layout1.getChildren().clear();
+                    	layout1.getChildren().addAll(decor1,craft,Dossier,inventaire,all,toolBar,buttonDel,buttonAdd,Matrice);
                         Matrice.getChildren().remove(Matrice.getChildren().size()-1);}
                         
                         Matrice.getChildren().add(selected);
@@ -742,7 +756,8 @@ public class Mouvement extends Application {
         	if(compteur==craft_1.liste.size() && compteur==liste.size()) {
         		caMarche = true;
         		creationImage newImage = new creationImage(listImage.get(dicoCraft.get(clef).resultat), String.valueOf(dicoCraft.get(clef).resultat));
-        		
+        		layout1.getChildren().clear();
+        		layout1.getChildren().addAll(decor1,craftOk,Dossier,inventaire,all,toolBar,buttonDel,buttonAdd,Matrice);
         		Matrice.getChildren().add(newImage.imageView);
         		Matrice.getChildren().get(Matrice.getChildren().size()-1).setTranslateX(85);
         		Matrice.getChildren().get(Matrice.getChildren().size()-1).setTranslateY(-80);
