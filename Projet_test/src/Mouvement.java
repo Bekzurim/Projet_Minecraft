@@ -204,18 +204,18 @@ public class Mouvement extends Application {
 	  creationCraft craft_29 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,3,0,0,3,0,0)),8);
 	  creationCraft craft_30 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,3,0,0,3,0)),8);
 	  creationCraft craft_31 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,3,0,0,3)),8);
-	  creationCraft craft_35 = new creationCraft(new ArrayList<Integer>(Arrays.asList(52,31,0,0,0,0,0,0,0)),9);
-	  creationCraft craft_36 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,52,31,0,0,0,0)),9);
-	  creationCraft craft_37 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,52,31,0)),9);
+	  creationCraft craft_35 = new creationCraft(new ArrayList<Integer>(Arrays.asList(59,36,0,0,0,0,0,0,0)),9);
+	  creationCraft craft_36 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,59,36,0,0,0,0)),9);
+	  creationCraft craft_37 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,59,36,0)),9);
 	  creationCraft craft_2 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,5,0,0,7,0,0)),11);
 	  creationCraft craft_3 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,5,0,0,7,0)),11);
 	  creationCraft craft_4 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,5,0,0,7)),11);
 	  creationCraft craft_5 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,13,0,0,7,0,0)),14);
 	  creationCraft craft_6 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,13,0,0,7,0)),14);
 	  creationCraft craft_7 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,13,0,0,7)),14);
-	  creationCraft craft_45 = new creationCraft(new ArrayList<Integer>(Arrays.asList(52,32,0,0,0,0,0,0,0)),15);
-	  creationCraft craft_46 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,52,32,0,0,0,0)),15);
-	  creationCraft craft_47 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,52,32,0)),15);
+	  creationCraft craft_45 = new creationCraft(new ArrayList<Integer>(Arrays.asList(59,37,0,0,0,0,0,0,0)),15);
+	  creationCraft craft_46 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,59,37,0,0,0,0)),15);
+	  creationCraft craft_47 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,59,37,0)),15);
 	  
 	  //Food
 	  creationCraft craft_8 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,21,0,26,27,28,0,21,0)),22);
@@ -224,33 +224,33 @@ public class Mouvement extends Application {
 	  creationCraft craft_11 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,21,0,26,28,27,0,21,0)),22);
 	  creationCraft craft_12 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,21,0,28,26,27,0,21,0)),22);
 	  creationCraft craft_13 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,21,0,28,27,26,0,21,0)),22);
-	  creationCraft craft_38 = new creationCraft(new ArrayList<Integer>(Arrays.asList(52,30,0,0,0,0,0,0,0)),28);
-	  creationCraft craft_39 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,52,30,0,0,0,0)),28);
-	  creationCraft craft_40 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,52,30,0)),28);
+	  creationCraft craft_38 = new creationCraft(new ArrayList<Integer>(Arrays.asList(59,35,0,0,0,0,0,0,0)),28);
+	  creationCraft craft_39 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,59,35,0,0,0,0)),28);
+	  creationCraft craft_40 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,59,35,0)),28);
 	  
 	  //Life
-	  creationCraft craft_20 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,10,0,0,33,0,0)),31);
-	  creationCraft craft_21 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,10,0,0,33,0)),31);
-	  creationCraft craft_22 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,10,0,0,33)),31);
-	  creationCraft craft_23 = new creationCraft(new ArrayList<Integer>(Arrays.asList(33,0,0,6,0,0,0,0,0)),32);
-	  creationCraft craft_24 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,33,0,0,6,0,0,0,0)),32);
-	  creationCraft craft_25 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,33,0,0,6,0,0,0)),32);
-	  creationCraft craft_1 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,4,0,4,29,4,0,4,0)),33);
-	  creationCraft craft_15 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,9,0,9,29,9,0,9,0)),35);
-	  creationCraft craft_41 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,29,0,0,1,0,0)),30);
-	  creationCraft craft_42 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,29,0,0,1,0)),30);
-	  creationCraft craft_43 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,29,0,0,1)),30);
+	  creationCraft craft_20 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,10,0,0,38,0,0)),36);
+	  creationCraft craft_21 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,10,0,0,38,0)),36);
+	  creationCraft craft_22 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,10,0,0,38)),36);
+	  creationCraft craft_23 = new creationCraft(new ArrayList<Integer>(Arrays.asList(38,0,0,6,0,0,0,0,0)),37);
+	  creationCraft craft_24 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,38,0,0,6,0,0,0,0)),37);
+	  creationCraft craft_25 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,38,0,0,6,0,0,0)),37);
+	  creationCraft craft_1 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,4,0,4,34,4,0,4,0)),38);
+	  creationCraft craft_15 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,9,0,9,34,9,0,9,0)),40);
+	  creationCraft craft_41 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,34,0,0,1,0,0)),35);
+	  creationCraft craft_42 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,34,0,0,1,0)),35);
+	  creationCraft craft_43 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,34,0,0,1)),35);
 	  creationCraft craft_44 = new creationCraft(new ArrayList<Integer>(Arrays.asList(28,28,28,28,28,28,28,28,28)),34);
 	  
 	  //Weapon
 	 
-	  creationCraft craft_14 = new creationCraft(new ArrayList<Integer>(Arrays.asList(14,14,14,14,14,14,0,14,0)),42);
-	  creationCraft craft_32 = new creationCraft(new ArrayList<Integer>(Arrays.asList(14,0,0,14,0,0,8,0,0)),52);
-	  creationCraft craft_33 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,14,0,0,14,0,0,8,0)),52);
-	  creationCraft craft_34 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,14,0,0,14,0,0,8)),52);
-	  creationCraft craft_48 = new creationCraft(new ArrayList<Integer>(Arrays.asList(9,0,0,8,0,0,15,0,0)),45);
-	  creationCraft craft_49 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,9,0,0,8,0,0,15,0)),45);
-	  creationCraft craft_50 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,9,0,0,8,0,0,15)),45);
+	  creationCraft craft_14 = new creationCraft(new ArrayList<Integer>(Arrays.asList(14,14,14,14,14,14,0,14,0)),49);
+	  creationCraft craft_32 = new creationCraft(new ArrayList<Integer>(Arrays.asList(14,0,0,14,0,0,8,0,0)),59);
+	  creationCraft craft_33 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,14,0,0,14,0,0,8,0)),59);
+	  creationCraft craft_34 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,14,0,0,14,0,0,8)),59);
+	  creationCraft craft_48 = new creationCraft(new ArrayList<Integer>(Arrays.asList(9,0,0,8,0,0,15,0,0)),52);
+	  creationCraft craft_49 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,9,0,0,8,0,0,15,0)),52);
+	  creationCraft craft_50 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,9,0,0,8,0,0,15)),52);
 
 	  
 	  //Creation du dico avec les crafts
@@ -510,7 +510,7 @@ public class Mouvement extends Application {
                 	  all.getChildren().addAll(Base);
                 	  douquonest = 0;
             	  }
-            	  else if(18<=IdnouvelObjet && IdnouvelObjet<=28){ //Place nouveau Food
+            	  else if(18<=IdnouvelObjet && IdnouvelObjet<=33){ //Place nouveau Food
             		  Food.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
             		  selected = Food.getChildren().get(Food.getChildren().size()-1);
             		  ((ImageView) selected).setFitHeight(30);
@@ -520,7 +520,7 @@ public class Mouvement extends Application {
                 	  all.getChildren().addAll(Food);
                 	  douquonest = 1;
             	  }
-            	  else if(29<=IdnouvelObjet && IdnouvelObjet<=35){ //Place nouveau Life
+            	  else if(34<=IdnouvelObjet && IdnouvelObjet<=42){ //Place nouveau Life
             		  Life.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
             		  selected = Life.getChildren().get(Life.getChildren().size()-1);
             		  ((ImageView) selected).setFitHeight(30);
@@ -530,7 +530,7 @@ public class Mouvement extends Application {
                 	  all.getChildren().addAll(Life);
                 	  douquonest = 2;
             	  }
-            	  else if(36<=IdnouvelObjet && IdnouvelObjet<=79){ //Place nouveau Weapon
+            	  else if(43<=IdnouvelObjet && IdnouvelObjet<=96){ //Place nouveau Weapon
             		  Weapon.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
             		  selected = Weapon.getChildren().get(Weapon.getChildren().size()-1);
             		  ((ImageView) selected).setFitHeight(30);
