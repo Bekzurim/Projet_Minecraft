@@ -294,13 +294,13 @@ public class Mouvement extends Application {
 	toolBar.setTranslateY(86);
 	
 	final VBox vb = new VBox();
-	vb.setLayoutX(5);
     vb.setSpacing(10);
     
     String style = "-fx-background-color: rgba(23, 27, 24, 0.9);";
     vb.setStyle(style);
     vb.getChildren().addAll(sanstest,creepertest,killtest,caketest,burgertest,meatBoytest,MLGtest,lightSabertest,pongtest);
-    vb.setTranslateX(580);
+    vb.setTranslateX(275);
+    vb.setMaxWidth(150);
     
 	
 	//Les 4 groupes, permet de clean facilement une catégorie. +reessayer stackpane (peut être)
@@ -397,6 +397,8 @@ public class Mouvement extends Application {
     //On lance la fenêtre
     scene1 = new Scene(layout1,700,500);
     scene2 = new Scene(layout2,700,500);
+    stage.setMaxWidth(700);
+    stage.setMaxHeight(500);
     stage.setScene(scene1);
     stage.getIcons().add(icon);
     stage.setTitle("Projet Minecraft");
@@ -569,14 +571,14 @@ public class Mouvement extends Application {
     vb.setOnScroll((ScrollEvent event) -> {
         //scroll de l'historique
         double deltaY = event.getDeltaY();
-        if (deltaY < 0 && vb.getChildren().get(vb.getChildren().size()-1).getTranslateY()>-310){
+        if (deltaY < 0 && vb.getChildren().get(vb.getChildren().size()-1).getTranslateY()>-300){
         	for(int i=0; i<vb.getChildren().size(); i++) {
-        	vb.getChildren().get(i).setTranslateY((vb.getChildren().get(i).getTranslateY()) + deltaY/2);
+        	vb.getChildren().get(i).setTranslateY((vb.getChildren().get(i).getTranslateY()) + deltaY);
         	}
         }
-        if(deltaY > 0 && vb.getChildren().get(0).getTranslateY()<300) {
+        if(deltaY > 0 && vb.getChildren().get(0).getTranslateY()<280) {
         	for(int i=0; i<vb.getChildren().size(); i++) {
-            	vb.getChildren().get(i).setTranslateY((vb.getChildren().get(i).getTranslateY()) + deltaY/2);
+            	vb.getChildren().get(i).setTranslateY((vb.getChildren().get(i).getTranslateY()) + deltaY);
             	}
         }
         
