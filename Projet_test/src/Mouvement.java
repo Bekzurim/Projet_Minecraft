@@ -328,19 +328,19 @@ public class Mouvement extends Application {
     //Positionnement des Nodes à la mano.
     for(int i=0; i<Base.getChildren().size()-2; i++){
     		selected = Base.getChildren().get(i+2);
-    		selected.setTranslateX(-330+(51*Math.round(i/3)));selected.setTranslateY(130+51*(i%3));
+    		selected.setTranslateX(-330+(51*Math.round(i/3)));selected.setTranslateY(130+50*(i%3));
     }
     for(int i=0; i<Food.getChildren().size()-2; i++){
 		selected = Food.getChildren().get(i+2);
-		selected.setTranslateX(-330+(51*Math.round(i/3)));selected.setTranslateY(130+51*(i%3));
+		selected.setTranslateX(-330+(51*Math.round(i/3)));selected.setTranslateY(130+50*(i%3));
     }
     for(int i=0; i<Life.getChildren().size()-2; i++){
 		selected = Life.getChildren().get(i+2);
-		selected.setTranslateX(-330+(51*Math.round(i/3)));selected.setTranslateY(130+51*(i%3));
+		selected.setTranslateX(-330+(51*Math.round(i/3)));selected.setTranslateY(130+50*(i%3));
     }
     for(int i=0; i<Weapon.getChildren().size()-2; i++){
 		selected = Weapon.getChildren().get(i+2);
-		selected.setTranslateX(-330+(51*Math.round(i/3)));selected.setTranslateY(130+51*(i%3));
+		selected.setTranslateX(-330+(51*Math.round(i/3)));selected.setTranslateY(130+50*(i%3));
     }
     selected = null;
     
