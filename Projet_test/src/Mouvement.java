@@ -33,9 +33,9 @@ public class Mouvement extends Application {
 
 @Override public void start(final Stage stage) throws Exception {
 	  //Liste pour récuprérer les images en fonction de l'ID
-	  List<String> listImage = Arrays.asList("0","Base/Dirt.png","Base/bois.png","Base/wooden_block.png","Base/rock.png","Base/sand.png","Base/wind.png","Base/fire_2.png","Base/stick.png","Base/bone.png","Base/water.png","Base/glass.png","Base/glaçon.png","Base/iron_nugget.png","Base/iron_ingot.png","Base/feather.png","Base/Poubelle_1.png","Base/Poubelle_2.png",
-	  "Food/baguette.png","Food/beurre.png","Food/ble.png","Food/burger_pain.png","Food/burger.png","Food/farine.png","Food/fromage.png","Food/pomme.png","Food/salade.png","Food/tomate.png","Food/viande.png",
-	  "Life/life.png","Life/cow.png","Life/fish.png","Life/bird.png","Life/egg.png","Life/SMB.png","Life/sans.png",
+	  List<String> listImage = Arrays.asList("0","Base/Dirt.png","Base/bois.png","Base/wooden_block.png","Base/rock.png","Base/sand.png","Base/wind.png","Base/fire_2.png","Base/stick.png","Base/bone.png","Base/water.png","Base/glass.png","Base/glaçon.png","Base/iron_nugget.png","Base/iron_ingot.png","Base/feather.png","Base/silex2.png","Base/redstone.png",
+	  "Food/baguette.png","Food/beurre.png","Food/ble.png","Food/burger_pain.png","Food/burger.png","Food/farine.png","Food/fromage.png","Food/pomme.png","Food/salade.png","Food/tomate.png","Food/viande.png","oeuf_brouillé.png","Food/noodles.png","Food/cake.png","Food/soda.png","Food/soupe_poisson.png",
+	  "Life/life.png","Life/cow.png","Life/fish.png","Life/bird.png","Life/egg.png","Life/SMB.png","Life/sans.png","Life/human.png","Life/creeper.png",
 	  "Weapon/ak.png","Weapon/axe.png","Weapon/backpack.png","Weapon/baseball_bat.png","Weapon/battle_axe.png","Weapon/battle_hammer.png","Weapon/bouclier.png","Weapon/bouteille_alcool.png","Weapon/bow.png","Weapon/bow-arrow.png","Weapon/butcher_knife.png","Weapon/chainsaw.png","Weapon/crossbow.png","Weapon/crossbow_arrow.png","Weapon/dague.png","Weapon/double_spear.png","Weapon/Epee_classique.png","Weapon/gas_mask.png","Weapon/grenade.png","Weapon/grenade_laucher.png","Weapon/guandao.png","Weapon/hunter_knife.png","Weapon/katana.png","Weapon/Katana1.png","Weapon/kunai.png","Weapon/lance.png","Weapon/lightsaber.png","Weapon/medkiy.png","Weapon/military_knife.png","Weapon/minigun.png","Weapon/molotov_cocktail.png","Weapon/pistol.png","Weapon/pistol_ammo.png","Weapon/revolver.png","Weapon/rocket.png","Weapon/rocket_launcher.png","Weapon/scythe.png","Weapon/shotgun.png","Weapon/shuriken.png","Weapon/smoke_grenade.png","Weapon/sniper.png","Weapon/tanto1.png","Weapon/throwing_knife.png","Weapon/thunder.png"
 	  );
 
@@ -113,8 +113,8 @@ public class Mouvement extends Application {
 	  creationImage ironNugget = new creationImage("Base/iron_nugget.png","13");
 	  creationImage ironIngot = new creationImage("Base/iron_ingot.png","14");
 	  creationImage feather = new creationImage("Base/feather.png","15");
-	  creationImage Poubelle_1 = new creationImage("Base/Poubelle_1.png","16");
-	  creationImage Poubelle_2 = new creationImage("Base/Poubelle_2.png","17");
+	  creationImage silex = new creationImage("Base/silex2.png","16");
+	  creationImage redstone = new creationImage("Base/redstone.png","17");
 	  
 	  //La bouffe
 	  creationImage baguette = new creationImage("Food/baguette.png","18");
@@ -128,61 +128,68 @@ public class Mouvement extends Application {
 	  creationImage salade = new creationImage("Food/salade.png","26");
 	  creationImage tomate = new creationImage("Food/tomate.png","27");
 	  creationImage viande = new creationImage("Food/viande.png","28");
+	  creationImage oeufBrouillé = new creationImage("Food/oeuf_brouillé.png","29");
+	  creationImage noodles = new creationImage("Food/noodles.png","30");
+	  creationImage cake = new creationImage("Food/cake.png","31");
+	  creationImage soda = new creationImage("Food/soda.png","32");
+	  creationImage soupe_poisson = new creationImage("Food/soupe_poisson.png","33");
 	  
 	//La vie
-	  creationImage life = new creationImage("Life/life.png","29");
-	  creationImage cow = new creationImage("Life/cow.png","30");
-	  creationImage fish = new creationImage("Life/fish.png","31");
-	  creationImage bird = new creationImage("Life/bird.png","32");
-	  creationImage egg = new creationImage("Life/egg.png","33");
-	  creationImage SMB = new creationImage("Life/SMB.png","34");
-	  creationImage Sans = new creationImage("Life/Sans.png","35");
+	  creationImage life = new creationImage("Life/life.png","34");
+	  creationImage cow = new creationImage("Life/cow.png","35");
+	  creationImage fish = new creationImage("Life/fish.png","36");
+	  creationImage bird = new creationImage("Life/bird.png","37");
+	  creationImage egg = new creationImage("Life/egg.png","38");
+	  creationImage SMB = new creationImage("Life/SMB.png","39");
+	  creationImage Sans = new creationImage("Life/Sans.png","40");
+	  creationImage human = new creationImage("Life/human.png","41");
+	  creationImage creeper = new creationImage("Life/creeper.png","42");
 	  
 	  //Les armes
-	  creationImage ak = new creationImage("Weapon/ak.png","36");
-	  creationImage axe = new creationImage("Weapon/axe.png","37");
-	  creationImage backpack = new creationImage("Weapon/backpack.png","38");
-	  creationImage baseball_bat = new creationImage("Weapon/baseball_bat.png","39");
-	  creationImage battle_axe = new creationImage("Weapon/battle_axe.png","40");
-	  creationImage battle_hammer = new creationImage("Weapon/battle_hammer.png","41");
-	  creationImage bouclier = new creationImage("Weapon/bouclier.png","42");
-	  creationImage bouteille_alcool = new creationImage("Weapon/bouteille_alcool.png","43");
-	  creationImage bow = new creationImage("Weapon/bow.png","44");
-	  creationImage bow_arrow = new creationImage("Weapon/bow-arrow.png","45");
-	  creationImage butcher_knife = new creationImage("Weapon/butcher_knife.png","46");
-	  creationImage chainsaw = new creationImage("Weapon/chainsaw.png","47");
-	  creationImage crossbow = new creationImage("Weapon/crossbow.png","48");
-	  creationImage crossbow_arrow = new creationImage("Weapon/crossbow_arrow.png","49");
-	  creationImage dague = new creationImage("Weapon/dague.png","50");
-	  creationImage double_spear = new creationImage("Weapon/double_spear.png","51");
-	  creationImage Epee_classique = new creationImage("Weapon/Epee_classique.png","52");
-	  creationImage gas_mask = new creationImage("Weapon/gas_mask.png","53");
-	  creationImage grenade = new creationImage("Weapon/grenade.png","54");
-	  creationImage grenade_laucher = new creationImage("Weapon/grenade_laucher.png","55");
-	  creationImage guandao = new creationImage("Weapon/guandao.png","56");
-	  creationImage hunter_knife = new creationImage("Weapon/hunter_knife.png","57");
-	  creationImage katana = new creationImage("Weapon/katana.png","58");
-	  creationImage Katana1 = new creationImage("Weapon/Katana1.png","59");
-	  creationImage kunai = new creationImage("Weapon/kunai.png","60");
-	  creationImage lance = new creationImage("Weapon/lance.png","61");
-	  creationImage lightsaber = new creationImage("Weapon/lightsaber.png","62");
-	  creationImage medkiy = new creationImage("Weapon/medkiy.png","63");
-	  creationImage military_knife = new creationImage("Weapon/military_knife.png","64");
-	  creationImage minigun = new creationImage("Weapon/minigun.png","65");
-	  creationImage molotov_cocktail = new creationImage("Weapon/molotov_cocktail.png","66");
-	  creationImage pistol = new creationImage("Weapon/pistol.png","67");
-	  creationImage pistol_ammo = new creationImage("Weapon/pistol_ammo.png","68");
-	  creationImage revolver = new creationImage("Weapon/revolver.png","69");
-	  creationImage rocket = new creationImage("Weapon/rocket.png","70");
-	  creationImage rocket_launcher = new creationImage("Weapon/rocket_launcher.png","71");
-	  creationImage scythe = new creationImage("Weapon/scythe.png","72");
-	  creationImage shotgun = new creationImage("Weapon/shotgun.png","73");
-	  creationImage shuriken = new creationImage("Weapon/shuriken.png","74");
-	  creationImage smoke_grenade = new creationImage("Weapon/smoke_grenade.png","75");
-	  creationImage sniper = new creationImage("Weapon/sniper.png","76");
-	  creationImage tanto1 = new creationImage("Weapon/tanto1.png","77");
-	  creationImage throwing_knife = new creationImage("Weapon/throwing_knife.png","78");
-	  creationImage thunder = new creationImage("Weapon/thunder.png","79");
+	  creationImage ak = new creationImage("Weapon/ak.png","43");
+	  creationImage axe = new creationImage("Weapon/axe.png","44");
+	  creationImage backpack = new creationImage("Weapon/backpack.png","45");
+	  creationImage baseball_bat = new creationImage("Weapon/baseball_bat.png","46");
+	  creationImage battle_axe = new creationImage("Weapon/battle_axe.png","47");
+	  creationImage battle_hammer = new creationImage("Weapon/battle_hammer.png","48");
+	  creationImage bouclier = new creationImage("Weapon/bouclier.png","49");
+	  creationImage bouteille_alcool = new creationImage("Weapon/bouteille_alcool.png","50");
+	  creationImage bow = new creationImage("Weapon/bow.png","51");
+	  creationImage bow_arrow = new creationImage("Weapon/bow-arrow.png","52");
+	  creationImage butcher_knife = new creationImage("Weapon/butcher_knife.png","53");
+	  creationImage chainsaw = new creationImage("Weapon/chainsaw.png","54");
+	  creationImage crossbow = new creationImage("Weapon/crossbow.png","55");
+	  creationImage crossbow_arrow = new creationImage("Weapon/crossbow_arrow.png","56");
+	  creationImage dague = new creationImage("Weapon/dague.png","57");
+	  creationImage double_spear = new creationImage("Weapon/double_spear.png","58");
+	  creationImage Epee_classique = new creationImage("Weapon/Epee_classique.png","59");
+	  creationImage gas_mask = new creationImage("Weapon/gas_mask.png","70");
+	  creationImage grenade = new creationImage("Weapon/grenade.png","71");
+	  creationImage grenade_laucher = new creationImage("Weapon/grenade_laucher.png","72");
+	  creationImage guandao = new creationImage("Weapon/guandao.png","73");
+	  creationImage hunter_knife = new creationImage("Weapon/hunter_knife.png","74");
+	  creationImage katana = new creationImage("Weapon/katana.png","75");
+	  creationImage Katana1 = new creationImage("Weapon/Katana1.png","76");
+	  creationImage kunai = new creationImage("Weapon/kunai.png","77");
+	  creationImage lance = new creationImage("Weapon/lance.png","78");
+	  creationImage lightsaber = new creationImage("Weapon/lightsaber.png","79");
+	  creationImage medkiy = new creationImage("Weapon/medkiy.png","80");
+	  creationImage military_knife = new creationImage("Weapon/military_knife.png","81");
+	  creationImage minigun = new creationImage("Weapon/minigun.png","82");
+	  creationImage molotov_cocktail = new creationImage("Weapon/molotov_cocktail.png","83");
+	  creationImage pistol = new creationImage("Weapon/pistol.png","84");
+	  creationImage pistol_ammo = new creationImage("Weapon/pistol_ammo.png","85");
+	  creationImage revolver = new creationImage("Weapon/revolver.png","86");
+	  creationImage rocket = new creationImage("Weapon/rocket.png","87");
+	  creationImage rocket_launcher = new creationImage("Weapon/rocket_launcher.png","88");
+	  creationImage scythe = new creationImage("Weapon/scythe.png","89");
+	  creationImage shotgun = new creationImage("Weapon/shotgun.png","90");
+	  creationImage shuriken = new creationImage("Weapon/shuriken.png","91");
+	  creationImage smoke_grenade = new creationImage("Weapon/smoke_grenade.png","92");
+	  creationImage sniper = new creationImage("Weapon/sniper.png","93");
+	  creationImage tanto1 = new creationImage("Weapon/tanto1.png","94");
+	  creationImage throwing_knife = new creationImage("Weapon/throwing_knife.png","95");
+	  creationImage thunder = new creationImage("Weapon/thunder.png","96");
 	  
 	  //Création des crafts
 	  
