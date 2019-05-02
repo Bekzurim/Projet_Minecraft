@@ -39,32 +39,43 @@ public class Mouvement extends Application {
 	  );
 
 	  //Achievements
-	  ImageView sansFA1 = new ImageView(new File("sansFutureAchievement.png").toURI().toString());
-	  ImageView sansFAT1 = new ImageView(new File("sansFutureAchievementtxt.png").toURI().toString());
-	  ImageView sansFA2 = new ImageView(new File("sansFutureAchievement.png").toURI().toString());
-	  ImageView sansFAT2 = new ImageView(new File("sansFutureAchievementtxt.png").toURI().toString());
-	  ImageView sansFA3 = new ImageView(new File("sansFutureAchievement.png").toURI().toString());
-	  ImageView sansFAT3 = new ImageView(new File("sansFutureAchievementtxt.png").toURI().toString());
-	  ImageView sansFA4 = new ImageView(new File("sansFutureAchievement.png").toURI().toString());
-	  ImageView sansFAT4 = new ImageView(new File("sansFutureAchievementtxt.png").toURI().toString());
-	  ImageView sansFA5 = new ImageView(new File("sansFutureAchievement.png").toURI().toString());
-	  ImageView sansFAT5 = new ImageView(new File("sansFutureAchievementtxt.png").toURI().toString());
-	  ImageView sansFA6 = new ImageView(new File("sansFutureAchievement.png").toURI().toString());
-	  ImageView sansFAT6 = new ImageView(new File("sansFutureAchievementtxt.png").toURI().toString());
-	  ImageView sansFA7 = new ImageView(new File("sansFutureAchievement.png").toURI().toString());
-	  ImageView sansFAT7 = new ImageView(new File("sansFutureAchievementtxt.png").toURI().toString());
-	  ImageView sansFA8 = new ImageView(new File("sansFutureAchievement.png").toURI().toString());
-	  ImageView sansFAT8 = new ImageView(new File("sansFutureAchievementtxt.png").toURI().toString());
-	  ImageView sansA1 = new ImageView(new File("sansAchievement.png").toURI().toString());
-	  ImageView sansA2 = new ImageView(new File("sansAchievement.png").toURI().toString());
-	  ImageView sansA3 = new ImageView(new File("sansAchievement.png").toURI().toString());
-	  ImageView sansA4 = new ImageView(new File("sansAchievement.png").toURI().toString());
-	  ImageView sansA5 = new ImageView(new File("sansAchievement.png").toURI().toString());
-	  ImageView sansA6 = new ImageView(new File("sansAchievement.png").toURI().toString());
-	  ImageView sansA7 = new ImageView(new File("sansAchievement.png").toURI().toString());
-	  ImageView sansA8 = new ImageView(new File("sansAchievement.png").toURI().toString());
-	  ImageView sansTest1 = new ImageView(new File("sansAchievement.png").toURI().toString());
-	  ImageView sansTest2 = new ImageView(new File("sansAchievement.png").toURI().toString());
+	  ImageView sansFA = new ImageView(new File("sansFutureAchievement.png").toURI().toString());
+	  ImageView sansFAT = new ImageView(new File("sansFutureAchievementtxt.png").toURI().toString());
+	  ImageView creeperFA = new ImageView(new File("creeperFutureAchievement.png").toURI().toString());
+	  ImageView creeperFAT = new ImageView(new File("creeperFutureAchievementtxt.png").toURI().toString());
+	  ImageView killFA = new ImageView(new File("KillFutureAchievement.png").toURI().toString());
+	  ImageView killFAT = new ImageView(new File("KillFutureAchievementtxt.png").toURI().toString());
+	  ImageView cakeFA = new ImageView(new File("CakeFutureAchievement.png").toURI().toString());
+	  ImageView cakeFAT = new ImageView(new File("CakeFutureAchievementtxt.png").toURI().toString());
+	  ImageView burgerFA = new ImageView(new File("BurgerFutureAchievement.png").toURI().toString());
+	  ImageView burgerFAT = new ImageView(new File("BurgerFutureAchievementtxt.png").toURI().toString());
+	  ImageView meatBoyFA = new ImageView(new File("MeatBoyFutureAchievement.png").toURI().toString());
+	  ImageView meatBoyFAT = new ImageView(new File("MeatBoyFutureAchievementtxt.png").toURI().toString());
+	  ImageView MLGFA = new ImageView(new File("MLGFutureAchievement.png").toURI().toString());
+	  ImageView MLGFAT = new ImageView(new File("MLGFutureAchievementtxt.png").toURI().toString());
+	  ImageView lightSaberFA = new ImageView(new File("LightSaberFutureAchievement.png").toURI().toString());
+	  ImageView lightSaberFAT = new ImageView(new File("LightSaberFutureAchievementtxt.png").toURI().toString());
+	  ImageView pingFA = new ImageView(new File("PongFutureAchievement.png").toURI().toString());
+	  ImageView pongFAT = new ImageView(new File("PongFutureAchievementtxt.png").toURI().toString());
+	  ImageView sansA = new ImageView(new File("sansAchievement.png").toURI().toString());
+	  ImageView creeperA = new ImageView(new File("creeperAchievement.png").toURI().toString());
+	  ImageView killA = new ImageView(new File("KillAchievement.png").toURI().toString());
+	  ImageView cakeA = new ImageView(new File("CakeAchievement.png").toURI().toString());
+	  ImageView burgerA = new ImageView(new File("BurgerAchievement.png").toURI().toString());
+	  ImageView meatBoyA = new ImageView(new File("MeatBoyAchievement.png").toURI().toString());
+	  ImageView MLGA = new ImageView(new File("MLGAchievement.png").toURI().toString());
+	  ImageView lightSaberA = new ImageView(new File("LightSaberAchievement.png").toURI().toString());
+	  ImageView pongA = new ImageView(new File("PongAchievement.png").toURI().toString());
+	  
+	  ImageView sanstest = new ImageView(new File("sansAchievement.png").toURI().toString());
+	  ImageView creepertest = new ImageView(new File("creeperAchievement.png").toURI().toString());
+	  ImageView killtest = new ImageView(new File("KillAchievement.png").toURI().toString());
+	  ImageView caketest = new ImageView(new File("CakeAchievement.png").toURI().toString());
+	  ImageView burgertest = new ImageView(new File("BurgerAchievement.png").toURI().toString());
+	  ImageView meatBoytest = new ImageView(new File("MeatBoyAchievement.png").toURI().toString());
+	  ImageView MLGtest = new ImageView(new File("MLGAchievement.png").toURI().toString());
+	  ImageView lightSabertest = new ImageView(new File("LightSaberAchievement.png").toURI().toString());
+	  ImageView pongtest = new ImageView(new File("PongAchievement.png").toURI().toString());
 	  
 	  //Les bases
 	  Image icon = new Image(new File("icon.png").toURI().toString());
@@ -288,7 +299,7 @@ public class Mouvement extends Application {
     
     String style = "-fx-background-color: rgba(23, 27, 24, 0.9);";
     vb.setStyle(style);
-    vb.getChildren().addAll(sansTest1,sansTest2);
+    vb.getChildren().addAll(sanstest,creepertest,killtest,caketest,burgertest,meatBoytest,MLGtest,lightSabertest,pongtest);
     vb.setTranslateX(580);
     
 	
@@ -310,7 +321,7 @@ public class Mouvement extends Application {
     Matrice.getChildren().addAll(limite9,limite10);
     all.getChildren().addAll(Base);
     layout1.getChildren().addAll(decor1,craft,Dossier,inventaire,all,toolBar,buttonDel,buttonAdd,Matrice); //le Padre!
-    Succes.getChildren().addAll(sansFA1,sansFA2,sansFA3,sansFA4,sansFA5,sansFA6,sansFA7,sansFA8);
+    Succes.getChildren().addAll(sansFA,creeperFA,killFA,cakeFA,burgerFA,meatBoyFA,MLGFA,lightSaberFA,pingFA);
     layout2.getChildren().addAll(decor2,vb,mini_craft,Succes);
     
     //Positionnement des Nodes à la mano.
@@ -353,30 +364,33 @@ public class Mouvement extends Application {
     inventaire.setTranslateY(179);
     //Des achievements dans le layout2
     Succes.setTranslateX(-140);
-    sansA1.setTranslateX(-140);sansA1.setTranslateY(-150);
-    sansFA1.setTranslateX(-140);sansFA1.setTranslateY(-150);
-    sansFAT1.setTranslateX(-140);sansFAT1.setTranslateY(-150);
-    sansA2.setTranslateY(-150);
-    sansFA2.setTranslateY(-150);
-    sansFAT2.setTranslateY(-150);
-    sansA3.setTranslateX(140);sansA3.setTranslateY(-150);
-    sansFA3.setTranslateX(140);sansFA3.setTranslateY(-150);
-    sansFAT3.setTranslateX(140);sansFAT3.setTranslateY(-150);
-    sansA4.setTranslateX(-140);sansA4.setTranslateY(-20);
-    sansFA4.setTranslateX(-140);sansFA4.setTranslateY(-20);
-    sansFAT4.setTranslateX(-140);sansFAT4.setTranslateY(-20);
-    sansA5.setTranslateY(-20);
-    sansFA5.setTranslateY(-20);
-    sansFAT5.setTranslateY(-20);
-    sansA6.setTranslateX(140);sansA6.setTranslateY(-20);
-    sansFA6.setTranslateX(140);sansFA6.setTranslateY(-20);
-    sansFAT6.setTranslateX(140);sansFAT6.setTranslateY(-20);
-    sansA7.setTranslateX(-140);sansA7.setTranslateY(110);
-    sansFA7.setTranslateX(-140);sansFA7.setTranslateY(110);
-    sansFAT7.setTranslateX(-140);sansFAT7.setTranslateY(110);
-    sansA8.setTranslateY(110);
-    sansFA8.setTranslateY(110);
-    sansFAT8.setTranslateY(110);
+    sansA.setTranslateX(-140);sansA.setTranslateY(-150);
+    sansFA.setTranslateX(-140);sansFA.setTranslateY(-150);
+    sansFAT.setTranslateX(-140);sansFAT.setTranslateY(-150);
+    creeperA.setTranslateY(-150);
+    creeperFA.setTranslateY(-150);
+    creeperFAT.setTranslateY(-150);
+    killA.setTranslateX(140);killA.setTranslateY(-150);
+    killFA.setTranslateX(140);killFA.setTranslateY(-150);
+    killFAT.setTranslateX(140);killFAT.setTranslateY(-150);
+    cakeA.setTranslateX(-140);cakeA.setTranslateY(-20);
+    cakeFA.setTranslateX(-140);cakeFA.setTranslateY(-20);
+    cakeFAT.setTranslateX(-140);cakeFAT.setTranslateY(-20);
+    burgerA.setTranslateY(-20);
+    burgerFA.setTranslateY(-20);
+    burgerFAT.setTranslateY(-20);
+    meatBoyA.setTranslateX(140);meatBoyA.setTranslateY(-20);
+    meatBoyFA.setTranslateX(140);meatBoyFA.setTranslateY(-20);
+    meatBoyFAT.setTranslateX(140);meatBoyFAT.setTranslateY(-20);
+    MLGA.setTranslateX(-140);MLGA.setTranslateY(110);
+    MLGFA.setTranslateX(-140);MLGFA.setTranslateY(110);
+    MLGFAT.setTranslateX(-140);MLGFAT.setTranslateY(110);
+    lightSaberA.setTranslateY(110);
+    lightSaberFA.setTranslateY(110);
+    lightSaberFAT.setTranslateY(110);
+    pongA.setTranslateX(140);pongA.setTranslateY(110);
+    pingFA.setTranslateX(140);pingFA.setTranslateY(110);
+    pongFAT.setTranslateX(140);pongFAT.setTranslateY(110);
     mini_craft.setTranslateX(130);mini_craft.setTranslateY(-200);
     
     
@@ -517,8 +531,8 @@ public class Mouvement extends Application {
                 	  douquonest = 3;
             	  }
             	  if(Integer.parseInt(selected.getId()) == 35) {
-            		  Succes.getChildren().remove(sansFA1);
-            		  Succes.getChildren().addAll(sansA1);
+            		  Succes.getChildren().remove(sansFA);
+            		  Succes.getChildren().addAll(sansA);
             	  }	
             	  
             	  for(int i =0;i<matrice.length*matrice.length;i++){
@@ -551,12 +565,12 @@ public class Mouvement extends Application {
     vb.setOnScroll((ScrollEvent event) -> {
         //scroll de l'historique
         double deltaY = event.getDeltaY();
-        if (deltaY < 0 && vb.getChildren().get(vb.getChildren().size()-1).getTranslateY()>-110){
+        if (deltaY < 0 && vb.getChildren().get(vb.getChildren().size()-1).getTranslateY()>-310){
         	for(int i=0; i<vb.getChildren().size(); i++) {
         	vb.getChildren().get(i).setTranslateY((vb.getChildren().get(i).getTranslateY()) + deltaY/2);
         	}
         }
-        if(deltaY > 0 && vb.getChildren().get(0).getTranslateY()<380) {
+        if(deltaY > 0 && vb.getChildren().get(0).getTranslateY()<300) {
         	for(int i=0; i<vb.getChildren().size(); i++) {
             	vb.getChildren().get(i).setTranslateY((vb.getChildren().get(i).getTranslateY()) + deltaY/2);
             	}
@@ -566,69 +580,76 @@ public class Mouvement extends Application {
         
     });
     /////   Gère les indices au passage de la souris
-    sansFA1.setOnMouseEntered(new EventHandler<MouseEvent>() {
+    sansFA.setOnMouseEntered(new EventHandler<MouseEvent>() {
         @Override
-        public void handle(MouseEvent t) {Succes.getChildren().add(sansFAT1);}});
+        public void handle(MouseEvent t) {Succes.getChildren().add(sansFAT);}});
 
-    sansFAT1.setOnMouseExited(new EventHandler<MouseEvent>() {
+    sansFAT.setOnMouseExited(new EventHandler<MouseEvent>() {
     	@Override
-        public void handle(MouseEvent t) {Succes.getChildren().remove(sansFAT1);}});
+        public void handle(MouseEvent t) {Succes.getChildren().remove(sansFAT);}});
     
-    sansFA2.setOnMouseEntered(new EventHandler<MouseEvent>() {
+    creeperFA.setOnMouseEntered(new EventHandler<MouseEvent>() {
         @Override
-        public void handle(MouseEvent t) {Succes.getChildren().add(sansFAT2);}});
+        public void handle(MouseEvent t) {Succes.getChildren().add(creeperFAT);}});
 
-    sansFAT2.setOnMouseExited(new EventHandler<MouseEvent>() {
+    creeperFAT.setOnMouseExited(new EventHandler<MouseEvent>() {
     	@Override
-        public void handle(MouseEvent t) {Succes.getChildren().remove(sansFAT2);}});
+        public void handle(MouseEvent t) {Succes.getChildren().remove(creeperFAT);}});
     
-    sansFA3.setOnMouseEntered(new EventHandler<MouseEvent>() {
+    killFA.setOnMouseEntered(new EventHandler<MouseEvent>() {
         @Override
-        public void handle(MouseEvent t) {Succes.getChildren().add(sansFAT3);}});
+        public void handle(MouseEvent t) {Succes.getChildren().add(killFAT);}});
 
-    sansFAT3.setOnMouseExited(new EventHandler<MouseEvent>() {
+    killFAT.setOnMouseExited(new EventHandler<MouseEvent>() {
     	@Override
-        public void handle(MouseEvent t) {Succes.getChildren().remove(sansFAT3);}});
+        public void handle(MouseEvent t) {Succes.getChildren().remove(killFAT);}});
     
-    sansFA4.setOnMouseEntered(new EventHandler<MouseEvent>() {
+    cakeFA.setOnMouseEntered(new EventHandler<MouseEvent>() {
         @Override
-        public void handle(MouseEvent t) {Succes.getChildren().add(sansFAT4);}});
+        public void handle(MouseEvent t) {Succes.getChildren().add(cakeFAT);}});
 
-    sansFAT4.setOnMouseExited(new EventHandler<MouseEvent>() {
+    cakeFAT.setOnMouseExited(new EventHandler<MouseEvent>() {
     	@Override
-        public void handle(MouseEvent t) {Succes.getChildren().remove(sansFAT4);}});
+        public void handle(MouseEvent t) {Succes.getChildren().remove(cakeFAT);}});
     
-    sansFA5.setOnMouseEntered(new EventHandler<MouseEvent>() {
+    burgerFA.setOnMouseEntered(new EventHandler<MouseEvent>() {
         @Override
-        public void handle(MouseEvent t) {Succes.getChildren().add(sansFAT5);}});
+        public void handle(MouseEvent t) {Succes.getChildren().add(burgerFAT);}});
 
-    sansFAT5.setOnMouseExited(new EventHandler<MouseEvent>() {
+    burgerFAT.setOnMouseExited(new EventHandler<MouseEvent>() {
     	@Override
-        public void handle(MouseEvent t) {Succes.getChildren().remove(sansFAT5);}});
+        public void handle(MouseEvent t) {Succes.getChildren().remove(burgerFAT);}});
     
-    sansFA6.setOnMouseEntered(new EventHandler<MouseEvent>() {
+    meatBoyFA.setOnMouseEntered(new EventHandler<MouseEvent>() {
         @Override
-        public void handle(MouseEvent t) {Succes.getChildren().add(sansFAT6);}});
+        public void handle(MouseEvent t) {Succes.getChildren().add(meatBoyFAT);}});
 
-    sansFAT6.setOnMouseExited(new EventHandler<MouseEvent>() {
+    meatBoyFAT.setOnMouseExited(new EventHandler<MouseEvent>() {
     	@Override
-        public void handle(MouseEvent t) {Succes.getChildren().remove(sansFAT6);}});
+        public void handle(MouseEvent t) {Succes.getChildren().remove(meatBoyFAT);}});
     
-    sansFA7.setOnMouseEntered(new EventHandler<MouseEvent>() {
+    MLGFA.setOnMouseEntered(new EventHandler<MouseEvent>() {
         @Override
-        public void handle(MouseEvent t) {Succes.getChildren().add(sansFAT7);}});
+        public void handle(MouseEvent t) {Succes.getChildren().add(MLGFAT);}});
 
-    sansFAT7.setOnMouseExited(new EventHandler<MouseEvent>() {
+    MLGFAT.setOnMouseExited(new EventHandler<MouseEvent>() {
     	@Override
-        public void handle(MouseEvent t) {Succes.getChildren().remove(sansFAT7);}});
+        public void handle(MouseEvent t) {Succes.getChildren().remove(MLGFAT);}});
     
-    sansFA8.setOnMouseEntered(new EventHandler<MouseEvent>() {
+    lightSaberFA.setOnMouseEntered(new EventHandler<MouseEvent>() {
         @Override
-        public void handle(MouseEvent t) {Succes.getChildren().add(sansFAT8);}});
+        public void handle(MouseEvent t) {Succes.getChildren().add(lightSaberFAT);}});
 
-    sansFAT8.setOnMouseExited(new EventHandler<MouseEvent>() {
+    lightSaberFAT.setOnMouseExited(new EventHandler<MouseEvent>() {
     	@Override
-        public void handle(MouseEvent t) {Succes.getChildren().remove(sansFAT8);}});
+        public void handle(MouseEvent t) {Succes.getChildren().remove(lightSaberFAT);}});
+    pingFA.setOnMouseEntered(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent t) {Succes.getChildren().add(pongFAT);}});
+
+    pongFAT.setOnMouseExited(new EventHandler<MouseEvent>() {
+    	@Override
+        public void handle(MouseEvent t) {Succes.getChildren().remove(pongFAT);}});
     
     //Selection de la Node dans Layout1
     all.setOnMousePressed(evt -> {
