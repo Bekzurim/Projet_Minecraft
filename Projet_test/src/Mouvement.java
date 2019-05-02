@@ -464,7 +464,7 @@ public class Mouvement extends Application {
             		  matrice[i%3][i/3] = 0;}
             	  buttonDel.setStyle("-fx-background-color: #ff0000;");
             	  Matrice.getChildren().clear();
-            	  Matrice.getChildren().addAll(limite9,limite10); //peut etre pas necessaire
+            	  Matrice.getChildren().addAll(limite9,limite10); //peut être pas necessaire
               }
             });
     
