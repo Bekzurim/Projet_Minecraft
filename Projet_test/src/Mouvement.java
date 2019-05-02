@@ -534,6 +534,10 @@ public class Mouvement extends Application {
             		  Succes.getChildren().remove(sansFA);
             		  Succes.getChildren().addAll(sansA);
             	  }	
+            	  if(Integer.parseInt(selected.getId()) == 34) {
+            		  Succes.getChildren().remove(meatBoyFA);
+            		  Succes.getChildren().addAll(meatBoyA);
+            	  }	
             	  
             	  for(int i =0;i<matrice.length*matrice.length;i++){
             		  matrice[i%3][i/3] = 0;}
