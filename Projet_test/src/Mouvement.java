@@ -13,6 +13,7 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
@@ -397,8 +398,8 @@ public class Mouvement extends Application {
     //On lance la fenêtre
     scene1 = new Scene(layout1,700,500);
     scene2 = new Scene(layout2,700,500);
-    stage.setMaxWidth(700);
-    stage.setMaxHeight(500);
+    stage.setMaxWidth(713);
+    stage.setMaxHeight(535);
     stage.setScene(scene1);
     stage.getIcons().add(icon);
     stage.setTitle("Projet Minecraft");
