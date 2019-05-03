@@ -268,7 +268,7 @@ public class Mouvement extends Application {
 	  creationCraft craft_64 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,16,0,0,77,0,0,14,0)),69);
 	  creationCraft craft_65 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,16,0,0,77,0,0,14)),69);
 	  creationCraft craft_66 = new creationCraft(new ArrayList<Integer>(Arrays.asList(8,0,0,0,69,0,0,0,8)),79);
-	  creationCraft craft_67 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,8,0,0,69,0,0,8,0)),79);
+	  creationCraft craft_67 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,8,69,8,0,0,0)),79);
 	  creationCraft craft_68 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,8,0,69,0,8,0,0)),79);
 
 	  
