@@ -30,24 +30,24 @@ public class Mouvement extends Application {
 	double STARTX,STARTY;
 	double X,Y;
 	int douquonest = 0;
-	boolean caMarche,test;
-	boolean aideTxt = false;
+	boolean caMarche,test,aideTxt,GreenPeace = false;
 	Integer clef;
 
 @Override public void start(final Stage stage) throws Exception {
-	  //Liste pour récuprérer les images en fonction de l'ID
+	  // Liste pour récuprérer les images en fonction de l'ID
 	  List<String> listImage = Arrays.asList("0","Base/Dirt.png","Base/bois.png","Base/wooden_block.png","Base/rock.png","Base/sand.png","Base/wind.png","Base/fire_2.png","Base/stick.png","Base/bone.png","Base/water.png","Base/glass.png","Base/glaçon.png","Base/iron_nugget.png","Base/iron_ingot.png","Base/feather.png","Base/silex2.png","Base/redstone.png",
 	  "Food/baguette.png","Food/beurre.png","Food/ble.png","Food/burger_pain.png","Food/burger.png","Food/farine.png","Food/fromage.png","Food/pomme.png","Food/salade.png","Food/tomate.png","Food/viande.png","oeuf_brouillé.png","Food/noodles.png","Food/cake.png","Food/soda.png","Food/soupe_poisson.png",
 	  "Life/life.png","Life/cow.png","Life/fish.png","Life/bird.png","Life/egg.png","Life/SMB.png","Life/sans.png","Life/human.png","Life/creeper.png",
 	  "Weapon/ak.png","Weapon/axe.png","Weapon/backpack.png","Weapon/baseball_bat.png","Weapon/battle_axe.png","Weapon/battle_hammer.png","Weapon/bouclier.png","Weapon/bouteille_alcool.png","Weapon/bow.png","Weapon/bow-arrow.png","Weapon/briquet.png","Weapon/butcher_knife.png","Weapon/chainsaw.png","Weapon/double_spear.png","Weapon/Epee_classique.png","Weapon/gas_mask.png","Weapon/grenade.png","Weapon/grenade_laucher.png","Weapon/Katana1.png","Weapon/kunai.png","Weapon/lance.png","Weapon/lightsaber.png","Weapon/m4_petit.png","Weapon/medkiy.png","Weapon/military_knife.png","Weapon/molotov_cocktail.png","Weapon/pistol_ammo.png","Weapon/revolver.png","Weapon/rocket.png","Weapon/rocket_launcher.png","Weapon/scythe.png","Weapon/shotgun.png","Weapon/shuriken.png","Weapon/sniper.png","Weapon/poudre_a_canon.png",
 	  "Weapon/TNT.png","Weapon/gameBoy.png");
+	  // Liste pour afficher les Noms
 	  List<String> listNom = Arrays.asList("0","Terre","Bois","Bloc de Bois","Pierre","Sable","Vent","Feu","Baton","Os","Eau","Verre","Glaçon","Pépite de Fer","Lingot de Fer","Plume","Silex","Redstone",
 	  "Baguette","Beurre","Blé","Pain à Burger","Burger","Farine","Fromage","Pomme","Salade","Tomate","Viande","Oeuf_Brouillé","Noodles","Gateau","Soda","Soupe de Poisson",
 	  "Vie","Vache","Poisson","Oiseau","Oeuf","Super Meat Boy","Sans","Humain","Creeper",
 	  "Ak","Hache","JetPack","Batte de Baseball","Double Hache","Marteau","Bouclier","Bouteille","Arc","Flèche","Briquet","Couteau","Tronconneuse","Lance Double","Epée","Masque à Gaz","Grenade","Lance Grenade","Katana","Kunai","Lance","Sabre Laser","M4","Kit de Soin","Couteau Militaire","Cocktail Molotov","Balles","Revolver","Roquette","Lance Roquette","Faux","Fusil à Pompe","Shriken","Sniper","Poudre à Canon",
 	  "TNT","GameBoy");
 
-	  //Achievements
+	  // Achievements
 	  ImageView sansFA = new ImageView(new File("sansFutureAchievement.png").toURI().toString());
 	  ImageView sansFAT = new ImageView(new File("sansFutureAchievementtxt.png").toURI().toString());
 	  ImageView creeperFA = new ImageView(new File("creeperFutureAchievement.png").toURI().toString());
@@ -86,7 +86,7 @@ public class Mouvement extends Application {
 	  ImageView lightSabertest = new ImageView(new File("LightSaberAchievement.png").toURI().toString());
 	  ImageView pongtest = new ImageView(new File("PongAchievement.png").toURI().toString());
 	  
-	  //Les bases
+	  // Les bases
 	  Image icon = new Image(new File("icon.png").toURI().toString());
 	  ImageView decor1 = new ImageView(new File("fond_ecran2.png").toURI().toString());
 	  ImageView decor2 = new ImageView(new File("fond_ecran2.png").toURI().toString());
@@ -124,7 +124,7 @@ public class Mouvement extends Application {
 	  creationImage silex = new creationImage("Base/silex2.png","16");
 	  creationImage redstone = new creationImage("Base/redstone.png","17");
 	  
-	  //La bouffe
+	  // La bouffe
 	  creationImage baguette = new creationImage("Food/baguette.png","18");
 	  creationImage beurre = new creationImage("Food/beurre.png","19");
 	  creationImage ble = new creationImage("Food/ble.png","20");
@@ -142,7 +142,7 @@ public class Mouvement extends Application {
 	  creationImage soda = new creationImage("Food/soda.png","32");
 	  creationImage soupe_poisson = new creationImage("Food/soupe_poisson.png","33");
 	  
-	//La vie
+	  // La vie
 	  creationImage life = new creationImage("Life/life.png","34");
 	  creationImage cow = new creationImage("Life/cow.png","35");
 	  creationImage fish = new creationImage("Life/fish.png","36");
@@ -153,7 +153,7 @@ public class Mouvement extends Application {
 	  creationImage human = new creationImage("Life/human.png","41");
 	  creationImage creeper = new creationImage("Life/creeper.png","42");
 	  
-	  //Les armes
+	  // Les armes
 	  creationImage ak = new creationImage("Weapon/ak.png","43");
 	  creationImage axe = new creationImage("Weapon/axe.png","44");
 	  creationImage backpack = new creationImage("Weapon/backpack.png","45");
@@ -192,9 +192,9 @@ public class Mouvement extends Application {
 	  creationImage tnt = new creationImage("Weapon/TNT.png","78");
 	  creationImage gameBoy = new creationImage("Weapon/gameBoy.png","79");
 	  
-	  //Création des crafts
+	  // Création des crafts
 	  
-	  //Base
+	  // Base
 	  creationCraft craft_16 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,2,2,0,2,2,0,0,0)),3);
 	  creationCraft craft_17 = new creationCraft(new ArrayList<Integer>(Arrays.asList(2,2,0,2,2,0,0,0,0)),3);
 	  creationCraft craft_18 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,2,2,0,2,2,0)),3);
@@ -218,7 +218,7 @@ public class Mouvement extends Application {
 	  creationCraft craft_46 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,57,37,0,0,0,0)),15);
 	  creationCraft craft_47 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,57,37,0)),15);
 	  
-	  //Food
+	  // Food
 	  creationCraft craft_8 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,21,0,26,27,28,0,21,0)),22);
 	  creationCraft craft_9 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,21,0,27,26,28,0,21,0)),22);
 	  creationCraft craft_10 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,21,0,27,28,26,0,21,0)),22);
@@ -233,7 +233,7 @@ public class Mouvement extends Application {
 	  creationCraft craft_61 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,20,20,20,0,7,0)),18);
 	  creationCraft craft_62 = new creationCraft(new ArrayList<Integer>(Arrays.asList(25,25,25,19,19,19,23,23,23)),31);
 	  
-	  //Life
+	  // Life
 	  creationCraft craft_20 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,10,0,0,38,0,0)),36);
 	  creationCraft craft_21 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,10,0,0,38,0)),36);
 	  creationCraft craft_22 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,10,0,0,38)),36);
@@ -248,8 +248,7 @@ public class Mouvement extends Application {
 	  creationCraft craft_44 = new creationCraft(new ArrayList<Integer>(Arrays.asList(28,28,28,28,28,28,28,28,28)),39);
 	  creationCraft craft_52 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,78,0,78,34,78,0,78,0)),42);
 	  
-	  //Weapon
-	 
+	  // Weapon
 	  creationCraft craft_14 = new creationCraft(new ArrayList<Integer>(Arrays.asList(14,14,14,14,14,14,0,14,0)),49);
 	  creationCraft craft_32 = new creationCraft(new ArrayList<Integer>(Arrays.asList(14,0,0,14,0,0,8,0,0)),57);
 	  creationCraft craft_33 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,14,0,0,14,0,0,8,0)),57);
@@ -272,7 +271,7 @@ public class Mouvement extends Application {
 	  creationCraft craft_68 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,8,0,69,0,8,0,0)),79);
 
 	  
-	  //Creation du dico avec les crafts
+	  // Creation du dico avec les crafts
 	  Map<Integer,creationCraft> dicoCraft=new HashMap<Integer,creationCraft>();
 	  dicoCraft.put(1, craft_1);
 	  dicoCraft.put(10, craft_2);dicoCraft.put(11, craft_3);dicoCraft.put(12, craft_4);
@@ -301,14 +300,14 @@ public class Mouvement extends Application {
 	  dicoCraft.put(250, craft_63);dicoCraft.put(251, craft_64);dicoCraft.put(252, craft_65);
 	  dicoCraft.put(260, craft_66);dicoCraft.put(261, craft_67);dicoCraft.put(262, craft_68);
 	
+	// Barre du Menu
 	Menu menu = new Menu("Menu");
 	MenuBar menuBar = new MenuBar();
 	menuBar.setStyle("-fx-background-color: rgba(83, 87, 84, 0.9);");
-	menuBar.setMinWidth(700);
+	menuBar.setMinWidth(700); // Prend la longueur de l'écran car Group n'agit pas comme StackPane
 	menuBar.getMenus().add(menu);
-	CheckMenuItem checkMenuItem = new CheckMenuItem("Afficher nom Objets");
+	CheckMenuItem checkMenuItem = new CheckMenuItem("Afficher le nom des Objets");
 	menu.getItems().add(checkMenuItem);
-	
 	final Group mb = new Group(menuBar);
 	mb.setTranslateY(-237);
 	
@@ -349,11 +348,11 @@ public class Mouvement extends Application {
     vb.setMaxWidth(150);
     
 	
-	//Les 4 groupes, permet de clean facilement une catégorie. +reessayer stackpane (peut être)
+	// Les 4 groupes, permet de clean facilement une catégorie. +reessayer stackpane (peut être)
 	Group Base = new Group();
 	Group Food = new Group();
-	Group Weapon = new Group();
 	Group Life = new Group();
+	Group Weapon = new Group();
 	Group Matrice = new Group();
 	StackPane Succes = new StackPane();
 	StackPane all = new StackPane();	
@@ -367,11 +366,11 @@ public class Mouvement extends Application {
     Weapon.getChildren().addAll(limite7,limite8,gunPowder.imageView);
     Matrice.getChildren().addAll(limite9,limite10);
     all.getChildren().addAll(Base);
-    layout1.getChildren().addAll(decor1,craft,Dossier,inventaire,texte,all,toolBar,buttonDel,buttonAdd,Matrice,mb); //le Padre!
+    layout1.getChildren().addAll(decor1,craft,Dossier,inventaire,texte,all,toolBar,buttonDel,buttonAdd,Matrice,mb); // le Padre!
     Succes.getChildren().addAll(sansFA,creeperFA,killFA,cakeFA,burgerFA,meatBoyFA,MLGFA,lightSaberFA,pingFA);
     layout2.getChildren().addAll(decor2,vb,mini_craft,Succes);
     
-    //Positionnement des Nodes à la mano.
+    // Positionnement des Nodes à la mano.
     for(int i=0; i<Base.getChildren().size()-2; i++){
     		selected = Base.getChildren().get(i+2);
     		selected.setTranslateX(-330+(51*Math.round(i/3)));selected.setTranslateY(130+50*(i%3));
@@ -390,7 +389,8 @@ public class Mouvement extends Application {
     }
     selected = null;
     
-    //Ca j'ai vrmt honte faudra changer.
+    // Ca c'est pas jojo mais la classe Group s'étandant aux nodes les plus éloignées 
+    // il fallait des limites qu'on ne pouvait franchir.
     limite1.setTranslateX(-1000);limite1.setTranslateY(-1000);
     limite2.setTranslateX(1000);limite2.setTranslateY(1000);
     limite3.setTranslateX(-1000);limite3.setTranslateY(-1000);
@@ -402,7 +402,7 @@ public class Mouvement extends Application {
     limite9.setTranslateX(-1000);limite9.setTranslateY(-1000);
     limite10.setTranslateX(1000);limite10.setTranslateY(1000);
     
-    //Positionnement du Décor dans le layout1
+    // Positionnement du Décor dans le layout1
     craft.setTranslateX(-55);craft.setTranslateY(-85);
     craftOk.setTranslateX(-55);craftOk.setTranslateY(-85);
     buttonAdd.setTranslateX(82);buttonAdd.setTranslateY(-9);buttonAdd.setMinWidth(54);buttonAdd.setMaxHeight(5);
@@ -444,7 +444,7 @@ public class Mouvement extends Application {
     MediaPlayer mediaPlayer = new MediaPlayer(sound);
     mediaPlayer.play();*/
     
-    //On lance la fenêtre
+    // On lance la fenêtre
     scene1 = new Scene(layout1,700,500);
     scene2 = new Scene(layout2,700,500);
     stage.setMaxWidth(713);
@@ -454,12 +454,12 @@ public class Mouvement extends Application {
     stage.setTitle("Projet Minecraft");
     stage.show();
     
-    //Matrice de craft
+    // Matrice centrale
     int[][] matrice = new int[3][3];
     
 ////////////////////////////////////////////     Boutons event     ////////////////////////////////////////////
     
-    //Affiche que les Nodes du Group Base (clear les autres).
+    // N'affiche que les Nodes du Group Base (clear les autres).
     Bbase.addEventHandler(MouseEvent.MOUSE_PRESSED,
             new EventHandler<MouseEvent>() {
               @Override
@@ -471,20 +471,20 @@ public class Mouvement extends Application {
               }
             });
     
-    //Affiche que les Nodes du Group Food (clear les autres).
+    // N'affiche que les Nodes du Group Food (clear les autres).
     Bfood.addEventHandler(MouseEvent.MOUSE_PRESSED,
             new EventHandler<MouseEvent>() {
               @Override
               public void handle(MouseEvent e) {
             	  texte.getChildren().clear();
-            	  all.getChildren().clear();
+            	  all.getChildren().clear();	
             	  all.getChildren().addAll(Food);
             	  douquonest = 1;
             	  
               }
             });
     
-    //Affiche que les Nodes du Group Life (clear les autres).
+    // N'affiche que les Nodes du Group Life (clear les autres).
     Blife.addEventHandler(MouseEvent.MOUSE_PRESSED,
             new EventHandler<MouseEvent>() {
               @Override
@@ -496,7 +496,7 @@ public class Mouvement extends Application {
               }
             });
     
-    //Affiche que les Nodes du Group Weapon (clear les autres).
+    // N'affiche que les Nodes du Group Weapon (clear les autres).
     Bweapon.addEventHandler(MouseEvent.MOUSE_PRESSED,
             new EventHandler<MouseEvent>() {
               @Override
@@ -508,7 +508,7 @@ public class Mouvement extends Application {
               }
             });
     
-    //Animation du bouton delete + vide le Groupe Matrice
+    // Animation du bouton delete + vide le Groupe Matrice
     buttonDel.addEventHandler(MouseEvent.MOUSE_PRESSED,
             new EventHandler<MouseEvent>() {
               @Override
@@ -524,6 +524,7 @@ public class Mouvement extends Application {
               }
             });
     
+    // Animation du bouton delete
     buttonDel.addEventHandler(MouseEvent.MOUSE_RELEASED,
             new EventHandler<MouseEvent>() {
               @Override
@@ -532,6 +533,7 @@ public class Mouvement extends Application {
               }
             });
     
+    // Animation du Bouton Add + ajout si possible de la nouvelle Node à son groupe (et clean de la matrice)
     buttonAdd.addEventHandler(MouseEvent.MOUSE_PRESSED,
             new EventHandler<MouseEvent>() {
               @Override
@@ -543,10 +545,10 @@ public class Mouvement extends Application {
             	  caMarche = false;
             	  clef = clef/10*10;
             	  for(int i=0;i<10;i++) {
-              		dicoCraft.remove(clef+i);}//Clean toutes les possibilités de craft
+              		dicoCraft.remove(clef+i);}// Clean toutes autres les possibilités de craft
             	  int IdnouvelObjet = Integer.parseInt(Matrice.getChildren().get(Matrice.getChildren().size()-1).getId());
             	  
-            	  if(1<=IdnouvelObjet && IdnouvelObjet<=17){ //Place nouveau Base
+            	  if(1<=IdnouvelObjet && IdnouvelObjet<=17){ // Place nouvelle node dans Base
             		  Base.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
             		  selected = Base.getChildren().get(Base.getChildren().size()-1);
             		  ((ImageView) selected).setFitHeight(30);
@@ -556,7 +558,7 @@ public class Mouvement extends Application {
                 	  all.getChildren().addAll(Base);
                 	  douquonest = 0;
             	  }
-            	  else if(18<=IdnouvelObjet && IdnouvelObjet<=33){ //Place nouveau Food
+            	  else if(18<=IdnouvelObjet && IdnouvelObjet<=33){ // Place nouvelle node dans Food
             		  Food.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
             		  selected = Food.getChildren().get(Food.getChildren().size()-1);
             		  ((ImageView) selected).setFitHeight(30);
@@ -566,7 +568,7 @@ public class Mouvement extends Application {
                 	  all.getChildren().addAll(Food);
                 	  douquonest = 1;
             	  }
-            	  else if(34<=IdnouvelObjet && IdnouvelObjet<=42){ //Place nouveau Life
+            	  else if(34<=IdnouvelObjet && IdnouvelObjet<=42){ // Place nouvelle node dans Life
             		  Life.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
             		  selected = Life.getChildren().get(Life.getChildren().size()-1);
             		  ((ImageView) selected).setFitHeight(30);
@@ -576,7 +578,7 @@ public class Mouvement extends Application {
                 	  all.getChildren().addAll(Life);
                 	  douquonest = 2;
             	  }
-            	  else if(43<=IdnouvelObjet && IdnouvelObjet<=79){ //Place nouveau Weapon
+            	  else if(43<=IdnouvelObjet && IdnouvelObjet<=79){ // Place nouvelle node dans Weapon
             		  Weapon.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
             		  selected = Weapon.getChildren().get(Weapon.getChildren().size()-1);
             		  ((ImageView) selected).setFitHeight(30);
@@ -586,6 +588,7 @@ public class Mouvement extends Application {
                 	  all.getChildren().addAll(Weapon);
                 	  douquonest = 3;
             	  }
+            	  // Si on débloque les Achievements
             	  if(Integer.parseInt(selected.getId()) == 40) {
             		  Succes.getChildren().remove(sansFA);
             		  Succes.getChildren().addAll(sansA);
@@ -594,7 +597,8 @@ public class Mouvement extends Application {
             		  Succes.getChildren().remove(creeperFA);
             		  Succes.getChildren().addAll(creeperA);
             	  }
-            	  if(Integer.parseInt(selected.getId()) == 9 || Integer.parseInt(selected.getId()) == 15 || Integer.parseInt(selected.getId()) == 28) {
+            	  if((Integer.parseInt(selected.getId()) == 9 || Integer.parseInt(selected.getId()) == 15 || Integer.parseInt(selected.getId()) == 28) && GreenPeace == false) {
+            		  GreenPeace = true;
             		  Succes.getChildren().remove(killFA);
             		  Succes.getChildren().addAll(killA);
             	  }
@@ -627,6 +631,7 @@ public class Mouvement extends Application {
               }
             });
     
+    // Animation du bouton Add
     buttonAdd.addEventHandler(MouseEvent.MOUSE_RELEASED,
             new EventHandler<MouseEvent>() {
               @Override
@@ -637,6 +642,7 @@ public class Mouvement extends Application {
     
 ////////////////////////////////////////////     Mouse event     ////////////////////////////////////////////
     
+    // Retour au Layout1
     layout2.setOnMousePressed(evt -> {
     	if(439<evt.getX() && evt.getX()<520 && 25<evt.getY() && evt.getY()<75) {
     	selected = null; //evite de garder un objet séléctionné car en cas de reclick l'objet se téléportait à l'endroit en question dans le layout 1.
@@ -647,8 +653,9 @@ public class Mouvement extends Application {
     	
     });
     
+    // Scroll pour l'historique
     vb.setOnScroll((ScrollEvent event) -> {
-        //scroll de l'historique
+    	
         double deltaY = event.getDeltaY();
         if (deltaY < 0 && vb.getChildren().get(vb.getChildren().size()-1).getTranslateY()>-300){
         	for(int i=0; i<vb.getChildren().size(); i++) {
@@ -664,7 +671,8 @@ public class Mouvement extends Application {
         
         
     });
-    /////   Gère les indices au passage de la souris
+    
+    //Change les images des Achievements au passage de la souris
     sansFA.setOnMouseEntered(new EventHandler<MouseEvent>() {
         @Override
         public void handle(MouseEvent t) {Succes.getChildren().add(sansFAT);}});
@@ -737,12 +745,14 @@ public class Mouvement extends Application {
     	@Override
         public void handle(MouseEvent t) {Succes.getChildren().remove(pongFAT);}});
     
+    // Permet de choisir si on veut ou non afficher le nom des Nodes 
     checkMenuItem.setOnAction(e -> {
     	if(checkMenuItem.isSelected()) {
     		aideTxt = true;}
     	else {aideTxt = false;}
     });
     
+    // Affiche le nom des Objets au passage 
     all.setOnMouseMoved(new EventHandler<MouseEvent>() {
         @Override
         public void handle(MouseEvent t) {
@@ -771,7 +781,7 @@ public class Mouvement extends Application {
         }});
     
     
-    //Selection de la Node dans Layout1
+    // Selection de la Node dans Layout1
     all.setOnMousePressed(evt -> {
     	
     	X = evt.getX();
@@ -800,7 +810,7 @@ public class Mouvement extends Application {
     	}
     });
     
-    //Mouvement
+    // Mouvement
     all.setOnMouseDragged(evt -> {
         if (selected != null) {
             selected.setTranslateX(evt.getX() - offset.getX() + translateStart.getX());
@@ -815,7 +825,7 @@ public class Mouvement extends Application {
     
     all.setOnMouseReleased(evt -> {
         if (selected != null && test == false) {
-        	//Si on est dans la matrice
+        	// Si on est dans la matrice
         	if(815<evt.getX() && evt.getX()<964 && 860<evt.getY() && evt.getY()<1009) {
         	for(int i=0; i<matrice.length*matrice.length;i++) {
         			if(815+50*(i%3)<=evt.getX() && evt.getX()<865+50*(i%3) && 860+50*(i/3)<=evt.getY() && evt.getY()<910+50*(i/3)) {
@@ -823,7 +833,7 @@ public class Mouvement extends Application {
                         selected.setTranslateY(-130+50*(i/3));
                         if (selected.getId() != null && matrice[i/3][i%3] ==0) {
                         	matrice[i/3][i%3] = Integer.valueOf(selected.getId()); //La matrice récupère l'ID de la Node.
-                        if(caMarche ==true) { //delete le resultat si on rajoute un node dans la matrice
+                        if(caMarche ==true) { // delete le resultat si on rajoute un node dans la matrice
                         layout1.getChildren().clear();
                     	layout1.getChildren().addAll(decor1,craft,Dossier,inventaire,texte,all,toolBar,buttonDel,buttonAdd,Matrice,mb);//Remet fond craft
                         Matrice.getChildren().remove(Matrice.getChildren().size()-1);}
@@ -848,7 +858,7 @@ public class Mouvement extends Application {
         			}		
         	}
         	}
-        	//Si on est dans l'inventaire
+        	// Si on est dans l'inventaire
         	else if((evt.getY() - offset.getY() + translateStart.getY())>=100) {
         		double X;
         		selected.setTranslateY(Math.round((evt.getY() - offset.getY() + translateStart.getY()+25)/50)*50-20);
@@ -859,12 +869,12 @@ public class Mouvement extends Application {
         		selected.setTranslateX(X);
         		
         	}
-        	//Sinon retour au point de départ.
+        	// Sinon retour au point de départ.
         	else {
         		selected.setTranslateX(STARTX);
         		selected.setTranslateY(STARTY);
         	}
-        	//Redimensionnement de l'image
+        	// Redimensionnement de l'image
         	((ImageView) evt.getTarget()).setFitHeight(30);
             ((ImageView) evt.getTarget()).setFitWidth(30);
             
@@ -878,7 +888,7 @@ public class Mouvement extends Application {
         	}
             System.out.println("");
         }	
-        //Parcourir et comparer avec la matrice
+        // Parcourir et comparer avec la matrice
         
         ArrayList<Integer> liste = new ArrayList<Integer>();
         ArrayList<?> valeur;
@@ -894,9 +904,6 @@ public class Mouvement extends Application {
         	int compteur=0;
         	clef=idico.next();
         	valeur = dicoCraft.get(clef).liste;
-      	  
-      	  	//System.out.print(valeur);
-      	    //System.out.println(liste);
       	
         	for(int k=0;k<liste.size();k++) {
         		if (valeur.get(k)==liste.get(k)) {
