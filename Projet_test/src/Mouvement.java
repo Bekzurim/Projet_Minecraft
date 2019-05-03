@@ -19,6 +19,8 @@ import javafx.scene.image.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
@@ -42,12 +44,12 @@ public class Mouvement extends Application {
 	  "Food/baguette.png","Food/beurre.png","Food/ble.png","Food/burger_pain.png","Food/burger.png","Food/farine.png","Food/fromage.png","Food/pomme.png","Food/salade.png","Food/tomate.png","Food/viande.png","oeuf_brouillé.png","Food/noodles.png","Food/cake.png","Food/soda.png","Food/soupe_poisson.png",
 	  "Life/life.png","Life/cow.png","Life/fish.png","Life/bird.png","Life/egg.png","Life/SMB.png","Life/sans.png","Life/human.png","Life/creeper.png",
 	  "Weapon/ak.png","Weapon/axe.png","Weapon/backpack.png","Weapon/baseball_bat.png","Weapon/battle_axe.png","Weapon/battle_hammer.png","Weapon/bouclier.png","Weapon/bouteille_alcool.png","Weapon/bow.png","Weapon/bow-arrow.png","Weapon/briquet.png","Weapon/butcher_knife.png","Weapon/chainsaw.png","Weapon/double_spear.png","Weapon/Epee_classique.png","Weapon/gas_mask.png","Weapon/grenade.png","Weapon/grenade_laucher.png","Weapon/Katana1.png","Weapon/kunai.png","Weapon/lance.png","Weapon/lightsaber.png","Weapon/m4_petit.png","Weapon/medkiy.png","Weapon/military_knife.png","Weapon/molotov_cocktail.png","Weapon/pistol_ammo.png","Weapon/revolver.png","Weapon/rocket.png","Weapon/rocket_launcher.png","Weapon/scythe.png","Weapon/shotgun.png","Weapon/shuriken.png","Weapon/sniper.png","Weapon/poudre_a_canon.png",
-	  "Weapon/TNT.png");
+	  "Weapon/TNT.png","Weapon/gameBoy.png");
 	  List<String> listNom = Arrays.asList("0","Terre","Bois","Bloc de Bois","Pierre","Sable","Vent","Feu","Baton","Os","Eau","Verre","Glaçon","Pépite de Fer","Lingot de Fer","Plume","Silex","Redstone",
 	  "Baguette","Beurre","Blé","Pain à Burger","Burger","Farine","Fromage","Pomme","Salade","Tomate","Viande","Oeuf_Brouillé","Noodles","Gateau","Soda","Soupe de Poisson",
 	  "Vie","Vache","Poisson","Oiseau","Oeuf","Super Meat Boy","Sans","Humain","Creeper",
 	  "Ak","Hache","JetPack","Batte de Baseball","Double Hache","Marteau","Bouclier","Bouteille","Arc","Flèche","Briquet","Couteau","Tronconneuse","Lance Double","Epée","Masque à Gaz","Grenade","Lance Grenade","Katana","Kunai","Lance","Sabre Laser","M4","Kit de Soin","Couteau Militaire","Cocktail Molotov","Balles","Revolver","Roquette","Lance Roquette","Faux","Fusil à Pompe","Shriken","Sniper","Poudre à Canon",
-	  "TNT");
+	  "TNT","gameBoy");
 
 	  //Achievements
 	  ImageView sansFA = new ImageView(new File("sansFutureAchievement.png").toURI().toString());
@@ -192,6 +194,7 @@ public class Mouvement extends Application {
 	  creationImage sniper = new creationImage("Weapon/sniper.png","76");
 	  creationImage gunPowder = new creationImage("Weapon/poudre_a_canon.png","77");
 	  creationImage tnt = new creationImage("Weapon/TNT.png","78");
+	  creationImage gameBoy = new creationImage("Weapon/gameBoy.png","79");
 	  
 	  //Création des crafts
 	  
@@ -230,6 +233,9 @@ public class Mouvement extends Application {
 	  creationCraft craft_39 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,57,35,0,0,0,0)),28);
 	  creationCraft craft_40 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,57,35,0)),28);
 	  creationCraft craft_56 = new creationCraft(new ArrayList<Integer>(Arrays.asList(11,10,11,11,10,11,11,11,11)),32);
+	  creationCraft craft_60 = new creationCraft(new ArrayList<Integer>(Arrays.asList(20,20,20,0,7,0,0,0,0)),18);
+	  creationCraft craft_61 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,20,20,20,0,7,0)),18);
+	  creationCraft craft_62 = new creationCraft(new ArrayList<Integer>(Arrays.asList(25,25,25,19,19,19,23,23,23)),31);
 	  
 	  //Life
 	  creationCraft craft_20 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,10,0,0,38,0,0)),36);
@@ -262,6 +268,12 @@ public class Mouvement extends Application {
 	  creationCraft craft_57 = new creationCraft(new ArrayList<Integer>(Arrays.asList(16,0,0,14,0,0,14,0,0)),53);
 	  creationCraft craft_58 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,16,0,0,14,0,0,14,0)),53);
 	  creationCraft craft_59 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,16,0,0,14,0,0,14)),53);
+	  creationCraft craft_63 = new creationCraft(new ArrayList<Integer>(Arrays.asList(16,0,0,77,0,0,14,0,0)),69);
+	  creationCraft craft_64 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,16,0,0,77,0,0,14,0)),69);
+	  creationCraft craft_65 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,16,0,0,77,0,0,14)),69);
+	  creationCraft craft_66 = new creationCraft(new ArrayList<Integer>(Arrays.asList(8,0,0,0,69,0,0,0,8)),79);
+	  creationCraft craft_67 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,8,0,0,69,0,0,8,0)),79);
+	  creationCraft craft_68 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,8,0,69,0,8,0,0)),79);
 
 	  
 	  //Creation du dico avec les crafts
@@ -288,6 +300,10 @@ public class Mouvement extends Application {
 	  dicoCraft.put(200, craft_53);dicoCraft.put(201, craft_54);dicoCraft.put(202, craft_55);
 	  dicoCraft.put(210, craft_56);
 	  dicoCraft.put(220, craft_57);dicoCraft.put(221, craft_58);dicoCraft.put(222, craft_59);
+	  dicoCraft.put(230, craft_60);dicoCraft.put(231, craft_61);
+	  dicoCraft.put(240, craft_62);
+	  dicoCraft.put(250, craft_63);dicoCraft.put(251, craft_64);dicoCraft.put(252, craft_65);
+	  dicoCraft.put(260, craft_66);dicoCraft.put(261, craft_67);dicoCraft.put(262, craft_68);
 	
 	Menu menu = new Menu("Menu");
 	MenuBar menuBar = new MenuBar();
@@ -428,6 +444,9 @@ public class Mouvement extends Application {
     pongFAT.setTranslateX(140);pongFAT.setTranslateY(110);
     mini_craft.setTranslateX(130);mini_craft.setTranslateY(-200);
     
+    /*Media sound = new Media("existepasencore");
+    MediaPlayer mediaPlayer = new MediaPlayer(sound);
+    mediaPlayer.play();*/
     
     //On lance la fenêtre
     scene1 = new Scene(layout1,700,500);
@@ -499,7 +518,7 @@ public class Mouvement extends Application {
               @Override
               public void handle(MouseEvent e) {
             	  layout1.getChildren().clear();
-              	  layout1.getChildren().addAll(decor1,craft,Dossier,inventaire,texte,all,toolBar,buttonDel,buttonAdd,Matrice);//change le fond Craft au cas ou il y avait un craft valide.
+              	  layout1.getChildren().addAll(decor1,craft,Dossier,inventaire,texte,all,toolBar,buttonDel,buttonAdd,Matrice,mb);//change le fond Craft au cas ou il y avait un craft valide.
             	  caMarche = false;
             	  for(int i =0;i<matrice.length*matrice.length;i++){
             		  matrice[i%3][i/3] = 0;}
@@ -561,7 +580,7 @@ public class Mouvement extends Application {
                 	  all.getChildren().addAll(Life);
                 	  douquonest = 2;
             	  }
-            	  else if(43<=IdnouvelObjet && IdnouvelObjet<=88){ //Place nouveau Weapon
+            	  else if(43<=IdnouvelObjet && IdnouvelObjet<=79){ //Place nouveau Weapon
             		  Weapon.getChildren().add(Matrice.getChildren().get(Matrice.getChildren().size()-1));
             		  selected = Weapon.getChildren().get(Weapon.getChildren().size()-1);
             		  ((ImageView) selected).setFitHeight(30);
@@ -591,9 +610,17 @@ public class Mouvement extends Application {
             		  Succes.getChildren().remove(meatBoyFA);
             		  Succes.getChildren().addAll(meatBoyA);
             	  }	
+            	  if(Integer.parseInt(selected.getId()) == 31) {
+            		  Succes.getChildren().remove(cakeFA);
+            		  Succes.getChildren().addAll(cakeA);
+            	  }	
             	  if(Integer.parseInt(selected.getId()) == 64) {
             		  Succes.getChildren().remove(lightSaberFA);
             		  Succes.getChildren().addAll(lightSaberA);
+            	  }	
+            	  if(Integer.parseInt(selected.getId()) == 79) {
+            		  Succes.getChildren().remove(pingFA);
+            		  Succes.getChildren().addAll(pongA);
             	  }	
             	  
             	  for(int i =0;i<matrice.length*matrice.length;i++){
@@ -721,8 +748,7 @@ public class Mouvement extends Application {
     });
     
     all.setOnMouseMoved(new EventHandler<MouseEvent>() {
-        @SuppressWarnings("unlikely-arg-type")
-		@Override
+        @Override
         public void handle(MouseEvent t) {
         	Node target = (Node) t.getTarget();
         	
