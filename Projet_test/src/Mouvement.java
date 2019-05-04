@@ -29,6 +29,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class Mouvement extends Application {
 	
@@ -309,10 +310,12 @@ public class Mouvement extends Application {
 	  dicoCraft.put(250, craft_63);dicoCraft.put(251, craft_64);dicoCraft.put(252, craft_65);
 	  dicoCraft.put(260, craft_66);dicoCraft.put(261, craft_67);dicoCraft.put(262, craft_68);
 	
-	    
+	   
 	AudioClip ASound = new AudioClip(new File("Sound/achievement.wav").toURI().toString());
 	    
-	AudioClip BSound = new AudioClip(new File("Sound/BackgroundSound.mp3").toURI().toString());
+	AudioClip BSound = new AudioClip(new File("Sound/BackgroundSound.wav").toURI().toString());
+	MediaPlayer a =new MediaPlayer(new Media(new File("Sound/BackgroundSound.wav").toURI().toString())); 
+	
 	// Barre du Menu
 	MenuBar menuBar = new MenuBar();
 	Menu menu = new Menu("Menu");
@@ -337,6 +340,12 @@ public class Mouvement extends Application {
         	     System.out.println(BSound.getVolume());
          }
      });
+	
+	 a.setOnEndOfMedia(new Runnable() {
+	       public void run() {
+	         a.seek(Duration.ZERO);
+	       }
+	   });
 	  
 	Button Bbase = new Button("Base");
     Button Bfood = new Button("Food");
@@ -475,7 +484,7 @@ public class Mouvement extends Application {
     stage.getIcons().add(icon);
     stage.setTitle("Projet Minecraft");
     stage.show();
-    BSound.play(son);
+    a.play();
     
     // Matrice centrale
     int[][] matrice = new int[3][3];
