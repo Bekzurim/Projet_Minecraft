@@ -1,4 +1,5 @@
 import java.io.File;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -7,6 +8,10 @@ import java.util.List;
 import java.util.Map;
 
 import javafx.application.Application;
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.geometry.Point2D;
 import javafx.scene.Group;
@@ -17,6 +22,9 @@ import javafx.scene.image.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.*;
+import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
@@ -32,6 +40,7 @@ public class Mouvement extends Application {
 	int douquonest = 0;
 	boolean caMarche,test,aideTxt,GreenPeace = false;
 	Integer clef;
+	int son = 100;
 
 @Override public void start(final Stage stage) throws Exception {
 	  // Liste pour récuprérer les images en fonction de l'ID
@@ -300,17 +309,34 @@ public class Mouvement extends Application {
 	  dicoCraft.put(250, craft_63);dicoCraft.put(251, craft_64);dicoCraft.put(252, craft_65);
 	  dicoCraft.put(260, craft_66);dicoCraft.put(261, craft_67);dicoCraft.put(262, craft_68);
 	
+	    
+	AudioClip ASound = new AudioClip(new File("Sound/achievement.wav").toURI().toString());
+	    
+	AudioClip BSound = new AudioClip(new File("Sound/BackgroundSound.mp3").toURI().toString());
 	// Barre du Menu
-	Menu menu = new Menu("Menu");
 	MenuBar menuBar = new MenuBar();
+	Menu menu = new Menu("Menu");
+	Menu menu2 = new Menu("Son");
+	CheckMenuItem checkMenuItem = new CheckMenuItem("Afficher le nom des Objets");
+	CustomMenuItem customMenuItem = new CustomMenuItem();
+	Slider VolumeSlider = new Slider(0, 100, 50);
+	menu.getItems().add(checkMenuItem);
+	customMenuItem.setContent(VolumeSlider);
+	menu2.getItems().add(customMenuItem);
 	menuBar.setStyle("-fx-background-color: rgba(83, 87, 84, 0.9);");
 	menuBar.setMinWidth(700); // Prend la longueur de l'écran car Group n'agit pas comme StackPane
-	menuBar.getMenus().add(menu);
-	CheckMenuItem checkMenuItem = new CheckMenuItem("Afficher le nom des Objets");
-	menu.getItems().add(checkMenuItem);
+	menuBar.getMenus().addAll(menu,menu2);
+	
 	final Group mb = new Group(menuBar);
 	mb.setTranslateY(-237);
 	
+	VolumeSlider.valueProperty().addListener(new InvalidationListener() {
+         public void invalidated(Observable observable) {
+        	 	 son =  (int)VolumeSlider.getValue();
+                 BSound.setVolume(son);
+        	     System.out.println(BSound.getVolume());
+         }
+     });
 	  
 	Button Bbase = new Button("Base");
     Button Bfood = new Button("Food");
@@ -439,11 +465,7 @@ public class Mouvement extends Application {
     pingFA.setTranslateX(140);pingFA.setTranslateY(110);
     pongFAT.setTranslateX(140);pongFAT.setTranslateY(110);
     mini_craft.setTranslateX(130);mini_craft.setTranslateY(-200);
-    
-    /*Media sound = new Media("existepasencore");
-    MediaPlayer mediaPlayer = new MediaPlayer(sound);
-    mediaPlayer.play();*/
-    
+
     // On lance la fenêtre
     scene1 = new Scene(layout1,700,500);
     scene2 = new Scene(layout2,700,500);
@@ -453,6 +475,7 @@ public class Mouvement extends Application {
     stage.getIcons().add(icon);
     stage.setTitle("Projet Minecraft");
     stage.show();
+    BSound.play(son);
     
     // Matrice centrale
     int[][] matrice = new int[3][3];
@@ -464,6 +487,7 @@ public class Mouvement extends Application {
             new EventHandler<MouseEvent>() {
               @Override
               public void handle(MouseEvent e) {
+
             	  texte.getChildren().clear();
             	  all.getChildren().clear();
             	  all.getChildren().addAll(Base);
@@ -592,35 +616,43 @@ public class Mouvement extends Application {
             	  if(Integer.parseInt(selected.getId()) == 40) {
             		  Succes.getChildren().remove(sansFA);
             		  Succes.getChildren().addAll(sansA);
+            		  ASound.play();
             	  }	
             	  if(Integer.parseInt(selected.getId()) == 42) {
             		  Succes.getChildren().remove(creeperFA);
             		  Succes.getChildren().addAll(creeperA);
+            		  ASound.play();
             	  }
             	  if((Integer.parseInt(selected.getId()) == 9 || Integer.parseInt(selected.getId()) == 15 || Integer.parseInt(selected.getId()) == 28) && GreenPeace == false) {
             		  GreenPeace = true;
             		  Succes.getChildren().remove(killFA);
             		  Succes.getChildren().addAll(killA);
+            		  ASound.play();
             	  }
             	  if(Integer.parseInt(selected.getId()) == 22) {
             		  Succes.getChildren().remove(burgerFA);
             		  Succes.getChildren().addAll(burgerA);
+            		  ASound.play();
             	  }
             	  if(Integer.parseInt(selected.getId()) == 39) {
             		  Succes.getChildren().remove(meatBoyFA);
             		  Succes.getChildren().addAll(meatBoyA);
+            		  ASound.play();
             	  }	
             	  if(Integer.parseInt(selected.getId()) == 31) {
             		  Succes.getChildren().remove(cakeFA);
             		  Succes.getChildren().addAll(cakeA);
+            		  ASound.play();
             	  }	
             	  if(Integer.parseInt(selected.getId()) == 64) {
             		  Succes.getChildren().remove(lightSaberFA);
             		  Succes.getChildren().addAll(lightSaberA);
+            		  ASound.play();
             	  }	
             	  if(Integer.parseInt(selected.getId()) == 79) {
             		  Succes.getChildren().remove(pingFA);
             		  Succes.getChildren().addAll(pongA);
+            		  ASound.play();
             	  }	
             	  
             	  for(int i =0;i<matrice.length*matrice.length;i++){
