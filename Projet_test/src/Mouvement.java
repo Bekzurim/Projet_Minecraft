@@ -199,83 +199,125 @@ public class Mouvement extends Application {
 	  creationImage tnt = new creationImage("Weapon/TNT.png","78");
 	  creationImage gameBoy = new creationImage("Weapon/gameBoy.png","79");
 	  
-	  // Création des crafts
+	// Création des crafts
 	  
-	  // Base
-	  creationCraft craft_16 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,2,2,0,2,2,0,0,0)),3);
-	  creationCraft craft_17 = new creationCraft(new ArrayList<Integer>(Arrays.asList(2,2,0,2,2,0,0,0,0)),3);
-	  creationCraft craft_18 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,2,2,0,2,2,0)),3);
-	  creationCraft craft_19 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,2,2,0,2,2)),3);
-	  creationCraft craft_26 = new creationCraft(new ArrayList<Integer>(Arrays.asList(3,0,0,3,0,0,0,0,0)),8);
-	  creationCraft craft_27 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,3,0,0,3,0,0,0,0)),8);
-	  creationCraft craft_28 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,3,0,0,3,0,0,0)),8);
-	  creationCraft craft_29 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,3,0,0,3,0,0)),8);
-	  creationCraft craft_30 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,3,0,0,3,0)),8);
-	  creationCraft craft_31 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,3,0,0,3)),8);
-	  creationCraft craft_35 = new creationCraft(new ArrayList<Integer>(Arrays.asList(57,36,0,0,0,0,0,0,0)),9);
-	  creationCraft craft_36 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,57,36,0,0,0,0)),9);
-	  creationCraft craft_37 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,57,36,0)),9);
-	  creationCraft craft_2 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,5,0,0,7,0,0)),11);
-	  creationCraft craft_3 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,5,0,0,7,0)),11);
-	  creationCraft craft_4 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,5,0,0,7)),11);
-	  creationCraft craft_5 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,13,0,0,7,0,0)),14);
-	  creationCraft craft_6 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,13,0,0,7,0)),14);
-	  creationCraft craft_7 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,13,0,0,7)),14);
-	  creationCraft craft_45 = new creationCraft(new ArrayList<Integer>(Arrays.asList(57,37,0,0,0,0,0,0,0)),15);
-	  creationCraft craft_46 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,57,37,0,0,0,0)),15);
-	  creationCraft craft_47 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,57,37,0)),15);
-	  
-	  // Food
-	  creationCraft craft_8 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,21,0,26,27,28,0,21,0)),22);
-	  creationCraft craft_9 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,21,0,27,26,28,0,21,0)),22);
-	  creationCraft craft_10 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,21,0,27,28,26,0,21,0)),22);
-	  creationCraft craft_11 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,21,0,26,28,27,0,21,0)),22);
-	  creationCraft craft_12 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,21,0,28,26,27,0,21,0)),22);
-	  creationCraft craft_13 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,21,0,28,27,26,0,21,0)),22);
-	  creationCraft craft_38 = new creationCraft(new ArrayList<Integer>(Arrays.asList(57,35,0,0,0,0,0,0,0)),28);
-	  creationCraft craft_39 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,57,35,0,0,0,0)),28);
-	  creationCraft craft_40 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,57,35,0)),28);
-	  creationCraft craft_56 = new creationCraft(new ArrayList<Integer>(Arrays.asList(11,10,11,11,10,11,11,11,11)),32);
-	  creationCraft craft_60 = new creationCraft(new ArrayList<Integer>(Arrays.asList(20,20,20,0,7,0,0,0,0)),18);
-	  creationCraft craft_61 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,20,20,20,0,7,0)),18);
-	  creationCraft craft_62 = new creationCraft(new ArrayList<Integer>(Arrays.asList(25,25,25,19,19,19,23,23,23)),31);
-	  
-	  // Life
-	  creationCraft craft_20 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,10,0,0,38,0,0)),36);
-	  creationCraft craft_21 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,10,0,0,38,0)),36);
-	  creationCraft craft_22 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,10,0,0,38)),36);
-	  creationCraft craft_23 = new creationCraft(new ArrayList<Integer>(Arrays.asList(38,0,0,6,0,0,0,0,0)),37);
-	  creationCraft craft_24 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,38,0,0,6,0,0,0,0)),37);
-	  creationCraft craft_25 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,38,0,0,6,0,0,0)),37);
-	  creationCraft craft_1 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,4,0,4,34,4,0,4,0)),38);
-	  creationCraft craft_15 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,9,0,9,34,9,0,9,0)),40);
-	  creationCraft craft_41 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,34,0,0,1,0,0)),35);
-	  creationCraft craft_42 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,34,0,0,1,0)),35);
-	  creationCraft craft_43 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,34,0,0,1)),35);
-	  creationCraft craft_44 = new creationCraft(new ArrayList<Integer>(Arrays.asList(28,28,28,28,28,28,28,28,28)),39);
-	  creationCraft craft_52 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,78,0,78,34,78,0,78,0)),42);
-	  
-	  // Weapon
-	  creationCraft craft_14 = new creationCraft(new ArrayList<Integer>(Arrays.asList(14,14,14,14,14,14,0,14,0)),49);
-	  creationCraft craft_32 = new creationCraft(new ArrayList<Integer>(Arrays.asList(14,0,0,14,0,0,8,0,0)),57);
-	  creationCraft craft_33 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,14,0,0,14,0,0,8,0)),57);
-	  creationCraft craft_34 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,14,0,0,14,0,0,8)),57);
-	  creationCraft craft_48 = new creationCraft(new ArrayList<Integer>(Arrays.asList(9,0,0,8,0,0,15,0,0)),52);
-	  creationCraft craft_49 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,9,0,0,8,0,0,15,0)),52);
-	  creationCraft craft_50 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,9,0,0,8,0,0,15)),52);
-	  creationCraft craft_51 = new creationCraft(new ArrayList<Integer>(Arrays.asList(77,5,77,5,77,5,77,5,77)),78);
-	  creationCraft craft_53 = new creationCraft(new ArrayList<Integer>(Arrays.asList(17,0,0,17,0,0,8,0,0)),64);
-	  creationCraft craft_54 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,17,0,0,17,0,0,8,0)),64);
-	  creationCraft craft_55 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,17,0,0,17,0,0,8)),64);
-	  creationCraft craft_57 = new creationCraft(new ArrayList<Integer>(Arrays.asList(16,0,0,14,0,0,14,0,0)),53);
-	  creationCraft craft_58 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,16,0,0,14,0,0,14,0)),53);
-	  creationCraft craft_59 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,16,0,0,14,0,0,14)),53);
-	  creationCraft craft_63 = new creationCraft(new ArrayList<Integer>(Arrays.asList(16,0,0,77,0,0,14,0,0)),69);
-	  creationCraft craft_64 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,16,0,0,77,0,0,14,0)),69);
-	  creationCraft craft_65 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,16,0,0,77,0,0,14)),69);
-	  creationCraft craft_66 = new creationCraft(new ArrayList<Integer>(Arrays.asList(8,0,0,0,69,0,0,0,8)),79);
-	  creationCraft craft_67 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,8,69,8,0,0,0)),79);
-	  creationCraft craft_68 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,8,0,69,0,8,0,0)),79);
+		  // Base
+		  creationCraft craft_16 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,2,2,0,2,2,0,0,0)),3); //Wooden blocs
+		  creationCraft craft_17 = new creationCraft(new ArrayList<Integer>(Arrays.asList(2,2,0,2,2,0,0,0,0)),3);
+		  creationCraft craft_18 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,2,2,0,2,2,0)),3);
+		  creationCraft craft_19 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,2,2,0,2,2)),3);
+		  creationCraft craft_26 = new creationCraft(new ArrayList<Integer>(Arrays.asList(3,0,0,3,0,0,0,0,0)),8); //Stick
+		  creationCraft craft_27 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,3,0,0,3,0,0,0,0)),8);
+		  creationCraft craft_28 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,3,0,0,3,0,0,0)),8);
+		  creationCraft craft_29 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,3,0,0,3,0,0)),8);
+		  creationCraft craft_30 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,3,0,0,3,0)),8);
+		  creationCraft craft_31 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,3,0,0,3)),8);
+		  creationCraft craft_35 = new creationCraft(new ArrayList<Integer>(Arrays.asList(54,36,0,0,0,0,0,0,0)),9); //Os
+		  creationCraft craft_36 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,54,36,0,0,0,0)),9);
+		  creationCraft craft_37 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,54,36,0)),9);
+		  creationCraft craft_2 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,5,0,0,7,0,0)),11); //Verre 
+		  creationCraft craft_3 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,5,0,0,7,0)),11);
+		  creationCraft craft_4 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,5,0,0,7)),11);
+		  creationCraft craft_5 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,13,0,0,7,0,0)),14); //Lingot de fer
+		  creationCraft craft_6 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,13,0,0,7,0)),14);
+		  creationCraft craft_7 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,13,0,0,7)),14);
+		  creationCraft craft_45 = new creationCraft(new ArrayList<Integer>(Arrays.asList(54,37,0,0,0,0,0,0,0)),15); //Plume
+		  creationCraft craft_46 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,54,37,0,0,0,0)),15);
+		  creationCraft craft_47 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,54,37,0)),15);
+		  
+		  // Food
+		  creationCraft craft_60 = new creationCraft(new ArrayList<Integer>(Arrays.asList(20,20,20,0,7,0,0,0,0)),18); //Baguette
+		  creationCraft craft_61 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,20,20,20,0,7,0)),18);
+		  creationCraft craft_burger_pain_1 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,54,18,0,0,0,0)),21); //Pain de burger
+		  creationCraft craft_burger_pain_2 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,18,54,0,0,0)),21);
+		  creationCraft craft_8 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,21,0,26,27,28,0,21,0)),22); //Burger
+		  creationCraft craft_9 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,21,0,27,26,28,0,21,0)),22);
+		  creationCraft craft_10 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,21,0,27,28,26,0,21,0)),22);
+		  creationCraft craft_11 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,21,0,26,28,27,0,21,0)),22);
+		  creationCraft craft_12 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,21,0,28,26,27,0,21,0)),22);
+		  creationCraft craft_13 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,21,0,28,27,26,0,21,0)),22);
+		  creationCraft craft_farine_1 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,48,20,0,0,0,0)),23); //Farine
+		  creationCraft craft_farine_2 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,20,48,0,0,0)),23);
+		  creationCraft craft_38 = new creationCraft(new ArrayList<Integer>(Arrays.asList(54,35,0,0,0,0,0,0,0)),28); //Viande
+		  creationCraft craft_39 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,54,35,0,0,0,0)),28);
+		  creationCraft craft_40 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,0,54,35,0)),28);
+		  creationCraft craft_oeuf_brouille_1 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,38,0,0,7,0,0)),29); //Oeuf brouillés
+		  creationCraft craft_oeuf_brouille_2 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,38,0,0,7,0)),29);
+		  creationCraft craft_oeuf_brouille_3 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,38,0,0,7)),29);
+		  creationCraft craft_noodle = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,38,8,23,0,10)),30); //Nouilles (selon Wadie)
+		  creationCraft craft_62 = new creationCraft(new ArrayList<Integer>(Arrays.asList(25,25,25,19,19,19,23,23,23)),31); //Gateau
+		  creationCraft craft_56 = new creationCraft(new ArrayList<Integer>(Arrays.asList(11,10,11,11,10,11,11,11,11)),32); //Soda
+		  creationCraft craft_soupe_poisson_1 = new creationCraft(new ArrayList<Integer>(Arrays.asList(10,36,10,0,10,0,0,7,0)),33); //Soupe de poisson
+		  creationCraft craft_soupe_poisson_2 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,36,0,10,10,10,0,7,0)),33); 
+		  
+		  // Life
+		  creationCraft craft_41 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,34,0,0,1,0,0)),35); //Vache
+		  creationCraft craft_42 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,34,0,0,1,0)),35);
+		  creationCraft craft_43 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,34,0,0,1)),35);
+		  creationCraft craft_20 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,10,0,0,38,0,0)),36); //Poisson
+		  creationCraft craft_21 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,10,0,0,38,0)),36);
+		  creationCraft craft_22 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,10,0,0,38)),36);
+		  creationCraft craft_23 = new creationCraft(new ArrayList<Integer>(Arrays.asList(38,0,0,6,0,0,0,0,0)),37); //Oiseau
+		  creationCraft craft_24 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,38,0,0,6,0,0,0,0)),37);
+		  creationCraft craft_25 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,38,0,0,6,0,0,0)),37);
+		  creationCraft craft_1 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,4,0,4,34,4,0,4,0)),38); //Oeuf
+		  creationCraft craft_44 = new creationCraft(new ArrayList<Integer>(Arrays.asList(28,28,28,28,28,28,28,28,28)),39); //Super Meat Boy
+		  creationCraft craft_15 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,9,0,9,34,9,0,9,0)),40); //Sans
+		  creationCraft craft_human_1 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,57,34,0,0,0,0)),41); //Humain
+		  creationCraft craft_human_2 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,34,57,0,0,0)),41);
+		  creationCraft craft_human_3 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,70,34,0,0,0,0)),41); 
+		  creationCraft craft_human_4 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,34,70,0,0,0)),41);
+		  creationCraft craft_52 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,78,0,78,34,78,0,78,0)),42); //Creeper
+		  
+		  // Weapon
+		  creationCraft craft_ak = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,3,3,70,3,0,0)),43); //Ak
+		  creationCraft craft_hache = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,14,14,0,8,14,0,8,0)),44); //Hache
+		  creationCraft craft_bat = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,3,3,0,3,3,8,0,0)),46); //Batte de baseball
+		  creationCraft craft_battle_axe = new creationCraft(new ArrayList<Integer>(Arrays.asList(14,14,14,14,8,14,0,8,0)),47); //Hache de guerre
+		  creationCraft craft_battle_hammer = new creationCraft(new ArrayList<Integer>(Arrays.asList(14,0,14,14,8,14,0,8,0)),48); //Marteau de guerre
+		  creationCraft craft_14 = new creationCraft(new ArrayList<Integer>(Arrays.asList(14,14,14,14,14,14,0,14,0)),49); //Bouclier
+		  creationCraft craft_bouteille_alcool = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,11,0,11,10,11,11,11,11)),50); //Bouteille alcool
+		  creationCraft craft_48 = new creationCraft(new ArrayList<Integer>(Arrays.asList(9,0,0,8,0,0,15,0,0)),52); //Fleche d'arc
+		  creationCraft craft_49 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,9,0,0,8,0,0,15,0)),52);
+		  creationCraft craft_50 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,9,0,0,8,0,0,15)),52);
+		  creationCraft craft_57 = new creationCraft(new ArrayList<Integer>(Arrays.asList(16,0,0,14,0,0,14,0,0)),53); //Briquet
+		  creationCraft craft_58 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,16,0,0,14,0,0,14,0)),53);
+		  creationCraft craft_59 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,16,0,0,14,0,0,14)),53);
+		  creationCraft craft_butcher_knife_1 = new creationCraft(new ArrayList<Integer>(Arrays.asList(14,14,0,8,14,0,8,14,0)),54); //Couteau de boucher
+		  creationCraft craft_butcher_knife_2 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,14,14,0,8,14,0,8,14)),54); 
+		  creationCraft craft_chansaw = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,3,13,14,3,13,14)),55); //Tronconeuse
+		  creationCraft craft_double_spear = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,13,14,13,8,13,14,13,0)),56); //Double lance
+		  creationCraft craft_32 = new creationCraft(new ArrayList<Integer>(Arrays.asList(14,0,0,14,0,0,8,0,0)),57); //Epee classique
+		  creationCraft craft_33 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,14,0,0,14,0,0,8,0)),57);
+		  creationCraft craft_34 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,14,0,0,14,0,0,8)),57);
+		  creationCraft craft_grenade = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,5,13,5,77,5,0,5,0)),59); //Grenade
+		  creationCraft craft_lance_grenade = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,59,0,59,70,59,0,59,0)),60); //Lance grenade
+		  creationCraft craft_katana = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,13,0,0,13,0,0,8,0)),61); //Katana
+		  creationCraft craft_kunai = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,14,14,0,13,14,13,0,0)),62); //Kunai
+		  creationCraft craft_spear = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,14,0,8,0,8,0,0)),63); //Lance
+		  creationCraft craft_53 = new creationCraft(new ArrayList<Integer>(Arrays.asList(17,0,0,17,0,0,8,0,0)),64); //Sabre laser
+		  creationCraft craft_54 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,17,0,0,17,0,0,8,0)),64);
+		  creationCraft craft_55 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,17,0,0,17,0,0,8)),64);
+		  creationCraft craft_m4 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,70,14,14,0,0,0)),65); //M4
+		  creationCraft craft_medkit = new creationCraft(new ArrayList<Integer>(Arrays.asList(34,34,34,34,41,34,34,34,34)),66); //Medkit
+		  creationCraft craft_military_knife_1 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,14,13,0,13,14,0,8,8)),67); //Couteau militaire
+		  creationCraft craft_military_knife_2 = new creationCraft(new ArrayList<Integer>(Arrays.asList(14,13,0,13,14,0,8,8,0)),67);
+		  creationCraft craft_molotov_1 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,53,0,50,0,0)),68); //Cocktail molotof
+		  creationCraft craft_molotov_2 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,0,0,53,0,50,0)),68);
+		  creationCraft craft_63 = new creationCraft(new ArrayList<Integer>(Arrays.asList(16,0,0,77,0,0,14,0,0)),69); //Munitions
+		  creationCraft craft_64 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,16,0,0,77,0,0,14,0)),69);
+		  creationCraft craft_65 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,16,0,0,77,0,0,14)),69);
+		  creationCraft craft_revolver = new creationCraft(new ArrayList<Integer>(Arrays.asList(17,14,14,3,14,0,3,0,0)),70); //Revolver
+		  creationCraft craft_rocket = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,14,0,14,77,14,0,7,0)),71); //Roquette
+		  creationCraft craft_lance_rocket = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,71,0,71,70,71,0,71,0)),72); //Lance roquette
+		  creationCraft craft_scythe = new creationCraft(new ArrayList<Integer>(Arrays.asList(14,14,0,8,14,0,8,14,0)),73); //Faux
+		  creationCraft craft_shotgun = new creationCraft(new ArrayList<Integer>(Arrays.asList(77,77,7,77,70,77,77,77,77)),74); //Fusil a pompe
+		  creationCraft craft_shuriken = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,13,0,13,0,13,0,13,0)),75); //Shuriken
+		  creationCraft craft_sniper = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,14,14,0,70,0,0,0,0)),76); //Fusil a lunette
+		  creationCraft craft_51 = new creationCraft(new ArrayList<Integer>(Arrays.asList(77,5,77,5,77,5,77,5,77)),78); //TNT
+		  creationCraft craft_66 = new creationCraft(new ArrayList<Integer>(Arrays.asList(8,0,0,0,69,0,0,0,8)),79); //GameBoy
+		  creationCraft craft_67 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,0,8,69,8,0,0,0)),79);
+		  creationCraft craft_68 = new creationCraft(new ArrayList<Integer>(Arrays.asList(0,0,8,0,69,0,8,0,0)),79);
 
 	  
 	  // Creation du dico avec les crafts
@@ -392,8 +434,8 @@ public class Mouvement extends Application {
 	final StackPane layout2 = new StackPane();
 	final StackPane texte = new StackPane();
 	
-    Base.getChildren().addAll(limite1,limite2,dirt.imageView,sand.imageView,water.imageView,wood.imageView,rock.imageView,fire2.imageView,wind.imageView,ironNugget.imageView,redstone.imageView,silex.imageView);
-    Food.getChildren().addAll(limite3,limite4,beurre.imageView,ble.imageView,burgerPain.imageView,farine.imageView,fromage.imageView,pomme.imageView,salade.imageView,tomate.imageView);
+	Base.getChildren().addAll(limite1,limite2,dirt.imageView,wood.imageView,rock.imageView,sand.imageView,wind.imageView,fire2.imageView,water.imageView,glaçon.imageView,ironNugget.imageView,silex.imageView,redstone.imageView);
+    Food.getChildren().addAll(limite3,limite4,beurre.imageView,ble.imageView,fromage.imageView,pomme.imageView,salade.imageView,tomate.imageView);
     Life.getChildren().addAll(limite5,limite6,life.imageView);
     Weapon.getChildren().addAll(limite7,limite8,gunPowder.imageView);
     Matrice.getChildren().addAll(limite9,limite10);
