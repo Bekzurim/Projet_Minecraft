@@ -380,8 +380,9 @@ public class Mouvement extends Application {
 	  dicoCraft.put(570, craft_sniper);
 	   
 	AudioClip ASound = new AudioClip(new File("Sound/achievement.wav").toURI().toString());
-	    
 	AudioClip BSound = new AudioClip(new File("Sound/BackgroundSound.wav").toURI().toString());
+	AudioClip CSound = new AudioClip(new File("Sound/craft.wav").toURI().toString());
+	
 	MediaPlayer a =new MediaPlayer(new Media(new File("Sound/BackgroundSound.wav").toURI().toString())); 
 	
 	// Barre du Menu
@@ -695,42 +696,45 @@ public class Mouvement extends Application {
             		  Succes.getChildren().addAll(sansA);
             		  ASound.play();
             	  }	
-            	  if(Integer.parseInt(selected.getId()) == 42) {
+            	  else if(Integer.parseInt(selected.getId()) == 42) {
             		  Succes.getChildren().remove(creeperFA);
             		  Succes.getChildren().addAll(creeperA);
             		  ASound.play();
             	  }
-            	  if((Integer.parseInt(selected.getId()) == 9 || Integer.parseInt(selected.getId()) == 15 || Integer.parseInt(selected.getId()) == 28) && GreenPeace == false) {
+            	  else if((Integer.parseInt(selected.getId()) == 9 || Integer.parseInt(selected.getId()) == 15 || Integer.parseInt(selected.getId()) == 28) && GreenPeace == false) {
             		  GreenPeace = true;
             		  Succes.getChildren().remove(killFA);
             		  Succes.getChildren().addAll(killA);
             		  ASound.play();
             	  }
-            	  if(Integer.parseInt(selected.getId()) == 22) {
+            	 else if(Integer.parseInt(selected.getId()) == 22) {
             		  Succes.getChildren().remove(burgerFA);
             		  Succes.getChildren().addAll(burgerA);
             		  ASound.play();
             	  }
-            	  if(Integer.parseInt(selected.getId()) == 39) {
+            	 else if(Integer.parseInt(selected.getId()) == 39) {
             		  Succes.getChildren().remove(meatBoyFA);
             		  Succes.getChildren().addAll(meatBoyA);
             		  ASound.play();
             	  }	
-            	  if(Integer.parseInt(selected.getId()) == 31) {
+            	 else if(Integer.parseInt(selected.getId()) == 31) {
             		  Succes.getChildren().remove(cakeFA);
             		  Succes.getChildren().addAll(cakeA);
             		  ASound.play();
             	  }	
-            	  if(Integer.parseInt(selected.getId()) == 64) {
+            	 else if(Integer.parseInt(selected.getId()) == 64) {
             		  Succes.getChildren().remove(lightSaberFA);
             		  Succes.getChildren().addAll(lightSaberA);
             		  ASound.play();
             	  }	
-            	  if(Integer.parseInt(selected.getId()) == 79) {
+            	 else if(Integer.parseInt(selected.getId()) == 79) {
             		  Succes.getChildren().remove(pingFA);
             		  Succes.getChildren().addAll(pongA);
             		  ASound.play();
-            	  }	
+            	  }
+            	 else {
+            		 CSound.play();
+            	 }
             	  
             	  for(int i =0;i<matrice.length*matrice.length;i++){
             		  matrice[i%3][i/3] = 0;}
