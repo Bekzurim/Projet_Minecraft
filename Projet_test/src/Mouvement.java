@@ -1,5 +1,4 @@
 import java.io.File;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -10,8 +9,6 @@ import java.util.Map;
 import javafx.application.Application;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.geometry.Point2D;
 import javafx.scene.Group;
@@ -54,47 +51,47 @@ public class Mouvement extends Application {
 	  List<String> listNom = Arrays.asList("0","Terre","Bois","Bloc de Bois","Pierre","Sable","Vent","Feu","Baton","Os","Eau","Verre","Glaçon","Pépite de Fer","Lingot de Fer","Plume","Silex","Redstone",
 	  "Baguette","Beurre","Blé","Pain à Burger","Burger","Farine","Fromage","Pomme","Salade","Tomate","Viande","Oeuf_Brouillé","Noodles","Gateau","Soda","Soupe de Poisson",
 	  "Vie","Vache","Poisson","Oiseau","Oeuf","Super Meat Boy","Sans","Humain","Creeper",
-	  "Ak","Hache","JetPack","Batte de Baseball","Double Hache","Marteau","Bouclier","Bouteille","Arc","Flèche","Briquet","Couteau","Tronconneuse","Lance Double","Epée","Masque à Gaz","Grenade","Lance Grenade","Katana","Kunai","Lance","Sabre Laser","M4","Kit de Soin","Couteau Militaire","Cocktail Molotov","Balles","Revolver","Roquette","Lance Roquette","Faux","Fusil à Pompe","Shriken","Sniper","Poudre à Canon",
+	  "Ak","Hache","Sac à dos","Batte de Baseball","Double Hache","Marteau","Bouclier","Bouteille","Arc","Flèche","Briquet","Couteau","Tronconneuse","Lance Double","Epée","Masque à Gaz","Grenade","Lance Grenade","Katana","Kunai","Lance","Sabre Laser","M4","Kit de Soin","Couteau Militaire","Cocktail Molotov","Balles","Revolver","Roquette","Lance Roquette","Faux","Fusil à Pompe","Shriken","Sniper","Poudre à Canon",
 	  "TNT","GameBoy");
 
 	  // Achievements
-	  ImageView sansFA = new ImageView(new File("sansFutureAchievement.png").toURI().toString());
-	  ImageView sansFAT = new ImageView(new File("sansFutureAchievementtxt.png").toURI().toString());
-	  ImageView creeperFA = new ImageView(new File("creeperFutureAchievement.png").toURI().toString());
-	  ImageView creeperFAT = new ImageView(new File("creeperFutureAchievementtxt.png").toURI().toString());
-	  ImageView killFA = new ImageView(new File("KillFutureAchievement.png").toURI().toString());
-	  ImageView killFAT = new ImageView(new File("KillFutureAchievementtxt.png").toURI().toString());
-	  ImageView cakeFA = new ImageView(new File("CakeFutureAchievement.png").toURI().toString());
-	  ImageView cakeFAT = new ImageView(new File("CakeFutureAchievementtxt.png").toURI().toString());
-	  ImageView burgerFA = new ImageView(new File("BurgerFutureAchievement.png").toURI().toString());
-	  ImageView burgerFAT = new ImageView(new File("BurgerFutureAchievementtxt.png").toURI().toString());
-	  ImageView meatBoyFA = new ImageView(new File("MeatBoyFutureAchievement.png").toURI().toString());
-	  ImageView meatBoyFAT = new ImageView(new File("MeatBoyFutureAchievementtxt.png").toURI().toString());
-	  ImageView MLGFA = new ImageView(new File("MLGFutureAchievement.png").toURI().toString());
-	  ImageView MLGFAT = new ImageView(new File("MLGFutureAchievementtxt.png").toURI().toString());
-	  ImageView lightSaberFA = new ImageView(new File("LightSaberFutureAchievement.png").toURI().toString());
-	  ImageView lightSaberFAT = new ImageView(new File("LightSaberFutureAchievementtxt.png").toURI().toString());
-	  ImageView pingFA = new ImageView(new File("PongFutureAchievement.png").toURI().toString());
-	  ImageView pongFAT = new ImageView(new File("PongFutureAchievementtxt.png").toURI().toString());
-	  ImageView sansA = new ImageView(new File("sansAchievement.png").toURI().toString());
-	  ImageView creeperA = new ImageView(new File("creeperAchievement.png").toURI().toString());
-	  ImageView killA = new ImageView(new File("KillAchievement.png").toURI().toString());
-	  ImageView cakeA = new ImageView(new File("CakeAchievement.png").toURI().toString());
-	  ImageView burgerA = new ImageView(new File("BurgerAchievement.png").toURI().toString());
-	  ImageView meatBoyA = new ImageView(new File("MeatBoyAchievement.png").toURI().toString());
-	  ImageView MLGA = new ImageView(new File("MLGAchievement.png").toURI().toString());
-	  ImageView lightSaberA = new ImageView(new File("LightSaberAchievement.png").toURI().toString());
-	  ImageView pongA = new ImageView(new File("PongAchievement.png").toURI().toString());
+	  ImageView sansFA = new ImageView(new File("Achievements/sansFutureAchievement.png").toURI().toString());
+	  ImageView sansFAT = new ImageView(new File("Achievements/sansFutureAchievementtxt.png").toURI().toString());
+	  ImageView creeperFA = new ImageView(new File("Achievements/creeperFutureAchievement.png").toURI().toString());
+	  ImageView creeperFAT = new ImageView(new File("Achievements/creeperFutureAchievementtxt.png").toURI().toString());
+	  ImageView killFA = new ImageView(new File("Achievements/KillFutureAchievement.png").toURI().toString());
+	  ImageView killFAT = new ImageView(new File("Achievements/KillFutureAchievementtxt.png").toURI().toString());
+	  ImageView cakeFA = new ImageView(new File("Achievements/CakeFutureAchievement.png").toURI().toString());
+	  ImageView cakeFAT = new ImageView(new File("Achievements/CakeFutureAchievementtxt.png").toURI().toString());
+	  ImageView burgerFA = new ImageView(new File("Achievements/BurgerFutureAchievement.png").toURI().toString());
+	  ImageView burgerFAT = new ImageView(new File("Achievements/BurgerFutureAchievementtxt.png").toURI().toString());
+	  ImageView meatBoyFA = new ImageView(new File("Achievements/MeatBoyFutureAchievement.png").toURI().toString());
+	  ImageView meatBoyFAT = new ImageView(new File("Achievements/MeatBoyFutureAchievementtxt.png").toURI().toString());
+	  ImageView MLGFA = new ImageView(new File("Achievements/MLGFutureAchievement.png").toURI().toString());
+	  ImageView MLGFAT = new ImageView(new File("Achievements/MLGFutureAchievementtxt.png").toURI().toString());
+	  ImageView lightSaberFA = new ImageView(new File("Achievements/LightSaberFutureAchievement.png").toURI().toString());
+	  ImageView lightSaberFAT = new ImageView(new File("Achievements/LightSaberFutureAchievementtxt.png").toURI().toString());
+	  ImageView pingFA = new ImageView(new File("Achievements/PongFutureAchievement.png").toURI().toString());
+	  ImageView pongFAT = new ImageView(new File("Achievements/PongFutureAchievementtxt.png").toURI().toString());
+	  ImageView sansA = new ImageView(new File("Achievements/sansAchievement.png").toURI().toString());
+	  ImageView creeperA = new ImageView(new File("Achievements/creeperAchievement.png").toURI().toString());
+	  ImageView killA = new ImageView(new File("Achievements/KillAchievement.png").toURI().toString());
+	  ImageView cakeA = new ImageView(new File("Achievements/CakeAchievement.png").toURI().toString());
+	  ImageView burgerA = new ImageView(new File("Achievements/BurgerAchievement.png").toURI().toString());
+	  ImageView meatBoyA = new ImageView(new File("Achievements/MeatBoyAchievement.png").toURI().toString());
+	  ImageView MLGA = new ImageView(new File("Achievements/MLGAchievement.png").toURI().toString());
+	  ImageView lightSaberA = new ImageView(new File("Achievements/LightSaberAchievement.png").toURI().toString());
+	  ImageView pongA = new ImageView(new File("Achievements/PongAchievement.png").toURI().toString());
 	  
-	  ImageView sanstest = new ImageView(new File("sansAchievement.png").toURI().toString());
-	  ImageView creepertest = new ImageView(new File("creeperAchievement.png").toURI().toString());
-	  ImageView killtest = new ImageView(new File("KillAchievement.png").toURI().toString());
-	  ImageView caketest = new ImageView(new File("CakeAchievement.png").toURI().toString());
-	  ImageView burgertest = new ImageView(new File("BurgerAchievement.png").toURI().toString());
-	  ImageView meatBoytest = new ImageView(new File("MeatBoyAchievement.png").toURI().toString());
-	  ImageView MLGtest = new ImageView(new File("MLGAchievement.png").toURI().toString());
-	  ImageView lightSabertest = new ImageView(new File("LightSaberAchievement.png").toURI().toString());
-	  ImageView pongtest = new ImageView(new File("PongAchievement.png").toURI().toString());
+	  ImageView sanstest = new ImageView(new File("Achievements/sansAchievement.png").toURI().toString());
+	  ImageView creepertest = new ImageView(new File("Achievements/creeperAchievement.png").toURI().toString());
+	  ImageView killtest = new ImageView(new File("Achievements/KillAchievement.png").toURI().toString());
+	  ImageView caketest = new ImageView(new File("Achievements/CakeAchievement.png").toURI().toString());
+	  ImageView burgertest = new ImageView(new File("Achievements/BurgerAchievement.png").toURI().toString());
+	  ImageView meatBoytest = new ImageView(new File("Achievements/MeatBoyAchievement.png").toURI().toString());
+	  ImageView MLGtest = new ImageView(new File("Achievements/MLGAchievement.png").toURI().toString());
+	  ImageView lightSabertest = new ImageView(new File("Achievements/LightSaberAchievement.png").toURI().toString());
+	  ImageView pongtest = new ImageView(new File("Achievements/PongAchievement.png").toURI().toString());
 	  
 	  // Les bases
 	  Image icon = new Image(new File("icon.png").toURI().toString());
